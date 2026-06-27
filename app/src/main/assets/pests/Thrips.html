@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>تریپس (Thrips) | آفت خطرناک گوجه فرنگی</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: linear-gradient(145deg, #1b3d2a, #0d2a1a);
+            font-family: 'Segoe UI', 'Vazirmatn', Tahoma, system-ui, sans-serif;
+            padding: 12px;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .master {
+            max-width: 750px;
+            width: 100%;
+            background: #27261cd9;
+            backdrop-filter: blur(4px);
+            border-radius: 2rem;
+            padding: 12px;
+            box-shadow: 0 12px 28px black;
+        }
+        .card {
+            background: #fef8ec;
+            border-radius: 1.8rem;
+            padding: 1rem;
+            box-shadow: inset 0 0 0 1px #fff9e8, 0 6px 14px rgba(0,0,0,0.2);
+        }
+        .title {
+            text-align: center;
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #9b4b2c;
+            text-shadow: 1px 1px 0 #e2d5c0;
+        }
+        .sub {
+            text-align: center;
+            font-size: 0.75rem;
+            color: #b47c44;
+            border-bottom: 2px dashed #dabd88;
+            display: inline-block;
+            width: auto;
+            margin: 0 auto 12px auto;
+            padding-bottom: 4px;
+        }
+        .svg-container {
+            background: #e7ddc4;
+            border-radius: 1.2rem;
+            padding: 8px;
+            text-align: center;
+            margin: 8px 0;
+            box-shadow: inset 0 0 0 2px #fef5e2, 0 4px 10px rgba(0,0,0,0.15);
+            min-height: 620px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        svg {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            border-radius: 1rem;
+        }
+        .button-area {
+            display: flex;
+            justify-content: center;
+            margin: 12px 0;
+        }
+        button {
+            background: #c08545;
+            border: none;
+            color: white;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 2rem;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: 0.2s;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+        button:active { transform: scale(0.96); }
+        .info-panel {
+            background: #efe4cf;
+            border-radius: 1.2rem;
+            padding: 0.9rem;
+            margin-top: 12px;
+            border-right: 5px solid #aa7942;
+            text-align: right;
+            font-size: 0.75rem;
+            max-height: 55vh;
+            overflow-y: auto;
+        }
+        .stage-name {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #4a3920;
+            background: #fdf1df;
+            padding: 4px 10px;
+            border-radius: 2rem;
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+        .section {
+            margin-top: 10px;
+            background: #faf3e3;
+            padding: 8px;
+            border-radius: 1rem;
+        }
+        .section-title {
+            font-weight: bold;
+            color: #6b3f1c;
+            border-right: 3px solid #c6904b;
+            padding-right: 8px;
+            margin-bottom: 6px;
+            font-size: 0.8rem;
+        }
+        .section-content { line-height: 1.45; color: #2c2a1a; }
+        hr { margin: 8px 0; border-color: #dbbc87; }
+        .highlight { background: #f5e6c4; padding: 2px 6px; border-radius: 12px; font-weight: bold; }
+        footer {
+            text-align: center;
+            font-size: 0.6rem;
+            color: #aa956b;
+            margin-top: 10px;
+        }
+        @media (max-width: 500px) {
+            .master { padding: 8px; }
+            .card { padding: 0.7rem; }
+            .title { font-size: 1.2rem; }
+            .info-panel { font-size: 0.7rem; max-height: 50vh; }
+            .section-title { font-size: 0.75rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="master">
+    <div class="card">
+        <div class="title">🦟 تریپس (Thrips) | Frankliniella occidentalis</div>
+        <div style="text-align: center;"><div class="sub">ناقل ویروس‌ها | آفت بسیار ریز و خطرناک ⚠️</div></div>
+
+        <div class="svg-container">
+            <svg id="thripsSvg" viewBox="0 0 600 750" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <filter id="shadow" x="-10%" y="-10%" width="130%" height="130%">
+                        <feDropShadow dx="2" dy="5" stdDeviation="4" flood-color="#2d2a1a" flood-opacity="0.25"/>
+                    </filter>
+                    <filter id="veinGlow"><feGaussianBlur stdDeviation="1"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+                    <linearGradient id="leafGrad" x1="20%" y1="0%" x2="80%" y2="100%">
+                        <stop offset="0%" stop-color="#6daa44"/><stop offset="60%" stop-color="#468a2e"/><stop offset="100%" stop-color="#2d6b1e"/>
+                    </linearGradient>
+                    <linearGradient id="fruitGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#e84030"/><stop offset="50%" stop-color="#cc3020"/><stop offset="100%" stop-color="#aa2518"/>
+                    </linearGradient>
+                    <linearGradient id="petioleGrad" x1="0" y1="0" x2="1" y2="0">
+                        <stop offset="0%" stop-color="#8b744b"/><stop offset="100%" stop-color="#b4925e"/>
+                    </linearGradient>
+                    <radialGradient id="fruitShine" cx="35%" cy="30%" r="50%">
+                        <stop offset="0%" stop-color="#ffaaa0" stop-opacity="0.5"/>
+                        <stop offset="100%" stop-color="#ff0000" stop-opacity="0"/>
+                    </radialGradient>
+                </defs>
+                <g filter="url(#shadow)">
+                    <!-- ==================== برگ ==================== -->
+                    <path id="petiolePath" d="M300,480 C285,515 270,555 285,610 Q295,640 310,655" stroke="url(#petioleGrad)" stroke-width="14" fill="none" stroke-linecap="round"/>
+                    <path id="petioleInner" d="M300,480 C310,510 325,555 312,610" stroke="#b7975f" stroke-width="3" fill="none" opacity="0.5"/>
+
+                    <g id="leafGroup">
+                        <path id="leafBlade" d="M300,160 C340,175 375,200 405,240 C425,268 442,298 448,330 C452,358 450,385 440,410 C425,445 400,475 372,500 C355,514 335,525 312,525 C290,525 270,514 253,500 C225,475 200,445 185,410 C175,385 173,358 177,330 C183,298 200,268 220,240 C250,200 285,175 300,160Z" fill="url(#leafGrad)" stroke="#3e6827" stroke-width="1.8"/>
+
+                        <!-- لکه‌های نقره‌ای و سفید روی برگ (علامت اصلی تریپس) -->
+                        <g id="silveryStippling" opacity="0">
+                            <ellipse cx="350" cy="290" rx="15" ry="10" fill="#ddeecc" opacity="0.6"/>
+                            <ellipse cx="320" cy="340" rx="12" ry="8" fill="#ddeecc" opacity="0.55"/>
+                            <ellipse cx="380" cy="360" rx="10" ry="7" fill="#ddeecc" opacity="0.5"/>
+                            <ellipse cx="290" cy="320" rx="10" ry="8" fill="#ddeecc" opacity="0.5"/>
+                            <ellipse cx="360" cy="400" rx="12" ry="8" fill="#ddeecc" opacity="0.45"/>
+                            <!-- لکه‌های ریز سفید -->
+                            <circle cx="340" cy="285" r="2" fill="#ddeecc" opacity="0.7"/>
+                            <circle cx="355" cy="295" r="1.5" fill="#ddeecc" opacity="0.7"/>
+                            <circle cx="330" cy="335" r="2" fill="#ddeecc" opacity="0.65"/>
+                            <circle cx="370" cy="355" r="1.5" fill="#ddeecc" opacity="0.65"/>
+                        </g>
+
+                        <!-- زردی و کلروز برگ -->
+                        <g id="leafYellowing" opacity="0">
+                            <ellipse cx="340" cy="320" rx="50" ry="45" fill="#e8cf5a" opacity="0.4"/>
+                            <ellipse cx="300" cy="380" rx="40" ry="35" fill="#e0c33e" opacity="0.35"/>
+                            <ellipse cx="370" cy="420" rx="30" ry="25" fill="#ddd055" opacity="0.3"/>
+                        </g>
+
+                        <!-- بدشکلی و پیچیدگی برگ -->
+                        <g id="leafDeformation" opacity="0">
+                            <path d="M340,175 Q370,200 365,250 Q360,280 340,270" stroke="#8a7a4a" stroke-width="1.5" fill="none" opacity="0.5"/>
+                            <path d="M280,175 Q250,200 255,250 Q260,280 280,270" stroke="#8a7a4a" stroke-width="1.5" fill="none" opacity="0.5"/>
+                            <path d="M370,290 Q390,310 380,345" stroke="#8a7a4a" stroke-width="1.5" fill="none" opacity="0.4"/>
+                        </g>
+
+                        <!-- نکروز حاشیه برگ -->
+                        <g id="marginNecrosis" opacity="0">
+                            <path d="M405,240 C430,280 448,330 445,380" stroke="#7a4e2a" stroke-width="6" fill="none" opacity="0.4" stroke-linecap="round"/>
+                            <path d="M220,240 C195,280 177,330 180,380" stroke="#7a4e2a" stroke-width="6" fill="none" opacity="0.4" stroke-linecap="round"/>
+                        </g>
+
+                        <!-- رگبرگ اصلی -->
+                        <path id="midVein" d="M300,170 Q293,280 300,490" stroke="#5b953c" stroke-width="4.5" fill="none" stroke-linecap="round" filter="url(#veinGlow)"/>
+                        <path id="midVeinInner" d="M300,170 Q295,280 300,490" stroke="#a3df78" stroke-width="1.4" fill="none"/>
+
+                        <!-- رگبرگ فرعی -->
+                        <g id="veinsGroup" stroke="#4b8231" fill="none" stroke-linecap="round">
+                            <path d="M300,210 Q330,225 355,240" stroke-width="2.6"/><path d="M300,210 Q270,225 245,240" stroke-width="2.6"/>
+                            <path d="M300,260 Q345,275 385,295" stroke-width="2.8"/><path d="M300,260 Q255,275 215,295" stroke-width="2.8"/>
+                            <path d="M300,320 Q355,340 410,365" stroke-width="3"/><path d="M300,320 Q245,340 190,365" stroke-width="3"/>
+                            <path d="M300,380 Q350,395 395,425" stroke-width="2.6"/><path d="M300,380 Q250,395 205,425" stroke-width="2.6"/>
+                            <path d="M300,440 Q335,455 365,485" stroke-width="2.4"/><path d="M300,440 Q265,455 235,485" stroke-width="2.4"/>
+                        </g>
+
+                        <!-- تریکوم -->
+                        <g id="trichomesGroup" stroke="#b6a467" fill="none" stroke-width="0.8" opacity="0.9">
+                            <path d="M380,230 L390,225"/><circle cx="390" cy="225" r="1.1" fill="#cfb572"/>
+                            <path d="M410,280 L422,272"/><circle cx="422" cy="272" r="1.2" fill="#cfb572"/>
+                            <path d="M435,340 L448,332"/><circle cx="448" cy="332" r="1.2" fill="#cfb572"/>
+                            <path d="M420,400 L433,395"/><circle cx="433" cy="395" r="1.1" fill="#cfb572"/>
+                            <path d="M380,460 L390,455"/><circle cx="390" cy="455" r="1.1" fill="#cfb572"/>
+                            <path d="M220,230 L210,225"/><circle cx="210" cy="225" r="1.1" fill="#cfb572"/>
+                            <path d="M190,280 L178,272"/><circle cx="178" cy="272" r="1.2" fill="#cfb572"/>
+                            <path d="M165,340 L152,332"/><circle cx="152" cy="332" r="1.2" fill="#cfb572"/>
+                            <path d="M180,400 L168,395"/><circle cx="168" cy="395" r="1.1" fill="#cfb572"/>
+                            <path d="M220,460 L210,455"/><circle cx="210" cy="455" r="1.1" fill="#cfb572"/>
+                        </g>
+
+                        <!-- روزنه‌ها -->
+                        <g id="stomataGroup" fill="#6a8c50" opacity="0.4">
+                            <ellipse cx="340" cy="260" rx="1.3" ry="2" transform="rotate(15 340 260)"/>
+                            <ellipse cx="320" cy="290" rx="1.2" ry="1.9" transform="rotate(-20 320 290)"/>
+                            <ellipse cx="370" cy="310" rx="1.4" ry="2.1" transform="rotate(30 370 310)"/>
+                            <ellipse cx="290" cy="330" rx="1.3" ry="2" transform="rotate(-10 290 330)"/>
+                            <ellipse cx="410" cy="350" rx="1.2" ry="1.9" transform="rotate(10 410 350)"/>
+                            <ellipse cx="220" cy="280" rx="1.4" ry="2.1" transform="rotate(-25 220 280)"/>
+                            <ellipse cx="260" cy="400" rx="1.3" ry="2" transform="rotate(5 260 400)"/>
+                            <ellipse cx="350" cy="430" rx="1.2" ry="1.9" transform="rotate(20 350 430)"/>
+                        </g>
+
+                        <!-- ==================== تریپس (حشره بسیار ریز) ==================== -->
+                        <!-- تریپس بالغ روی برگ (بزرگ شده برای نمایش) -->
+                        <g id="thripsAdult1" opacity="0">
+                            <g transform="translate(360, 310) scale(1.8)">
+                                <!-- بدن (باریک و کشیده) -->
+                                <ellipse cx="0" cy="0" rx="2" ry="6" fill="#ccaa66" stroke="#aa8844" stroke-width="0.3"/>
+                                <!-- سر -->
+                                <ellipse cx="0" cy="-6" rx="1.5" ry="1.8" fill="#ddbb77" stroke="#aa8844"/>
+                                <!-- چشم -->
+                                <circle cx="-0.8" cy="-6.8" r="0.5" fill="#cc5533"/>
+                                <circle cx="0.8" cy="-6.8" r="0.5" fill="#cc5533"/>
+                                <!-- شاخک -->
+                                <path d="M-0.8,-7.5 L-2,-9" stroke="#aa8844" stroke-width="0.3" fill="none"/>
+                                <path d="M0.8,-7.5 L2,-9" stroke="#aa8844" stroke-width="0.3" fill="none"/>
+                                <!-- پاها -->
+                                <path d="M-1,-2 L-3,0" stroke="#aa8844" stroke-width="0.3" fill="none"/>
+                                <path d="M1,-2 L3,0" stroke="#aa8844" stroke-width="0.3" fill="none"/>
+                                <path d="M-1,0 L-3,2" stroke="#aa8844" stroke-width="0.3" fill="none"/>
+                                <path d="M1,0 L3,2" stroke="#aa8844" stroke-width="0.3" fill="none"/>
+                                <!-- بال‌ها (باریک و حاشیه‌دار) -->
+                                <path d="M-1,-3 Q-5,-8 -7,-6 Q-5,-3 -2,-2" fill="#ddeecc" stroke="#aaccaa" stroke-width="0.2" opacity="0.7"/>
+                                <path d="M1,-3 Q5,-8 7,-6 Q5,-3 2,-2" fill="#ddeecc" stroke="#aaccaa" stroke-width="0.2" opacity="0.7"/>
+                            </g>
+                        </g>
+
+                        <!-- تریپس دوم -->
+                        <g id="thripsAdult2" opacity="0">
+                            <g transform="translate(330, 350) scale(1.5) rotate(15)">
+                                <ellipse cx="0" cy="0" rx="2" ry="6" fill="#ccaa66" stroke="#aa8844" stroke-width="0.3"/>
+                                <ellipse cx="0" cy="-6" rx="1.5" ry="1.8" fill="#ddbb77"/>
+                                <circle cx="-0.8" cy="-6.8" r="0.5" fill="#cc5533"/>
+                                <circle cx="0.8" cy="-6.8" r="0.5" fill="#cc5533"/>
+                                <path d="M-0.8,-7.5 L-2,-9" stroke="#aa8844" stroke-width="0.3" fill="none"/>
+                                <path d="M0.8,-7.5 L2,-9" stroke="#aa8844" stroke-width="0.3" fill="none"/>
+                                <path d="M-1,-2 L-3,0" stroke="#aa8844" stroke-width="0.3" fill="none"/>
+                                <path d="M1,-2 L3,0" stroke="#aa8844" stroke-width="0.3" fill="none"/>
+                                <path d="M-1,-3 Q-5,-8 -7,-6 Q-5,-3 -2,-2" fill="#ddeecc" stroke="#aaccaa" stroke-width="0.2" opacity="0.7"/>
+                                <path d="M1,-3 Q5,-8 7,-6 Q5,-3 2,-2" fill="#ddeecc" stroke="#aaccaa" stroke-width="0.2" opacity="0.7"/>
+                            </g>
+                        </g>
+
+                        <!-- تریپس سوم (پوره) -->
+                        <g id="thripsNymph" opacity="0">
+                            <g transform="translate(380, 380) scale(1.3)">
+                                <ellipse cx="0" cy="0" rx="2" ry="4.5" fill="#ddee99" stroke="#bbcc77" stroke-width="0.3"/>
+                                <ellipse cx="0" cy="-4" rx="1.2" ry="1.5" fill="#eeffaa"/>
+                                <!-- بدون بال -->
+                                <path d="M-0.8,-5.5 L-1.5,-7" stroke="#bbcc77" stroke-width="0.3" fill="none"/>
+                                <path d="M0.8,-5.5 L1.5,-7" stroke="#bbcc77" stroke-width="0.3" fill="none"/>
+                            </g>
+                        </g>
+
+                        <!-- تخم تریپس -->
+                        <g id="thripsEggs" opacity="0">
+                            <ellipse cx="345" cy="295" rx="1" ry="0.5" fill="#ddeedd" stroke="#aaccaa" stroke-width="0.2"/>
+                            <ellipse cx="348" cy="298" rx="1" ry="0.5" fill="#ddeedd" stroke="#aaccaa" stroke-width="0.2"/>
+                            <ellipse cx="342" cy="298" rx="1" ry="0.5" fill="#ddeedd" stroke="#aaccaa" stroke-width="0.2"/>
+                        </g>
+
+                        <!-- فضولات سیاه ریز -->
+                        <g id="frass" opacity="0">
+                            <circle cx="355" cy="320" r="0.8" fill="#2a2a1a" opacity="0.6"/>
+                            <circle cx="358" cy="323" r="0.6" fill="#2a2a1a" opacity="0.6"/>
+                            <circle cx="352" cy="325" r="0.7" fill="#2a2a1a" opacity="0.6"/>
+                            <circle cx="325" cy="360" r="0.7" fill="#2a2a1a" opacity="0.5"/>
+                            <circle cx="328" cy="363" r="0.6" fill="#2a2a1a" opacity="0.5"/>
+                        </g>
+                    </g>
+
+                    <!-- ==================== میوه ==================== -->
+                    <g id="fruitGroup">
+                        <path d="M490,620 Q500,595 510,575" stroke="#5a7a3a" stroke-width="3.5" fill="none"/>
+                        <path d="M510,575 Q515,562 525,555" stroke="#5a7a3a" stroke-width="2.5" fill="none"/>
+                        
+                        <path d="M525,555 Q512,542 500,548" stroke="#3a6a2a" stroke-width="2.5" fill="none"/>
+                        <path d="M525,555 Q530,540 545,545" stroke="#3a6a2a" stroke-width="2.5" fill="none"/>
+                        <path d="M525,555 Q520,535 510,538" stroke="#3a6a2a" stroke-width="2.5" fill="none"/>
+                        <path d="M525,555 Q540,550 548,560" stroke="#3a6a2a" stroke-width="2" fill="none"/>
+                        <path d="M525,555 Q505,550 498,560" stroke="#3a6a2a" stroke-width="2" fill="none"/>
+                        
+                        <ellipse cx="525" cy="620" rx="48" ry="58" fill="url(#fruitGrad)"/>
+                        <ellipse cx="525" cy="620" rx="48" ry="58" fill="url(#fruitShine)"/>
+                        
+                        <!-- لکه‌های نقره‌ای روی میوه -->
+                        <g id="fruitSilvery" opacity="0">
+                            <ellipse cx="510" cy="600" rx="8" ry="6" fill="#ddeecc" opacity="0.4"/>
+                            <ellipse cx="540" cy="630" rx="6" ry="5" fill="#ddeecc" opacity="0.35"/>
+                            <ellipse cx="520" cy="645" rx="5" ry="4" fill="#ddeecc" opacity="0.35"/>
+                        </g>
+                        
+                        <!-- میوه بدشکل -->
+                        <g id="deformedFruit" opacity="0">
+                            <ellipse cx="525" cy="620" rx="35" ry="45" fill="#cc3020" opacity="0.6"/>
+                            <ellipse cx="525" cy="620" rx="35" ry="45" fill="none" stroke="#8a4e2a" stroke-width="1.5" opacity="0.5"/>
+                            <ellipse cx="510" cy="600" rx="10" ry="8" fill="#8a4e2a" opacity="0.4"/>
+                        </g>
+                    </g>
+                </g>
+            </svg>
+        </div>
+
+        <div class="button-area">
+            <button id="stageBtn">🦟 مراحل طغیان تریپس (سالم ← شدید)</button>
+        </div>
+
+        <div class="info-panel" id="infoPanel"></div>
+        <footer>🔍 لکه‌های نقره‌ای و سفید روی برگ + بدشکلی = تریپس</footer>
+    </div>
+</div>
+
+<script>
+    (function() {
+        const leafGrad = document.getElementById('leafGrad');
+        const silveryStippling = document.getElementById('silveryStippling');
+        const leafYellowing = document.getElementById('leafYellowing');
+        const leafDeformation = document.getElementById('leafDeformation');
+        const marginNecrosis = document.getElementById('marginNecrosis');
+        const thripsAdult1 = document.getElementById('thripsAdult1');
+        const thripsAdult2 = document.getElementById('thripsAdult2');
+        const thripsNymph = document.getElementById('thripsNymph');
+        const thripsEggs = document.getElementById('thripsEggs');
+        const frass = document.getElementById('frass');
+        const fruitSilvery = document.getElementById('fruitSilvery');
+        const deformedFruit = document.getElementById('deformedFruit');
+        const midVein = document.getElementById('midVein');
+        const veinsGroup = document.getElementById('veinsGroup');
+        const trichomesGroup = document.getElementById('trichomesGroup');
+        
+        let currentStage = 0;
+        
+        function setSeverityVisual(severity) {
+            const hue = 85 - severity * 12;
+            const sat = 55 - severity * 10;
+            const light = 42 - severity * 8;
+            const stops = leafGrad.querySelectorAll('stop');
+            if (stops.length >= 3) {
+                stops[0].setAttribute('stop-color', `hsl(${hue}, ${sat}%, ${light+5}%)`);
+                stops[1].setAttribute('stop-color', `hsl(${hue-4}, ${sat-4}%, ${light-2}%)`);
+                stops[2].setAttribute('stop-color', `hsl(${hue-8}, ${sat-8}%, ${light-6}%)`);
+            }
+            
+            let silverOp = severity * 0.85;
+            silveryStippling.setAttribute('opacity', Math.min(0.8, silverOp).toString());
+            
+            let yellowOp = severity * 0.7;
+            leafYellowing.setAttribute('opacity', Math.min(0.6, yellowOp).toString());
+            
+            let deformOp = (severity > 0.3) ? (severity - 0.3) * 1.0 : 0;
+            leafDeformation.setAttribute('opacity', Math.min(0.6, deformOp).toString());
+            
+            let necroOp = (severity > 0.6) ? (severity - 0.6) * 0.7 : 0;
+            marginNecrosis.setAttribute('opacity', Math.min(0.4, necroOp).toString());
+            
+            let t1Op = (severity > 0.2) ? (severity - 0.2) * 1.2 : 0;
+            thripsAdult1.setAttribute('opacity', Math.min(1, t1Op).toString());
+            let t2Op = (severity > 0.4) ? (severity - 0.4) * 1.3 : 0;
+            thripsAdult2.setAttribute('opacity', Math.min(1, t2Op).toString());
+            let tNOp = (severity > 0.35) ? (severity - 0.35) * 1.2 : 0;
+            thripsNymph.setAttribute('opacity', Math.min(1, tNOp).toString());
+            
+            let eggsOp = (severity > 0.3) ? (severity - 0.3) * 0.8 : 0;
+            thripsEggs.setAttribute('opacity', Math.min(0.7, eggsOp).toString());
+            
+            let frassOp = (severity > 0.4) ? (severity - 0.4) * 0.8 : 0;
+            frass.setAttribute('opacity', Math.min(0.6, frassOp).toString());
+            
+            let fruitSilOp = severity * 0.6;
+            fruitSilvery.setAttribute('opacity', Math.min(0.5, fruitSilOp).toString());
+            
+            let fruitDefOp = (severity > 0.55) ? (severity - 0.55) * 1.2 : 0;
+            deformedFruit.setAttribute('opacity', Math.min(0.7, fruitDefOp).toString());
+            
+            const veinColor = (severity > 0.6) ? "#8a9a5a" : "#5b953c";
+            midVein.setAttribute('stroke', veinColor);
+            const allVeins = veinsGroup.querySelectorAll('path');
+            allVeins.forEach(p => p.setAttribute('stroke', (severity > 0.6) ? "#8a9a5a" : "#4b8231"));
+            trichomesGroup.setAttribute('stroke', severity > 0.5 ? "#a88f58" : "#b6a467");
+        }
+        
+        const stageDetails = [
+            {
+                name: "🌿 مرحله ۰: گیاه کاملاً سالم",
+                symptoms: "🔹 برگ: سبز یکدست، بدون لکه<br>🍅 میوه: قرمز یکدست",
+                science: "شرایط مساعد برای تریپس:<br>• دمای ۲۵-۳۰ درجه<br>• رطوبت نسبی ۴۰-۶۰٪ (هوای گرم و خشک)<br>• تهویه ضعیف<br>• وجود علف‌های هرز میزبان",
+                control: "🛡️ پیشگیری:<br>• تله چسبنده آبی و زرد<br>• توری توری (گلخانه)<br>• حذف علف‌های هرز<br>• افزایش رطوبت (غبارپاشی)"
+            },
+            {
+                name: "⚠️ مرحله ۱: آلودگی خفیف",
+                symptoms: "🦟 برگ: لکه‌های نقره‌ای ریز روی برگ، چند تریپس پراکنده<br>🍅 میوه: بدون علائم",
+                science: "تریپس با مکیدن شیره سلولی، باعث ایجاد لکه‌های نقره‌ای روی برگ می‌شود. حشرات بسیار ریز هستند و با چشم غیرمسلح به سختی دیده می‌شوند.",
+                control: "💊 کنترل اولیه:<br>• اسپینوساد ۲۰۰ میلی‌لیتر/۱۰۰۰ لیتر<br>• تله چسبنده آبی<br>• حذف برگ‌های آلوده"
+            },
+            {
+                name: "🦟 مرحله ۲: آلودگی متوسط",
+                symptoms: "🦟 برگ: لکه‌های نقره‌ای گسترده، زردی، پیچیدگی خفیف برگ، جمعیت تریپس زیاد<br>🍅 میوه: لکه‌های نقره‌ای روی میوه، کیفیت پایین",
+                science: "تریپس ناقل ویروس‌های خطرناک (مانند TSWV) است. خسارت مستقیم و غیرمستقیم بالاست.",
+                control: "💊 کنترل شیمیایی:<br>• اسپینوساد ۲۰۰ میلی‌لیتر<br>• ایمیداکلوپرید ۵۰۰ میلی‌لیتر<br>• استامی پراید ۲۰۰ گرم<br>(تکرار هر ۷-۱۰ روز)"
+            },
+            {
+                name: "🔴 مرحله ۳: آلودگی شدید",
+                symptoms: "🔴 برگ: لکه‌های نقره‌ای گسترده، زردی شدید، پیچیدگی و بدشکلی، ریزش برگ<br>🍅 میوه: میوه بدشکل، لکه‌دار، بی‌کیفیت، غیرقابل فروش",
+                science: "کاهش محصول ۵۰-۷۰٪. تریپس ویروس‌ها را منتقل کرده و گیاه را نابود می‌کند.",
+                control: "🌱 مدیریت اضطراری:<br>• سمپاشی فوری (اسپینوساد + ایمیداکلوپرید)<br>• برداشت میوه‌های سالم<br>• حذف بوته‌های شدیداً آلوده"
+            }
+        ];
+        
+        function goToStage(stage) {
+            currentStage = stage;
+            let intensity = 0;
+            if (stage === 0) intensity = 0;
+            if (stage === 1) intensity = 0.35;
+            if (stage === 2) intensity = 0.65;
+            if (stage === 3) intensity = 0.95;
+            
+            setSeverityVisual(intensity);
+            
+            const data = stageDetails[stage];
+            const infoDiv = document.getElementById('infoPanel');
+            infoDiv.innerHTML = `
+                <div class="stage-name">${data.name}</div>
+                <div class="section">
+                    <div class="section-title">🍃 علائم روی برگ و میوه</div>
+                    <div class="section-content">${data.symptoms}</div>
+                </div>
+                <div class="section">
+                    <div class="section-title">🦟 شکل ظاهری و زیستگاه تریپس</div>
+                    <div class="section-content">تریپس حشره‌ای بسیار ریز (۰.۵-۲ میلی‌متر) با بدن باریک و کشیده، به رنگ زرد مایل به قهوه‌ای است. معمولاً در <strong>زیر برگ، داخل گل و روی برگ‌های جوان</strong> دیده می‌شود. با تکان دادن برگ، حشرات به سرعت حرکت می‌کنند.</div>
+                </div>
+                <div class="section">
+                    <div class="section-title">💊 روش‌های کنترل و درمان</div>
+                    <div class="section-content">${data.control}</div>
+                </div>
+                <hr>
+                <div class="section-content highlight">🎯 لکه‌های نقره‌ای و سفید روی برگ + بدشکلی = تریپس</div>
+            `;
+        }
+        
+        const btn = document.getElementById('stageBtn');
+        btn.addEventListener('click', () => {
+            let next = currentStage + 1;
+            if (next > 3) next = 0;
+            goToStage(next);
+        });
+        
+        goToStage(0);
+    })();
+</script>
+</body>
+</html>
