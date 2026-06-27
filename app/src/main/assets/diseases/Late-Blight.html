@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>بلایت دیررس (Late Blight) | تفاوت با بلایت زودرس</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: linear-gradient(145deg, #1b3d2a, #0d2a1a);
+            font-family: 'Segoe UI', 'Vazirmatn', Tahoma, system-ui, sans-serif;
+            padding: 12px;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .master {
+            max-width: 800px;
+            width: 100%;
+            background: #27261cd9;
+            backdrop-filter: blur(4px);
+            border-radius: 2rem;
+            padding: 12px;
+            box-shadow: 0 12px 28px black;
+        }
+        .card {
+            background: #fef8ec;
+            border-radius: 1.8rem;
+            padding: 1rem;
+            box-shadow: inset 0 0 0 1px #fff9e8, 0 6px 14px rgba(0,0,0,0.2);
+        }
+        .title {
+            text-align: center;
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #9b4b2c;
+            text-shadow: 1px 1px 0 #e2d5c0;
+        }
+        .sub {
+            text-align: center;
+            font-size: 0.75rem;
+            color: #b47c44;
+            border-bottom: 2px dashed #dabd88;
+            display: inline-block;
+            width: auto;
+            margin: 0 auto 12px auto;
+            padding-bottom: 4px;
+        }
+        .comparison-box {
+            background: #2c4724;
+            color: #ffecb3;
+            border-radius: 1rem;
+            padding: 10px;
+            margin-bottom: 15px;
+            font-size: 0.7rem;
+            text-align: center;
+        }
+        .comparison-box span {
+            color: #ffaa66;
+            font-weight: bold;
+        }
+        .svg-container {
+            background: #e7ddc4;
+            border-radius: 1.2rem;
+            padding: 8px;
+            text-align: center;
+            margin: 8px 0;
+            box-shadow: inset 0 0 0 2px #fef5e2, 0 4px 10px rgba(0,0,0,0.15);
+            min-height: 620px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        svg {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            border-radius: 1rem;
+        }
+        .button-area {
+            display: flex;
+            justify-content: center;
+            margin: 12px 0;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        button {
+            background: #c08545;
+            border: none;
+            color: white;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 2rem;
+            font-size: 0.85rem;
+            cursor: pointer;
+            font-family: inherit;
+            transition: 0.2s;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+        button:active { transform: scale(0.96); }
+        .info-panel {
+            background: #efe4cf;
+            border-radius: 1.2rem;
+            padding: 0.9rem;
+            margin-top: 12px;
+            border-right: 5px solid #aa7942;
+            text-align: right;
+            font-size: 0.75rem;
+            max-height: 55vh;
+            overflow-y: auto;
+        }
+        .stage-name {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #4a3920;
+            background: #fdf1df;
+            padding: 4px 10px;
+            border-radius: 2rem;
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+        .section {
+            margin-top: 10px;
+            background: #faf3e3;
+            padding: 8px;
+            border-radius: 1rem;
+        }
+        .section-title {
+            font-weight: bold;
+            color: #6b3f1c;
+            border-right: 3px solid #c6904b;
+            padding-right: 8px;
+            margin-bottom: 6px;
+            font-size: 0.8rem;
+        }
+        .section-content { line-height: 1.45; color: #2c2a1a; }
+        hr { margin: 8px 0; border-color: #dbbc87; }
+        .highlight { background: #f5e6c4; padding: 2px 6px; border-radius: 12px; font-weight: bold; }
+        .warning-box {
+            background: #fae6c3;
+            border-right: 4px solid #c67a2e;
+            padding: 6px 10px;
+            border-radius: 12px;
+            margin-top: 8px;
+            font-size: 0.7rem;
+        }
+        .diff-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #fff8ec;
+            border-radius: 1rem;
+            overflow: hidden;
+            margin-top: 10px;
+        }
+        .diff-table th, .diff-table td {
+            padding: 8px;
+            border-bottom: 1px solid #e2d2bb;
+            text-align: right;
+            font-size: 0.7rem;
+        }
+        .diff-table th {
+            background: #e7ddce;
+            font-weight: bold;
+        }
+        footer {
+            text-align: center;
+            font-size: 0.6rem;
+            color: #aa956b;
+            margin-top: 10px;
+        }
+        @media (max-width: 500px) {
+            .master { padding: 8px; }
+            .card { padding: 0.7rem; }
+            .title { font-size: 1.2rem; }
+            .info-panel { font-size: 0.7rem; max-height: 50vh; }
+            .section-title { font-size: 0.75rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="master">
+    <div class="card">
+        <div class="title">🍅 بلایت دیررس (Late Blight) | برگ + ساقه + میوه</div>
+        <div style="text-align: center;"><div class="sub">عامل: قارچ Phytophthora infestans | بسیار خطرناک ⚠️</div></div>
+
+        <!-- کادر مقایسه سریع -->
+        <div class="comparison-box">
+            🔴 <span>تفاوت با بلایت زودرس:</span> این بیماری لکه <span>آب سوخته و چرب</span> دارد (نه حلقوی)، زیر برگ <span>کپک سفید</span> دارد و به <span>ساقه و میوه</span> هم حمله می‌کند. سرعت انتشار آن <span>بسیار بالاست</span> (۴-۷ روز کل مزرعه).
+        </div>
+
+        <div class="svg-container">
+            <svg id="tomatoLeafSvg" viewBox="0 0 650 780" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <filter id="shadow" x="-10%" y="-10%" width="130%" height="130%">
+                        <feDropShadow dx="2" dy="5" stdDeviation="4" flood-color="#2d2a1a" flood-opacity="0.25"/>
+                    </filter>
+                    <filter id="veinGlow"><feGaussianBlur stdDeviation="1"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+                    <linearGradient id="leafGrad" x1="20%" y1="0%" x2="80%" y2="100%">
+                        <stop offset="0%" stop-color="#6daa44"/><stop offset="60%" stop-color="#468a2e"/><stop offset="100%" stop-color="#2d6b1e"/>
+                    </linearGradient>
+                    <linearGradient id="fruitGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#e84030"/><stop offset="50%" stop-color="#cc3020"/><stop offset="100%" stop-color="#aa2518"/>
+                    </linearGradient>
+                    <linearGradient id="petioleGrad" x1="0" y1="0" x2="1" y2="0">
+                        <stop offset="0%" stop-color="#8b744b"/><stop offset="100%" stop-color="#b4925e"/>
+                    </linearGradient>
+                    <radialGradient id="fruitShine" cx="35%" cy="30%" r="50%">
+                        <stop offset="0%" stop-color="#ffaaa0" stop-opacity="0.5"/>
+                        <stop offset="100%" stop-color="#ff0000" stop-opacity="0"/>
+                    </radialGradient>
+                </defs>
+                <g filter="url(#shadow)">
+                    <!-- ==================== برگ ==================== -->
+                    <path id="petiolePath" d="M320,500 C305,535 290,575 305,630 Q315,660 330,675" stroke="url(#petioleGrad)" stroke-width="14" fill="none" stroke-linecap="round"/>
+                    <path id="petioleInner" d="M320,500 C330,530 345,575 332,630" stroke="#b7975f" stroke-width="3" fill="none" opacity="0.5"/>
+
+                    <g id="leafGroup">
+                        <path id="leafBlade" d="M320,180 C360,195 395,220 425,260 C445,288 462,318 468,350 C472,378 470,405 460,430 C445,465 420,495 392,520 C375,534 355,545 332,545 C310,545 290,534 273,520 C245,495 220,465 205,430 C195,405 193,378 197,350 C203,318 220,288 240,260 C270,220 305,195 320,180Z" fill="url(#leafGrad)" stroke="#3e6827" stroke-width="1.8"/>
+
+                        <!-- لکه‌های آب سوخته و چرب (علامت بلایت دیررس - بدون حلقه) -->
+                        <g id="lateBlightSpots" opacity="0">
+                            <!-- لکه اصلی برگ (حالت آب سوخته) -->
+                            <ellipse cx="360" cy="290" rx="30" ry="24" fill="#3d2515" opacity="0.8"/>
+                            <ellipse cx="360" cy="290" rx="22" ry="17" fill="#4a2a1a" opacity="0.7"/>
+                            <ellipse cx="360" cy="290" rx="14" ry="11" fill="#5a351f" opacity="0.6"/>
+                            
+                            <ellipse cx="300" cy="360" rx="28" ry="22" fill="#3d2515" opacity="0.75"/>
+                            <ellipse cx="300" cy="360" rx="20" ry="16" fill="#4a2a1a" opacity="0.65"/>
+                            
+                            <ellipse cx="420" cy="400" rx="25" ry="19" fill="#3d2515" opacity="0.7"/>
+                            <ellipse cx="420" cy="400" rx="18" ry="13" fill="#4a2a1a" opacity="0.6"/>
+                            
+                            <ellipse cx="270" cy="430" rx="22" ry="17" fill="#3d2515" opacity="0.65"/>
+                            
+                            <!-- لکه‌های کوچک چرب -->
+                            <ellipse cx="390" cy="330" rx="12" ry="9" fill="#3d2515" opacity="0.6"/>
+                            <ellipse cx="330" cy="450" rx="14" ry="10" fill="#3d2515" opacity="0.55"/>
+                        </g>
+
+                        <!-- کپک سفید در زیر برگ (علامت اختصاصی بلایت دیررس) -->
+                        <g id="whiteMold" opacity="0">
+                            <ellipse cx="360" cy="292" rx="32" ry="26" fill="#e8e0d0" opacity="0.55"/>
+                            <ellipse cx="300" cy="362" rx="30" ry="24" fill="#e8e0d0" opacity="0.5"/>
+                            <ellipse cx="420" cy="402" rx="27" ry="21" fill="#e8e0d0" opacity="0.5"/>
+                            <ellipse cx="270" cy="432" rx="24" ry="19" fill="#e8e0d0" opacity="0.45"/>
+                            <ellipse cx="390" cy="332" rx="14" ry="11" fill="#e8e0d0" opacity="0.4"/>
+                        </g>
+
+                        <!-- نکروز گسترده برگ (خشکی قهوه‌ای تیره) -->
+                        <g id="leafNecrosis" opacity="0">
+                            <path d="M425,260 C455,310 470,370 458,420" stroke="#2a1508" stroke-width="14" fill="none" opacity="0.65" stroke-linecap="round"/>
+                            <path d="M240,260 C210,310 195,370 207,420" stroke="#2a1508" stroke-width="14" fill="none" opacity="0.65" stroke-linecap="round"/>
+                            <ellipse cx="320" cy="480" rx="50" ry="20" fill="#2a1508" opacity="0.5"/>
+                        </g>
+
+                        <!-- رگبرگ -->
+                        <path id="midVein" d="M320,190 Q313,300 320,510" stroke="#5b953c" stroke-width="4.5" fill="none" stroke-linecap="round" filter="url(#veinGlow)"/>
+                        <path id="midVeinInner" d="M320,190 Q315,300 320,510" stroke="#a3df78" stroke-width="1.4" fill="none"/>
+
+                        <g id="veinsGroup" stroke="#4b8231" fill="none" stroke-linecap="round">
+                            <path d="M320,230 Q350,245 375,260" stroke-width="2.6"/><path d="M320,230 Q290,245 265,260" stroke-width="2.6"/>
+                            <path d="M320,280 Q365,295 405,315" stroke-width="2.8"/><path d="M320,280 Q275,295 235,315" stroke-width="2.8"/>
+                            <path d="M320,340 Q375,360 430,385" stroke-width="3"/><path d="M320,340 Q265,360 210,385" stroke-width="3"/>
+                            <path d="M320,400 Q370,415 415,445" stroke-width="2.6"/><path d="M320,400 Q270,415 225,445" stroke-width="2.6"/>
+                            <path d="M320,460 Q355,475 385,505" stroke-width="2.4"/><path d="M320,460 Q285,475 255,505" stroke-width="2.4"/>
+                        </g>
+
+                        <g id="trichomesGroup" stroke="#b6a467" fill="none" stroke-width="0.8" opacity="0.9">
+                            <path d="M400,250 L410,245"/><circle cx="410" cy="245" r="1.1" fill="#cfb572"/>
+                            <path d="M430,300 L442,292"/><circle cx="442" cy="292" r="1.2" fill="#cfb572"/>
+                            <path d="M455,360 L468,352"/><circle cx="468" cy="352" r="1.2" fill="#cfb572"/>
+                            <path d="M240,250 L230,245"/><circle cx="230" cy="245" r="1.1" fill="#cfb572"/>
+                            <path d="M210,300 L198,292"/><circle cx="198" cy="292" r="1.2" fill="#cfb572"/>
+                            <path d="M185,360 L172,352"/><circle cx="172" cy="352" r="1.2" fill="#cfb572"/>
+                        </g>
+                    </g>
+
+                    <!-- ==================== ساقه آلوده ==================== -->
+                    <g id="stemGroup">
+                        <path id="mainStem" d="M320,675 Q315,700 310,740" stroke="#5a7a3a" stroke-width="12" fill="none" stroke-linecap="round"/>
+                        <g id="stemLesions" opacity="0">
+                            <ellipse cx="315" cy="700" rx="12" ry="7" fill="#2a1508" opacity="0.85"/>
+                            <ellipse cx="312" cy="720" rx="14" ry="8" fill="#2a1508" opacity="0.8"/>
+                            <ellipse cx="310" cy="735" rx="10" ry="6" fill="#2a1508" opacity="0.75"/>
+                            <ellipse cx="318" cy="690" rx="8" ry="5" fill="#2a1508" opacity="0.7"/>
+                        </g>
+                    </g>
+
+                    <!-- ==================== میوه بزرگ ==================== -->
+                    <g id="fruitGroup">
+                        <path d="M530,640 Q540,615 550,595" stroke="#5a7a3a" stroke-width="3.5" fill="none"/>
+                        <path d="M550,595 Q555,582 565,575" stroke="#5a7a3a" stroke-width="2.5" fill="none"/>
+                        
+                        <path d="M565,575 Q552,562 540,568" stroke="#3a6a2a" stroke-width="2.5" fill="none"/>
+                        <path d="M565,575 Q570,560 585,565" stroke="#3a6a2a" stroke-width="2.5" fill="none"/>
+                        <path d="M565,575 Q560,555 550,558" stroke="#3a6a2a" stroke-width="2.5" fill="none"/>
+                        <path d="M565,575 Q580,570 588,580" stroke="#3a6a2a" stroke-width="2" fill="none"/>
+                        <path d="M565,575 Q545,570 538,580" stroke="#3a6a2a" stroke-width="2" fill="none"/>
+                        
+                        <ellipse cx="565" cy="640" rx="48" ry="58" fill="url(#fruitGrad)"/>
+                        <ellipse cx="565" cy="640" rx="48" ry="58" fill="url(#fruitShine)"/>
+                        
+                        <!-- لکه‌های بلایت دیررس روی میوه (چرب و آب سوخته) -->
+                        <g id="fruitSpots" opacity="0">
+                            <ellipse cx="550" cy="615" rx="16" ry="11" fill="#3d2515" opacity="0.85"/>
+                            <ellipse cx="550" cy="615" rx="10" ry="7" fill="#4a2a1a" opacity="0.7"/>
+                            <ellipse cx="550" cy="615" rx="5" ry="3.5" fill="#5a351f" opacity="0.55"/>
+                            
+                            <ellipse cx="582" cy="642" rx="14" ry="10" fill="#3d2515" opacity="0.8"/>
+                            <ellipse cx="582" cy="642" rx="8" ry="6" fill="#4a2a1a" opacity="0.65"/>
+                            
+                            <ellipse cx="555" cy="662" rx="12" ry="8" fill="#3d2515" opacity="0.75"/>
+                            
+                            <ellipse cx="588" cy="620" rx="9" ry="6" fill="#3d2515" opacity="0.7"/>
+                            <ellipse cx="540" cy="648" rx="7" ry="5" fill="#3d2515" opacity="0.65"/>
+                        </g>
+                        
+                        <!-- پوسیدگی کامل میوه -->
+                        <g id="fruitRot" opacity="0">
+                            <ellipse cx="570" cy="655" rx="28" ry="22" fill="#1a0a02" opacity="0.65"/>
+                            <ellipse cx="570" cy="655" rx="18" ry="14" fill="#0d0501" opacity="0.7"/>
+                        </g>
+                    </g>
+                </g>
+            </svg>
+        </div>
+
+        <div class="button-area">
+            <button id="stageBtn">🦠 مراحل پیشرفت بلایت دیررس (سالم ← شدید)</button>
+            <button id="compareBtn" style="background:#6b8c42;">📊 مقایسه با بلایت زودرس</button>
+        </div>
+
+        <div class="info-panel" id="infoPanel"></div>
+        <footer>🔴 لکه‌های آب سوخته + کپک سفید زیر برگ + آلودگی ساقه و میوه = بلایت دیررس</footer>
+    </div>
+</div>
+
+<script>
+    (function() {
+        const leafGrad = document.getElementById('leafGrad');
+        const lateBlightSpots = document.getElementById('lateBlightSpots');
+        const whiteMold = document.getElementById('whiteMold');
+        const leafNecrosis = document.getElementById('leafNecrosis');
+        const stemLesions = document.getElementById('stemLesions');
+        const fruitSpots = document.getElementById('fruitSpots');
+        const fruitRot = document.getElementById('fruitRot');
+        const midVein = document.getElementById('midVein');
+        const veinsGroup = document.getElementById('veinsGroup');
+        const trichomesGroup = document.getElementById('trichomesGroup');
+        
+        let currentStage = 0;
+        let showComparison = false;
+        
+        function setSeverityVisual(severity) {
+            const hue = 85 - severity * 15;
+            const sat = 55 - severity * 20;
+            const light = 42 - severity * 15;
+            const stops = leafGrad.querySelectorAll('stop');
+            if (stops.length >= 3) {
+                stops[0].setAttribute('stop-color', `hsl(${hue}, ${sat}%, ${light+5}%)`);
+                stops[1].setAttribute('stop-color', `hsl(${hue-5}, ${sat-5}%, ${light-2}%)`);
+                stops[2].setAttribute('stop-color', `hsl(${hue-10}, ${sat-10}%, ${light-6}%)`);
+            }
+            
+            let spotOp = severity * 0.95;
+            lateBlightSpots.setAttribute('opacity', Math.min(0.95, spotOp).toString());
+            
+            let moldOp = (severity > 0.25) ? (severity - 0.25) * 1.0 : 0;
+            whiteMold.setAttribute('opacity', Math.min(0.7, moldOp).toString());
+            
+            let necroOp = (severity > 0.4) ? (severity - 0.4) * 1.2 : 0;
+            leafNecrosis.setAttribute('opacity', Math.min(0.8, necroOp).toString());
+            
+            let stemOp = severity * 0.9;
+            stemLesions.setAttribute('opacity', Math.min(0.9, stemOp).toString());
+            
+            let fruitSpotOp = severity * 0.9;
+            fruitSpots.setAttribute('opacity', Math.min(0.95, fruitSpotOp).toString());
+            
+            let fruitRotOp = (severity > 0.55) ? (severity - 0.55) * 1.6 : 0;
+            fruitRot.setAttribute('opacity', Math.min(0.9, fruitRotOp).toString());
+            
+            const veinColor = (severity > 0.5) ? "#8a9a5a" : "#5b953c";
+            midVein.setAttribute('stroke', veinColor);
+            const allVeins = veinsGroup.querySelectorAll('path');
+            allVeins.forEach(p => p.setAttribute('stroke', (severity > 0.5) ? "#8a9a5a" : "#4b8231"));
+            trichomesGroup.setAttribute('stroke', severity > 0.4 ? "#a88f58" : "#b6a467");
+        }
+        
+        const stageDetails = [
+            {
+                name: "🌿 مرحله ۰: گیاه کاملاً سالم",
+                symptoms: "🔹 برگ: سبز سالم، بدون لکه<br>🔹 ساقه: سبز و محکم<br>🔹 میوه: قرمز یکدست، براق",
+                science: "📗 شرایط مساعد برای بلایت دیررس:<br>• دمای ۱۵-۲۵ درجه (خنک‌تر از بلایت زودرس)<br>• رطوبت نسبی >90%<br>• بارندگی یا شبنم صبحگاهی طولانی<br>• تهویه ضعیف مزرعه",
+                control: "🛡️ پیشگیری حیاتی:<br>• ارقام مقاوم (فورتونا، فریدوم)<br>• آبیاری قطره‌ای اجباری<br>• سمپاشی پیشگیرانه هر ۵-۷ روز<br>• حذف بوته‌های آلوده فوری"
+            },
+            {
+                name: "⚠️ مرحله ۱: آلودگی خفیف (۲۴-۴۸ ساعت)",
+                symptoms: "🟤 برگ: لکه‌های قهوه‌ای آب سوخته (بدون حلقه)، شروع کپک سفید خفیف زیر برگ<br>🍅 میوه: بدون علائم",
+                science: "🔬 اسپورها در رطوبت ۱۰۰٪ در ۴-۶ ساعت جوانه می‌زنند. اولین لکه‌ها ۲۴ ساعت پس از آلودگی ظاهر می‌شوند.",
+                control: "💊 کنترل فوری:<br>• ریدومیل گلد ۲ کیلو/۱۰۰۰ لیتر<br>• حذف برگ‌های آلوده<br>• افزایش تهویه"
+            },
+            {
+                name: "🟤 مرحله ۲: آلودگی متوسط (۳-۴ روز)",
+                symptoms: "🟤 برگ: لکه‌های بزرگ آب سوخته (۲-۳ سانتی‌متر)، کپک سفید واضح زیر برگ، نکروز خفیف<br>🌿 ساقه: لکه‌های قهوه‌ای کشیده<br>🍅 میوه: لکه‌های قهوه‌ای چرب (۱-۲ سانتی‌متر)",
+                science: "🧪 هر لکه در رطوبت بالا صدها هزار اسپور تولید می‌کند. باد اسپورها را تا کیلومترها جابه‌جا می‌کند.",
+                control: "💊 کنترل شیمیایی:<br>• ریدومیل گلد ۲ کیلو<br>• مانکوزب ۲ کیلو<br>• متالاکسیل ۲ کیلو<br>(همراه چسباننده)"
+            },
+            {
+                name: "🔴 مرحله ۳: آلودگی شدید (۵-۷ روز)",
+                symptoms: "🔴 برگ: نکروز گسترده، ریزش کامل برگ‌ها، کپک سفید فراوان زیر برگ<br>🌿 ساقه: لکه‌های سیاه کشیده، حلقه‌زنی ساقه<br>🍅 میوه: پوسیدگی کامل چرب و بدبو، غیرقابل مصرف",
+                science: "⚠️ کاهش محصول ۸۰-۱۰۰٪. میوه‌ها حتی اگر سالم بمانند، در انبار پوسیده می‌شوند. قارچ سیستمیک است.",
+                control: "🌱 مدیریت اضطراری:<br>• برداشت میوه‌های سالم قبل از گسترش<br>• قارچکش سیستمیک (فوزتیل آلومینیوم)<br>• تخریب بوته‌های شدیداً آلوده"
+            }
+        ];
+        
+        function goToStage(stage) {
+            currentStage = stage;
+            let intensity = 0;
+            if (stage === 0) intensity = 0;
+            if (stage === 1) intensity = 0.35;
+            if (stage === 2) intensity = 0.65;
+            if (stage === 3) intensity = 0.95;
+            
+            setSeverityVisual(intensity);
+            
+            const data = stageDetails[stage];
+            const infoDiv = document.getElementById('infoPanel');
+            infoDiv.innerHTML = `
+                <div class="stage-name">${data.name}</div>
+                <div class="section">
+                    <div class="section-title">🍃 علائم روی برگ، ساقه و میوه</div>
+                    <div class="section-content">${data.symptoms}</div>
+                </div>
+                <div class="section">
+                    <div class="section-title">🧫 شرایط مساعد و چرخه بیماری</div>
+                    <div class="section-content">${data.science}</div>
+                </div>
+                <div class="section">
+                    <div class="section-title">💊 روش‌های کنترل و درمان</div>
+                    <div class="section-content">${data.control}</div>
+                </div>
+            `;
+        }
+        
+        function showComparisonTable() {
+            const infoDiv = document.getElementById('infoPanel');
+            infoDiv.innerHTML = `
+                <div class="stage-name">📊 مقایسه بلایت زودرس و بلایت دیررس</div>
+                <table class="diff-table">
+                    <tr><th>ویژگی</th><th>بلایت زودرس</th><th>بلایت دیررس</th></tr>
+                    <tr><td>عامل بیماری</td><td>Alternaria solani</td><td style="color:#aa3322; font-weight:bold;">Phytophthora infestans</td></tr>
+                    <tr><td>دمای مساعد</td><td>۲۵-۳۰ درجه (گرم)</td><td style="color:#aa3322; font-weight:bold;">۱۵-۲۵ درجه (خنک)</td></tr>
+                    <tr><td>شکل لکه روی برگ</td><td>حلقوی (هدف) + هاله زرد</td><td style="color:#aa3322; font-weight:bold;">آب سوخته، چرب، بی‌شکل</td></tr>
+                    <tr><td>کپک سفید زیر برگ</td><td>❌ ندارد</td><td style="color:#aa3322; font-weight:bold;">✅ دارد (علامت اختصاصی)</td></tr>
+                    <tr><td>آلودگی ساقه</td><td>لکه محدود</td><td style="color:#aa3322; font-weight:bold;">لکه‌های سیاه کشیده</td></tr>
+                    <tr><td>آلودگی میوه</td><td>لکه فرورفته (دیررس)</td><td style="color:#aa3322; font-weight:bold;">لکه چرب + پوسیدگی سریع</td></tr>
+                    <tr><td>سرعت پیشرفت</td><td>نسبتاً کند (۲-۳ هفته)</td><td style="color:#aa3322; font-weight:bold;">خیلی سریع (۴-۷ روز)</td></tr>
+                    <tr><td>خسارت اقتصادی</td><td>۳۰-۵۰٪</td><td style="color:#aa3322; font-weight:bold;">۸۰-۱۰۰٪ (نابودی کامل)</td></tr>
+                    <tr><td>شرایط بارانی</td><td>خطر متوسط</td><td style="color:#aa3322; font-weight:bold;">خطر بسیار بالا</td></tr>
+                    <tr><td colspan="3" style="background:#fae6c3; font-size:0.7rem;">🔴 <strong>نکته کلیدی تشخیص:</strong> اگر لکه حلقوی (هدف) بود → بلایت زودرس | اگر لکه آب سوخته + کپک سفید زیر برگ بود → بلایت دیررس</td></tr>
+                </table>
+                <div class="warning-box" style="margin-top:10px;">
+                    ⚠️ در هرمزگان به دلیل رطوبت بالا، هر دو بیماری شایع هستند. اما بلایت دیررس خطرناک‌تر است و نیاز به واکنش سریع دارد.
+                </div>
+                <hr>
+                <div class="section-content" style="text-align:center; margin-top:10px;">
+                    <button onclick="location.reload()" style="background:#bc9862; padding:6px 16px;">🔙 بازگشت به مراحل بیماری</button>
+                </div>
+            `;
+        }
+        
+        const btn = document.getElementById('stageBtn');
+        btn.addEventListener('click', () => {
+            let next = currentStage + 1;
+            if (next > 3) next = 0;
+            goToStage(next);
+        });
+        
+        const compareBtn = document.getElementById('compareBtn');
+        compareBtn.addEventListener('click', () => {
+            showComparisonTable();
+        });
+        
+        goToStage(0);
+    })();
+</script>
+</body>
+</html>
