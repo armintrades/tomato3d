@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>دانشنامه جامع گوجه فرنگی</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap');
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        
+        :root {
+            --bg: #f0ebe1;
+            --card: #ffffff;
+            --text: #1a1a1a;
+            --text-secondary: #666666;
+            --primary: #c62828;
+            --primary-light: #ffebee;
+            --green: #2e7d32;
+            --green-light: #e8f5e9;
+            --orange: #ef6c00;
+            --orange-light: #fff3e0;
+            --purple: #6a1b9a;
+            --purple-light: #f3e5f5;
+            --blue: #1565c0;
+            --blue-light: #e3f2fd;
+            --shadow: 0 2px 12px rgba(0,0,0,0.08);
+            --radius: 20px;
+        }
+        
+        body {
+            background: var(--bg);
+            font-family: 'Vazirmatn', system-ui, sans-serif;
+            padding: 0 0 100px;
+            color: var(--text);
+            direction: rtl;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #1B422C 0%, #0d2a1a 50%, #1a3a1a 100%);
+            padding: 40px 20px 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border-radius: 0 0 32px 32px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 70%);
+            animation: float 20s infinite linear;
+        }
+        
+        @keyframes float {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .hero-icon {
+            font-size: 64px;
+            margin-bottom: 12px;
+            display: block;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+        }
+        
+        .hero h1 {
+            color: #fff;
+            font-size: 1.8rem;
+            font-weight: 900;
+            margin-bottom: 8px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            position: relative;
+        }
+        
+        .hero p {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.85rem;
+            font-weight: 300;
+            position: relative;
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            color: #a5d6a7;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            margin-top: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+            position: relative;
+        }
+        
+        .search-box {
+            margin: -20px 16px 16px;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .search-box input {
+            width: 100%;
+            padding: 14px 20px 14px 48px;
+            border: none;
+            border-radius: 16px;
+            font-size: 0.9rem;
+            font-family: 'Vazirmatn', sans-serif;
+            background: var(--card);
+            box-shadow: var(--shadow);
+            color: var(--text);
+            outline: none;
+            direction: rtl;
+        }
+        
+        .search-box input::placeholder { color: #aaa; }
+        
+        .search-icon {
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.2rem;
+            opacity: 0.4;
+        }
+        
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 20px 16px 12px;
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+        
+        .section-title .icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+        }
+        
+        .cards-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            padding: 0 16px;
+        }
+        
+        .card {
+            background: var(--card);
+            border-radius: var(--radius);
+            padding: 16px;
+            text-decoration: none;
+            color: var(--text);
+            box-shadow: var(--shadow);
+            transition: transform 0.15s, box-shadow 0.15s;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            border: 1px solid rgba(0,0,0,0.04);
+        }
+        
+        .card:active {
+            transform: scale(0.97);
+            box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+        }
+        
+        .card-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+        }
+        
+        .card h3 {
+            font-size: 0.85rem;
+            font-weight: 700;
+            line-height: 1.4;
+            margin: 0;
+        }
+        
+        .card p {
+            font-size: 0.7rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+        
+        .card-full {
+            grid-column: 1 / -1;
+            flex-direction: row;
+            align-items: center;
+            gap: 14px;
+        }
+        
+        .card-full .card-content { flex: 1; }
+        
+        .card-full h3 { font-size: 0.95rem; }
+        .card-full p { font-size: 0.75rem; }
+        
+        .guide-card {
+            background: linear-gradient(135deg, #1B422C, #2e7d32);
+            color: #fff;
+            border: none;
+        }
+        
+        .guide-card p { color: rgba(255,255,255,0.7); }
+        
+        .guide-card .card-icon { background: rgba(255,255,255,0.15); }
+        
+        .quick-access {
+            padding: 0 16px;
+            margin-top: 8px;
+        }
+        
+        .quick-access-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+        
+        .quick-item {
+            background: var(--card);
+            border-radius: 16px;
+            padding: 14px 8px;
+            text-align: center;
+            text-decoration: none;
+            color: var(--text);
+            box-shadow: var(--shadow);
+            transition: transform 0.15s;
+        }
+        
+        .quick-item:active { transform: scale(0.95); }
+        
+        .quick-item .qi-icon { font-size: 1.8rem; margin-bottom: 4px; display: block; }
+        .quick-item .qi-label { font-size: 0.65rem; font-weight: 600; line-height: 1.3; }
+        
+        .footer {
+            text-align: center;
+            padding: 40px 16px 20px;
+            color: var(--text-secondary);
+            font-size: 0.7rem;
+        }
+        
+        .footer .heart { color: var(--primary); }
+        
+        .hidden { display: none !important; }
+        
+        @media (max-width: 360px) {
+            .cards-grid { grid-template-columns: 1fr; }
+            .quick-access-grid { grid-template-columns: repeat(3, 1fr); }
+            .hero h1 { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <span class="hero-icon">🍅</span>
+    <h1>دانشنامه جامع گوجه فرنگی</h1>
+    <p>مرجع تخصصی کشت، بیماری‌ها، آفات و تغذیه</p>
+    <div class="hero-badge">بیش از ۴۰ مقاله تخصصی</div>
+</div>
+
+<div class="search-box">
+    <span class="search-icon">🔍</span>
+    <input type="text" id="searchInput" placeholder="جستجو در موضوعات..." oninput="filterCards(this.value)">
+</div>
+
+<div class="quick-access">
+    <div class="quick-access-grid">
+        <a class="quick-item" href="guide/index.html">
+            <span class="qi-icon">📖</span>
+            <span class="qi-label">راهنمای کشت</span>
+        </a>
+        <a class="quick-item" href="guide/index2.html">
+            <span class="qi-icon">📋</span>
+            <span class="qi-label">مراحل کشت</span>
+        </a>
+        <a class="quick-item" href="guide/id.html">
+            <span class="qi-icon">🔬</span>
+            <span class="qi-label">مهندسی مزرعه</span>
+        </a>
+        <a class="quick-item" href="guide/id.html">
+            <span class="qi-icon">📊</span>
+            <span class="qi-label">برنامه کود</span>
+        </a>
+    </div>
+</div>
+
+<!-- راهنمای کشت -->
+<div class="section-title" data-search="راهنمای کشت برنامه مراحل کوددهی آبیاری هرس سمپاشی برداشت">
+    <div class="icon" style="background:#e8f5e9;">🌱</div>
+    راهنمای جامع کشت گوجه فرنگی
+</div>
+<div class="cards-grid" id="guideCards">
+    <a class="card guide-card card-full" href="guide/index.html">
+        <div class="card-icon">📖</div>
+        <div class="card-content">
+            <h3>دانشنامه کامل گوجه یارا</h3>
+            <p>۷ مرحله تخصصی + ۱۱ فصل جزوه کامل</p>
+        </div>
+    </a>
+    <a class="card guide-card card-full" href="guide/index2.html">
+        <div class="card-icon">📋</div>
+        <div class="card-content">
+            <h3>الگوی تخصصی کشت فضای باز</h3>
+            <p>برنامه هفته به هفته کوددهی و آبیاری</p>
+        </div>
+    </a>
+    <a class="card guide-card card-full" href="guide/id.html">
+        <div class="card-icon">🔬</div>
+        <div class="card-content">
+            <h3>مهندسی مزرعه هرمزگان</h3>
+            <p>الگوی تخصصی کشت در توکهور و هشتبندی</p>
+        </div>
+    </a>
+</div>
+
+<!-- بیماری‌ها -->
+<div class="section-title" data-search="بیماری بلایت سفیدک فوزاریوم آنتراکنوز ویروس قارچ">
+    <div class="icon" style="background:#ffebee;">🦠</div>
+    بیماری‌های قارچی و ویروسی
+</div>
+<div class="cards-grid" id="diseaseCards">
+    <a class="card" href="diseases/Early-Blight.html">
+        <div class="card-icon" style="background:#fff3e0;">🍂</div>
+        <h3>بلایت زودرس</h3>
+        <p>Alternaria solani</p>
+    </a>
+    <a class="card" href="diseases/Late-Blight.html">
+        <div class="card-icon" style="background:#fce4ec;">💀</div>
+        <h3>بلایت دیررس</h3>
+        <p>Phytophthora infestans</p>
+    </a>
+    <a class="card" href="diseases/Fusarium-Wilt.html">
+        <div class="card-icon" style="background:#fff8e1;">🥀</div>
+        <h3>پژمردگی فوزاریومی</h3>
+        <p>Fusarium oxysporum</p>
+    </a>
+    <a class="card" href="diseases/Verticillium-Wilt.html">
+        <div class="card-icon" style="background:#f3e5f5;">🟤</div>
+        <h3>پژمردگی ورتیسیلیومی</h3>
+        <p>Verticillium dahliae</p>
+    </a>
+    <a class="card" href="diseases/Powdery-Mildew.html">
+        <div class="card-icon" style="background:#eceff1;">⚪</div>
+        <h3>سفیدک سطحی</h3>
+        <p>Oidium neolycopersici</p>
+    </a>
+    <a class="card" href="diseases/Anthracnose.html">
+        <div class="card-icon" style="background:#efebe9;">⚫</div>
+        <h3>آنتراکنوز</h3>
+        <p>Colletotrichum spp.</p>
+    </a>
+    <a class="card" href="diseases/Botrytis.html">
+        <div class="card-icon" style="background:#e8eaf6;">🩶</div>
+        <h3>بوتریتیس</h3>
+        <p>Botrytis cinerea</p>
+    </a>
+    <a class="card" href="diseases/Bacterial-Spot.html">
+        <div class="card-icon" style="background:#e0f2f1;">🔵</div>
+        <h3>لکه باکتریایی</h3>
+        <p>Xanthomonas spp.</p>
+    </a>
+    <a class="card" href="diseases/Bacterial-Wilt.html">
+        <div class="card-icon" style="background:#e8f5e9;">🌿</div>
+        <h3>پژمردگی باکتریایی</h3>
+        <p>Ralstonia solanacearum</p>
+    </a>
+    <a class="card" href="diseases/Mosaic.html">
+        <div class="card-icon" style="background:#fff9c4;">🟡</div>
+        <h3>موزاییک</h3>
+        <p>Tobacco Mosaic Virus</p>
+    </a>
+    <a class="card" href="diseases/TYLCV.html">
+        <div class="card-icon" style="background:#ffecb3;">🔶</div>
+        <h3>زردی برگ گوجه</h3>
+        <p>TYLCV</p>
+    </a>
+    <a class="card" href="diseases/Rhizoctonia.html">
+        <div class="card-icon" style="background:#d7ccc8;">🪨</div>
+        <h3>رایزوکتونیا</h3>
+        <p>Rhizoctonia solani</p>
+    </a>
+    <a class="card" href="diseases/Septoria.html">
+        <div class="card-icon" style="background:#f1f8e9;">🟢</div>
+        <h3>سپتوریا</h3>
+        <p>Septoria lycopersici</p>
+    </a>
+    <a class="card" href="diseases/Soft-Rot.html">
+        <div class="card-icon" style="background:#fbe9e7;">🫠</div>
+        <h3>پوسیدگی نرم</h3>
+        <p>Erwinia spp.</p>
+    </a>
+</div>
+
+<!-- آفات -->
+<div class="section-title" data-search="آفت شته مگس کنه کرم حشره پروانه">
+    <div class="icon" style="background:#fff3e0;">🐛</div>
+    آفات مهم گوجه فرنگی
+</div>
+<div class="cards-grid" id="pestCards">
+    <a class="card" href="pests/Aphid.html">
+        <div class="card-icon" style="background:#e8f5e9;">🟢</div>
+        <h3>شته</h3>
+        <p>Aphis gossypii</p>
+    </a>
+    <a class="card" href="pests/Whitefly.html">
+        <div class="card-icon" style="background:#fafafa;">⚪</div>
+        <h3>مگس سفید</h3>
+        <p>Bemisia tabaci</p>
+    </a>
+    <a class="card" href="pests/Spider-Mite.html">
+        <div class="card-icon" style="background:#fff8e1;">🕷️</div>
+        <h3>کنه عنکبوتی</h3>
+        <p>Tetranychus urticae</p>
+    </a>
+    <a class="card" href="pests/Fruitworm.html">
+        <div class="card-icon" style="background:#fce4ec;">🐛</div>
+        <h3>کرم میوه</h3>
+        <p>Helicoverpa armigera</p>
+    </a>
+    <a class="card" href="pests/Thrips.html">
+        <div class="card-icon" style="background:#f3e5f5;">🦟</div>
+        <h3>تریپس</h3>
+        <p>Thrips tabaci</p>
+    </a>
+    <a class="card" href="pests/Leafminer.html">
+        <div class="card-icon" style="background:#e0f7fa;">🌀</div>
+        <h3>مینوز برگ</h3>
+        <p>Liriomyza spp.</p>
+    </a>
+    <a class="card" href="pests/Nematode.html">
+        <div class="card-icon" style="background:#efebe9;">🪱</div>
+        <h3>نماتد</h3>
+        <p>Meloidogyne spp.</p>
+    </a>
+    <a class="card" href="pests/Ladybug.html">
+        <div class="card-icon" style="background:#e8f5e9;">🐞</div>
+        <h3>کفشدوزک</h3>
+        <p>کنترل بیولوژیک</p>
+    </a>
+</div>
+
+<!-- عناصر غذایی -->
+<div class="section-title" data-search="عناصر غذایی کمبود نیتروژن فسفر پتاسیم کلسیم منیزیم ریزمغذی">
+    <div class="icon" style="background:#e3f2fd;">🧪</div>
+    کمبود عناصر غذایی
+</div>
+<div class="cards-grid" id="nutrientCards">
+    <a class="card" href="nutrients/Nitrogen.html">
+        <div class="card-icon" style="background:#e8f5e9;">💚</div>
+        <h3>نیتروژن (N)</h3>
+        <p>زردی برگ‌های پایینی</p>
+    </a>
+    <a class="card" href="nutrients/phosphorus.html">
+        <div class="card-icon" style="background:#f3e5f5;">💜</div>
+        <h3>فسفر (P)</h3>
+        <p>بنفش شدن ساقه</p>
+    </a>
+    <a class="card" href="nutrients/Potassium.html">
+        <div class="card-icon" style="background:#fff3e0;">🧡</div>
+        <h3>پتاسیم (K)</h3>
+        <p>سوختگی حاشیه برگ</p>
+    </a>
+    <a class="card" href="nutrients/calcium.html">
+        <div class="card-icon" style="background:#e3f2fd;">💙</div>
+        <h3>کلسیم (Ca)</h3>
+        <p>پوسیدگی گلگاه</p>
+    </a>
+    <a class="card" href="nutrients/Magnesium.html">
+        <div class="card-icon" style="background:#e0f2f1;">💚</div>
+        <h3>منیزیم (Mg)</h3>
+        <p>زردی بین رگبرگ‌ها</p>
+    </a>
+    <a class="card" href="nutrients/Iron.html">
+        <div class="card-icon" style="background:#fff8e1;">💛</div>
+        <h3>آهن (Fe)</h3>
+        <p>کلروز برگ‌های جوان</p>
+    </a>
+    <a class="card" href="nutrients/Zinc.html">
+        <div class="card-icon" style="background:#e8eaf6;">💙</div>
+        <h3>روی (Zn)</h3>
+        <p>کوچک ماندن برگ</p>
+    </a>
+    <a class="card" href="nutrients/Manganese.html">
+        <div class="card-icon" style="background:#f1f8e9;">💚</div>
+        <h3>منگنز (Mn)</h3>
+        <p>کلروز رگبرگی</p>
+    </a>
+    <a class="card" href="nutrients/Boron.html">
+        <div class="card-icon" style="background:#fce4ec;">💗</div>
+        <h3>بور (B)</h3>
+        <p>ریزش گل و شکستگی ساقه</p>
+    </a>
+    <a class="card" href="nutrients/Sulfur.html">
+        <div class="card-icon" style="background:#fff9c4;">💛</div>
+        <h3>گوگرد (S)</h3>
+        <p>زردی عمومی برگ</p>
+    </a>
+    <a class="card" href="nutrients/Copper.html">
+        <div class="card-icon" style="background:#e0f7fa;">💙</div>
+        <h3>مس (Cu)</h3>
+        <p>پژمردگی نوک برگ</p>
+    </a>
+    <a class="card" href="nutrients/Chlorine.html">
+        <div class="card-icon" style="background:#e8eaf6;">💜</div>
+        <h3>کلر (Cl)</h3>
+        <p>سوختگی حاشیه</p>
+    </a>
+    <a class="card" href="nutrients/Iron.html">
+        <div class="card-icon" style="background:#efebe9;">🤎</div>
+        <h3>مولیبدن (Mo)</h3>
+        <p>پیچیدگی برگ</p>
+    </a>
+</div>
+
+<!-- تنش‌ها -->
+<div class="section-title" data-search="تنش گرمایی خشکی سرما شوری آب و هوا محیط">
+    <div class="icon" style="background:#fff8e1;">🌡️</div>
+    تنش‌های محیطی
+</div>
+<div class="cards-grid" id="stressCards">
+    <a class="card" href="stress/Heat-Stress.html">
+        <div class="card-icon" style="background:#ffebee;">🔥</div>
+        <h3>تنش گرمایی</h3>
+        <p>پیچ خوردگی و سوختگی برگ</p>
+    </a>
+    <a class="card" href="stress/Cold-Stress.html">
+        <div class="card-icon" style="background:#e3f2fd;">❄️</div>
+        <h3>تنش سرمایی</h3>
+        <p>بنفش شدن و توقف رشد</p>
+    </a>
+    <a class="card" href="stress/Drought-Stress.html">
+        <div class="card-icon" style="background:#fff8e1;">🏜️</div>
+        <h3>تنش خشکی</h3>
+        <p>پژمردگی و ریزش برگ</p>
+    </a>
+    <a class="card" href="stress/Salinity.html">
+        <div class="card-icon" style="background:#e0f2f1;">🧂</div>
+        <h3>تنش شوری</h3>
+        <p>سوختگی حاشیه برگ</p>
+    </a>
+</div>
+
+<div class="footer">
+    <p>🍅 دانشنامه جامع گوجه فرنگی</p>
+    <p style="margin-top:4px;">مرجع تخصصی کشت و مدیریت تلفیقی آفات و بیماری‌ها</p>
+</div>
+
+<script>
+    function filterCards(query) {
+        const q = query.trim().toLowerCase();
+        const sections = document.querySelectorAll('.section-title');
+        const grids = document.querySelectorAll('.cards-grid');
+        
+        if (!q) {
+            sections.forEach(s => s.classList.remove('hidden'));
+            grids.forEach(g => g.classList.remove('hidden'));
+            document.querySelectorAll('.card').forEach(c => c.classList.remove('hidden'));
+            return;
+        }
+        
+        document.querySelectorAll('.card').forEach(card => {
+            const section = card.closest('.cards-grid');
+            const title = section ? section.previousElementSibling : null;
+            const searchText = (
+                card.textContent + ' ' + 
+                (title ? title.textContent : '') + ' ' +
+                (title ? (title.getAttribute('data-search') || '') : '')
+            ).toLowerCase();
+            
+            if (searchText.includes(q)) {
+                card.classList.remove('hidden');
+            } else {
+                card.classList.add('hidden');
+            }
+        });
+        
+        sections.forEach(section => {
+            const grid = section.nextElementSibling;
+            if (grid && grid.classList.contains('cards-grid')) {
+                const visibleCards = grid.querySelectorAll('.card:not(.hidden)');
+                if (visibleCards.length === 0) {
+                    section.classList.add('hidden');
+                    grid.classList.add('hidden');
+                } else {
+                    section.classList.remove('hidden');
+                    grid.classList.remove('hidden');
+                }
+            }
+        });
+    }
+</script>
+
+</body>
+</html>
