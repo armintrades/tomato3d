@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>کفشدوزک (Ladybug) | حشره مفید گوجه فرنگی</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: linear-gradient(145deg, #1b3d2a, #0d2a1a);
+            font-family: 'Segoe UI', 'Vazirmatn', Tahoma, system-ui, sans-serif;
+            padding: 12px;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .master {
+            max-width: 750px;
+            width: 100%;
+            background: #27261cd9;
+            backdrop-filter: blur(4px);
+            border-radius: 2rem;
+            padding: 12px;
+            box-shadow: 0 12px 28px black;
+        }
+        .card {
+            background: #fef8ec;
+            border-radius: 1.8rem;
+            padding: 1rem;
+            box-shadow: inset 0 0 0 1px #fff9e8, 0 6px 14px rgba(0,0,0,0.2);
+        }
+        .title {
+            text-align: center;
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #9b4b2c;
+            text-shadow: 1px 1px 0 #e2d5c0;
+        }
+        .sub {
+            text-align: center;
+            font-size: 0.75rem;
+            color: #b47c44;
+            border-bottom: 2px dashed #dabd88;
+            display: inline-block;
+            width: auto;
+            margin: 0 auto 12px auto;
+            padding-bottom: 4px;
+        }
+        .good-badge {
+            background: #2c5a2a;
+            color: #ffecb3;
+            border-radius: 1rem;
+            padding: 8px;
+            margin-bottom: 12px;
+            text-align: center;
+            font-size: 0.75rem;
+        }
+        .svg-container {
+            background: #e7ddc4;
+            border-radius: 1.2rem;
+            padding: 8px;
+            text-align: center;
+            margin: 8px 0;
+            box-shadow: inset 0 0 0 2px #fef5e2, 0 4px 10px rgba(0,0,0,0.15);
+            min-height: 620px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        svg {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            border-radius: 1rem;
+        }
+        .button-area {
+            display: flex;
+            justify-content: center;
+            margin: 12px 0;
+        }
+        button {
+            background: #c08545;
+            border: none;
+            color: white;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 2rem;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: 0.2s;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+        button:active { transform: scale(0.96); }
+        .info-panel {
+            background: #efe4cf;
+            border-radius: 1.2rem;
+            padding: 0.9rem;
+            margin-top: 12px;
+            border-right: 5px solid #aa7942;
+            text-align: right;
+            font-size: 0.75rem;
+            max-height: 55vh;
+            overflow-y: auto;
+        }
+        .stage-name {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #4a3920;
+            background: #fdf1df;
+            padding: 4px 10px;
+            border-radius: 2rem;
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+        .section {
+            margin-top: 10px;
+            background: #faf3e3;
+            padding: 8px;
+            border-radius: 1rem;
+        }
+        .section-title {
+            font-weight: bold;
+            color: #6b3f1c;
+            border-right: 3px solid #c6904b;
+            padding-right: 8px;
+            margin-bottom: 6px;
+            font-size: 0.8rem;
+        }
+        .section-content { line-height: 1.45; color: #2c2a1a; }
+        hr { margin: 8px 0; border-color: #dbbc87; }
+        .highlight { background: #f5e6c4; padding: 2px 6px; border-radius: 12px; font-weight: bold; }
+        footer {
+            text-align: center;
+            font-size: 0.6rem;
+            color: #aa956b;
+            margin-top: 10px;
+        }
+        @media (max-width: 500px) {
+            .master { padding: 8px; }
+            .card { padding: 0.7rem; }
+            .title { font-size: 1.2rem; }
+            .info-panel { font-size: 0.7rem; max-height: 50vh; }
+            .section-title { font-size: 0.75rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="master">
+    <div class="card">
+        <div class="title">🐞 کفشدوزک (Ladybug) | دشمن طبیعی آفات</div>
+        <div style="text-align: center;"><div class="sub">حشره مفید و شکارچی شته‌ها و کنه‌ها ✅</div></div>
+
+        <div class="good-badge">
+            ✅ این حشره <strong>مفید</strong> است و به کنترل طبیعی آفات کمک می‌کند. وجود آن در مزرعه نشانه سلامت محیط است.
+        </div>
+
+        <div class="svg-container">
+            <svg id="ladybugSvg" viewBox="0 0 600 750" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <filter id="shadow" x="-10%" y="-10%" width="130%" height="130%">
+                        <feDropShadow dx="2" dy="5" stdDeviation="4" flood-color="#2d2a1a" flood-opacity="0.25"/>
+                    </filter>
+                    <filter id="veinGlow"><feGaussianBlur stdDeviation="1"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+                    <linearGradient id="leafGrad" x1="20%" y1="0%" x2="80%" y2="100%">
+                        <stop offset="0%" stop-color="#6daa44"/><stop offset="60%" stop-color="#468a2e"/><stop offset="100%" stop-color="#2d6b1e"/>
+                    </linearGradient>
+                    <linearGradient id="fruitGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#e84030"/><stop offset="50%" stop-color="#cc3020"/><stop offset="100%" stop-color="#aa2518"/>
+                    </linearGradient>
+                    <linearGradient id="petioleGrad" x1="0" y1="0" x2="1" y2="0">
+                        <stop offset="0%" stop-color="#8b744b"/><stop offset="100%" stop-color="#b4925e"/>
+                    </linearGradient>
+                    <radialGradient id="fruitShine" cx="35%" cy="30%" r="50%">
+                        <stop offset="0%" stop-color="#ffaaa0" stop-opacity="0.5"/>
+                        <stop offset="100%" stop-color="#ff0000" stop-opacity="0"/>
+                    </radialGradient>
+                </defs>
+                <g filter="url(#shadow)">
+                    <!-- ==================== برگ ==================== -->
+                    <path id="petiolePath" d="M300,480 C285,515 270,555 285,610 Q295,640 310,655" stroke="url(#petioleGrad)" stroke-width="14" fill="none" stroke-linecap="round"/>
+                    <path id="petioleInner" d="M300,480 C310,510 325,555 312,610" stroke="#b7975f" stroke-width="3" fill="none" opacity="0.5"/>
+
+                    <g id="leafGroup">
+                        <path id="leafBlade" d="M300,160 C340,175 375,200 405,240 C425,268 442,298 448,330 C452,358 450,385 440,410 C425,445 400,475 372,500 C355,514 335,525 312,525 C290,525 270,514 253,500 C225,475 200,445 185,410 C175,385 173,358 177,330 C183,298 200,268 220,240 C250,200 285,175 300,160Z" fill="url(#leafGrad)" stroke="#3e6827" stroke-width="1.8"/>
+
+                        <!-- برگ سالم (بدون علائم خسارت) -->
+                        <!-- رگبرگ اصلی -->
+                        <path id="midVein" d="M300,170 Q293,280 300,490" stroke="#5b953c" stroke-width="4.5" fill="none" stroke-linecap="round" filter="url(#veinGlow)"/>
+                        <path id="midVeinInner" d="M300,170 Q295,280 300,490" stroke="#a3df78" stroke-width="1.4" fill="none"/>
+
+                        <!-- رگبرگ فرعی -->
+                        <g id="veinsGroup" stroke="#4b8231" fill="none" stroke-linecap="round">
+                            <path d="M300,210 Q330,225 355,240" stroke-width="2.6"/><path d="M300,210 Q270,225 245,240" stroke-width="2.6"/>
+                            <path d="M300,260 Q345,275 385,295" stroke-width="2.8"/><path d="M300,260 Q255,275 215,295" stroke-width="2.8"/>
+                            <path d="M300,320 Q355,340 410,365" stroke-width="3"/><path d="M300,320 Q245,340 190,365" stroke-width="3"/>
+                            <path d="M300,380 Q350,395 395,425" stroke-width="2.6"/><path d="M300,380 Q250,395 205,425" stroke-width="2.6"/>
+                            <path d="M300,440 Q335,455 365,485" stroke-width="2.4"/><path d="M300,440 Q265,455 235,485" stroke-width="2.4"/>
+                        </g>
+
+                        <!-- تریکوم -->
+                        <g id="trichomesGroup" stroke="#b6a467" fill="none" stroke-width="0.8" opacity="0.9">
+                            <path d="M380,230 L390,225"/><circle cx="390" cy="225" r="1.1" fill="#cfb572"/>
+                            <path d="M410,280 L422,272"/><circle cx="422" cy="272" r="1.2" fill="#cfb572"/>
+                            <path d="M435,340 L448,332"/><circle cx="448" cy="332" r="1.2" fill="#cfb572"/>
+                            <path d="M420,400 L433,395"/><circle cx="433" cy="395" r="1.1" fill="#cfb572"/>
+                            <path d="M380,460 L390,455"/><circle cx="390" cy="455" r="1.1" fill="#cfb572"/>
+                            <path d="M220,230 L210,225"/><circle cx="210" cy="225" r="1.1" fill="#cfb572"/>
+                            <path d="M190,280 L178,272"/><circle cx="178" cy="272" r="1.2" fill="#cfb572"/>
+                            <path d="M165,340 L152,332"/><circle cx="152" cy="332" r="1.2" fill="#cfb572"/>
+                            <path d="M180,400 L168,395"/><circle cx="168" cy="395" r="1.1" fill="#cfb572"/>
+                            <path d="M220,460 L210,455"/><circle cx="210" cy="455" r="1.1" fill="#cfb572"/>
+                        </g>
+
+                        <!-- روزنه‌ها -->
+                        <g id="stomataGroup" fill="#6a8c50" opacity="0.4">
+                            <ellipse cx="340" cy="260" rx="1.3" ry="2" transform="rotate(15 340 260)"/>
+                            <ellipse cx="320" cy="290" rx="1.2" ry="1.9" transform="rotate(-20 320 290)"/>
+                            <ellipse cx="370" cy="310" rx="1.4" ry="2.1" transform="rotate(30 370 310)"/>
+                            <ellipse cx="290" cy="330" rx="1.3" ry="2" transform="rotate(-10 290 330)"/>
+                            <ellipse cx="410" cy="350" rx="1.2" ry="1.9" transform="rotate(10 410 350)"/>
+                            <ellipse cx="220" cy="280" rx="1.4" ry="2.1" transform="rotate(-25 220 280)"/>
+                            <ellipse cx="260" cy="400" rx="1.3" ry="2" transform="rotate(5 260 400)"/>
+                            <ellipse cx="350" cy="430" rx="1.2" ry="1.9" transform="rotate(20 350 430)"/>
+                        </g>
+
+                        <!-- شته روی برگ (طعمه کفشدوزک) -->
+                        <g id="aphidPrey" opacity="0">
+                            <g transform="translate(360, 310) scale(0.8)">
+                                <ellipse cx="0" cy="0" rx="5" ry="8" fill="#88cc44" stroke="#669933" stroke-width="0.5"/>
+                                <ellipse cx="0" cy="-6" rx="3.5" ry="3" fill="#99dd55"/>
+                                <ellipse cx="0" cy="-9.5" rx="2.8" ry="2.5" fill="#99dd55"/>
+                                <path d="M-1.5,-10 Q-5,-15 -7,-18" stroke="#88aa44" stroke-width="0.5" fill="none"/>
+                                <path d="M1.5,-10 Q5,-15 7,-18" stroke="#88aa44" stroke-width="0.5" fill="none"/>
+                            </g>
+                            <g transform="translate(340, 330) scale(0.7)">
+                                <ellipse cx="0" cy="0" rx="5" ry="8" fill="#88cc44" stroke="#669933" stroke-width="0.5"/>
+                                <ellipse cx="0" cy="-6" rx="3.5" ry="3" fill="#99dd55"/>
+                                <ellipse cx="0" cy="-9.5" rx="2.8" ry="2.5" fill="#99dd55"/>
+                            </g>
+                        </g>
+
+                        <!-- ==================== کفشدوزک بالغ (روی برگ) ==================== -->
+                        <g id="ladybugAdult" opacity="0">
+                            <g transform="translate(350, 300) scale(1.4)">
+                                <!-- بدن نیم‌کره -->
+                                <ellipse cx="0" cy="0" rx="8" ry="7" fill="#dd3322" stroke="#aa2211" stroke-width="0.5"/>
+                                <!-- سر سیاه -->
+                                <ellipse cx="0" cy="-6" rx="3" ry="2.5" fill="#222222"/>
+                                <!-- لکه‌های سیاه روی بدن -->
+                                <circle cx="-3" cy="-2" r="1.2" fill="#111111"/>
+                                <circle cx="3" cy="-2" r="1.2" fill="#111111"/>
+                                <circle cx="-4" cy="2" r="1" fill="#111111"/>
+                                <circle cx="4" cy="2" r="1" fill="#111111"/>
+                                <circle cx="0" cy="3" r="1.2" fill="#111111"/>
+                                <circle cx="-2" cy="5" r="0.8" fill="#111111"/>
+                                <circle cx="2" cy="5" r="0.8" fill="#111111"/>
+                                <!-- خط وسط بدن -->
+                                <path d="M0,-4 Q0,0 0,6" stroke="#111111" stroke-width="0.8" fill="none"/>
+                                <!-- شاخک‌ها -->
+                                <path d="M-2,-8 Q-4,-10 -5,-11" stroke="#222" stroke-width="0.5" fill="none"/>
+                                <path d="M2,-8 Q4,-10 5,-11" stroke="#222" stroke-width="0.5" fill="none"/>
+                                <!-- پاها -->
+                                <path d="M-5,-1 Q-7,0 -8,2" stroke="#222" stroke-width="0.4" fill="none"/>
+                                <path d="M-5,2 Q-7,4 -8,5" stroke="#222" stroke-width="0.4" fill="none"/>
+                                <path d="M-4,4 Q-6,6 -7,7" stroke="#222" stroke-width="0.4" fill="none"/>
+                                <path d="M5,-1 Q7,0 8,2" stroke="#222" stroke-width="0.4" fill="none"/>
+                                <path d="M5,2 Q7,4 8,5" stroke="#222" stroke-width="0.4" fill="none"/>
+                                <path d="M4,4 Q6,6 7,7" stroke="#222" stroke-width="0.4" fill="none"/>
+                                <!-- انعکاس نور -->
+                                <ellipse cx="-2" cy="-3" rx="1.5" ry="1" fill="#ff8866" opacity="0.5"/>
+                            </g>
+                        </g>
+
+                        <!-- کفشدوزک دوم -->
+                        <g id="ladybugAdult2" opacity="0">
+                            <g transform="translate(390, 350) scale(1.1) rotate(-15)">
+                                <ellipse cx="0" cy="0" rx="8" ry="7" fill="#dd3322" stroke="#aa2211" stroke-width="0.5"/>
+                                <ellipse cx="0" cy="-6" rx="3" ry="2.5" fill="#222222"/>
+                                <circle cx="-3" cy="-2" r="1.2" fill="#111111"/>
+                                <circle cx="3" cy="-2" r="1.2" fill="#111111"/>
+                                <circle cx="-4" cy="2" r="1" fill="#111111"/>
+                                <circle cx="4" cy="2" r="1" fill="#111111"/>
+                                <circle cx="0" cy="3" r="1.2" fill="#111111"/>
+                                <path d="M0,-4 Q0,0 0,6" stroke="#111111" stroke-width="0.8" fill="none"/>
+                                <path d="M-2,-8 Q-4,-10 -5,-11" stroke="#222" stroke-width="0.5" fill="none"/>
+                                <path d="M2,-8 Q4,-10 5,-11" stroke="#222" stroke-width="0.5" fill="none"/>
+                            </g>
+                        </g>
+
+                        <!-- لارو کفشدوزک (شته خوار) -->
+                        <g id="ladybugLarva" opacity="0">
+                            <g transform="translate(320, 370) scale(1)">
+                                <!-- بدن کشیده و خاردار -->
+                                <ellipse cx="0" cy="0" rx="6" ry="3" fill="#333333" stroke="#222" stroke-width="0.5"/>
+                                <ellipse cx="-5" cy="0" rx="2.5" ry="2" fill="#444444"/>
+                                <!-- لکه‌های نارنجی روی بدن -->
+                                <circle cx="-2" cy="-1" r="1" fill="#dd8844"/>
+                                <circle cx="1" cy="-1" r="1" fill="#dd8844"/>
+                                <circle cx="3" cy="1" r="0.8" fill="#dd8844"/>
+                                <!-- خارهای روی بدن -->
+                                <path d="M-4,-2 L-5,-4" stroke="#333" stroke-width="0.8" fill="none"/>
+                                <path d="M-1,-2 L-1,-4" stroke="#333" stroke-width="0.8" fill="none"/>
+                                <path d="M2,-2 L3,-4" stroke="#333" stroke-width="0.8" fill="none"/>
+                                <path d="M4,-1 L6,-2" stroke="#333" stroke-width="0.8" fill="none"/>
+                                <!-- پاها -->
+                                <path d="M-4,1 L-5,3" stroke="#333" stroke-width="0.4" fill="none"/>
+                                <path d="M-1,1 L-1,3" stroke="#333" stroke-width="0.4" fill="none"/>
+                                <path d="M2,1 L3,3" stroke="#333" stroke-width="0.4" fill="none"/>
+                            </g>
+                        </g>
+
+                        <!-- تخم کفشدوزک -->
+                        <g id="ladybugEggs" opacity="0">
+                            <ellipse cx="380" cy="290" rx="1.5" ry="1" fill="#ffdd88" stroke="#ccaa66" stroke-width="0.2"/>
+                            <ellipse cx="383" cy="292" rx="1.5" ry="1" fill="#ffdd88" stroke="#ccaa66" stroke-width="0.2"/>
+                            <ellipse cx="386" cy="290" rx="1.5" ry="1" fill="#ffdd88" stroke="#ccaa66" stroke-width="0.2"/>
+                            <ellipse cx="383" cy="288" rx="1.5" ry="1" fill="#ffdd88" stroke="#ccaa66" stroke-width="0.2"/>
+                        </g>
+                    </g>
+
+                    <!-- ==================== میوه ==================== -->
+                    <g id="fruitGroup">
+                        <path d="M490,620 Q500,595 510,575" stroke="#5a7a3a" stroke-width="3.5" fill="none"/>
+                        <path d="M510,575 Q515,562 525,555" stroke="#5a7a3a" stroke-width="2.5" fill="none"/>
+                        
+                        <path d="M525,555 Q512,542 500,548" stroke="#3a6a2a" stroke-width="2.5" fill="none"/>
+                        <path d="M525,555 Q530,540 545,545" stroke="#3a6a2a" stroke-width="2.5" fill="none"/>
+                        <path d="M525,555 Q520,535 510,538" stroke="#3a6a2a" stroke-width="2.5" fill="none"/>
+                        <path d="M525,555 Q540,550 548,560" stroke="#3a6a2a" stroke-width="2" fill="none"/>
+                        <path d="M525,555 Q505,550 498,560" stroke="#3a6a2a" stroke-width="2" fill="none"/>
+                        
+                        <ellipse cx="525" cy="620" rx="48" ry="58" fill="url(#fruitGrad)"/>
+                        <ellipse cx="525" cy="620" rx="48" ry="58" fill="url(#fruitShine)"/>
+                    </g>
+                </g>
+            </svg>
+        </div>
+
+        <div class="button-area">
+            <button id="stageBtn">🐞 مراحل حضور کفشدوزک (بدون حضور ← حضور فعال)</button>
+        </div>
+
+        <div class="info-panel" id="infoPanel"></div>
+        <footer>✅ کفشدوزک حشره‌ای مفید است که از شته‌ها و سایر آفات نرم‌تن تغذیه می‌کند.</footer>
+    </div>
+</div>
+
+<script>
+    (function() {
+        const leafGrad = document.getElementById('leafGrad');
+        const aphidPrey = document.getElementById('aphidPrey');
+        const ladybugAdult = document.getElementById('ladybugAdult');
+        const ladybugAdult2 = document.getElementById('ladybugAdult2');
+        const ladybugLarva = document.getElementById('ladybugLarva');
+        const ladybugEggs = document.getElementById('ladybugEggs');
+        const midVein = document.getElementById('midVein');
+        const veinsGroup = document.getElementById('veinsGroup');
+        const trichomesGroup = document.getElementById('trichomesGroup');
+        
+        let currentStage = 0;
+        
+        function setSeverityVisual(severity) {
+            // برگ سالم می‌ماند (کفشدوزک به برگ آسیب نمی‌زند)
+            const hue = 85 - severity * 5;
+            const sat = 55 - severity * 3;
+            const light = 42 - severity * 2;
+            const stops = leafGrad.querySelectorAll('stop');
+            if (stops.length >= 3) {
+                stops[0].setAttribute('stop-color', `hsl(${hue}, ${sat}%, ${light+5}%)`);
+                stops[1].setAttribute('stop-color', `hsl(${hue-2}, ${sat-2}%, ${light-1}%)`);
+                stops[2].setAttribute('stop-color', `hsl(${hue-4}, ${sat-4}%, ${light-4}%)`);
+            }
+            
+            // شته (طعمه) - در مراحل بالاتر کفشدوزک، شته کمتر می‌شود
+            let aphidOp = (1 - severity) * 0.8;
+            aphidPrey.setAttribute('opacity', Math.min(0.8, Math.max(0, aphidOp)).toString());
+            
+            // کفشدوزک بالغ
+            let adultOp = severity * 0.9;
+            ladybugAdult.setAttribute('opacity', Math.min(1, adultOp).toString());
+            let adult2Op = (severity > 0.3) ? (severity - 0.3) * 1.2 : 0;
+            ladybugAdult2.setAttribute('opacity', Math.min(1, adult2Op).toString());
+            
+            // لارو کفشدوزک
+            let larvaOp = (severity > 0.5) ? (severity - 0.5) * 1.5 : 0;
+            ladybugLarva.setAttribute('opacity', Math.min(1, larvaOp).toString());
+            
+            // تخم کفشدوزک
+            let eggsOp = (severity > 0.2) ? (severity - 0.2) * 0.8 : 0;
+            ladybugEggs.setAttribute('opacity', Math.min(0.8, eggsOp).toString());
+            
+            const veinColor = (severity > 0.6) ? "#8a9a5a" : "#5b953c";
+            midVein.setAttribute('stroke', veinColor);
+            const allVeins = veinsGroup.querySelectorAll('path');
+            allVeins.forEach(p => p.setAttribute('stroke', (severity > 0.6) ? "#8a9a5a" : "#4b8231"));
+            trichomesGroup.setAttribute('stroke', severity > 0.5 ? "#a88f58" : "#b6a467");
+        }
+        
+        const stageDetails = [
+            {
+                name: "🌿 مرحله ۰: بدون کفشدوزک",
+                symptoms: "🔹 برگ: سالم و سبز<br>🐞 کفشدوزک: وجود ندارد<br>🍅 میوه: سالم",
+                science: "کفشدوزک حشره‌ای مفید است که از شته‌ها، کنه‌ها و سایر آفات نرم‌تن تغذیه می‌کند. یک کفشدوزک بالغ می‌تواند روزانه ۵۰-۶۰ شته را بخورد.",
+                control: "🌱 <strong>نکات جذب کفشدوزک:</strong><br>• کاشت گیاهان جاذب (شوید، گشنیز، گل آفتابگردان)<br>• عدم استفاده از سموم شیمیایی وسیع‌الطیف<br>• ایجاد پناهگاه (بقایای گیاهی)"
+            },
+            {
+                name: "🐞 مرحله ۱: حضور کفشدوزک (آغاز کنترل بیولوژیک)",
+                symptoms: "🔹 برگ: سالم<br>🐞 کفشدوزک: چند کفشدوزک بالغ روی برگ<br>🍅 میوه: سالم",
+                science: "کفشدوزک‌ها به طور طبیعی به دنبال شته‌ها وارد مزرعه می‌شوند. وجود آنها نشانه تعادل اکولوژیک است.",
+                control: "✅ <strong>توصیه:</strong> از سمپاشی خودداری کنید. کفشدوزک‌ها به کنترل شته‌ها کمک می‌کنند."
+            },
+            {
+                name: "🥚 مرحله ۲: تخم‌گذاری و لارو",
+                symptoms: "🔹 برگ: سالم<br>🐞 کفشدوزک: تخم، لارو و حشرات بالغ<br>🦟 شته: در حال کاهش<br>🍅 میوه: سالم",
+                science: "لارو کفشدوزک بسیار فعال است و روزانه ۸۰-۱۰۰ شته می‌خورد. تخم‌ها به صورت دسته‌ای نزدیک کلونی شته گذاشته می‌شوند.",
+                control: "✅ <strong>نکته:</strong> لاروهای کفشدوزک شبیه کرم‌های کوچک سیاه با لکه‌های نارنجی هستند. آنها را با آفت اشتباه نگیرید."
+            },
+            {
+                name: "✅ مرحله ۳: کنترل کامل آفت",
+                symptoms: "🔹 برگ: سالم و عاری از شته<br>🐞 کفشدوزک: جمعیت فعال<br>🍅 میوه: سالم و با کیفیت",
+                science: "کفشدوزک‌ها جمعیت شته را به زیر سطح اقتصادی رسانده‌اند. گیاه بدون نیاز به سمپاشی سالم مانده است.",
+                control: "🎯 <strong>نتیجه:</strong> کنترل بیولوژیک موفق. در صورت نبود شته، کفشدوزک‌ها به مزارع دیگر مهاجرت می‌کنند."
+            }
+        ];
+        
+        function goToStage(stage) {
+            currentStage = stage;
+            let intensity = 0;
+            if (stage === 0) intensity = 0;
+            if (stage === 1) intensity = 0.35;
+            if (stage === 2) intensity = 0.65;
+            if (stage === 3) intensity = 0.95;
+            
+            setSeverityVisual(intensity);
+            
+            const data = stageDetails[stage];
+            const infoDiv = document.getElementById('infoPanel');
+            infoDiv.innerHTML = `
+                <div class="stage-name">${data.name}</div>
+                <div class="section">
+                    <div class="section-title">🍃 وضعیت برگ و میوه</div>
+                    <div class="section-content">${data.symptoms}</div>
+                </div>
+                <div class="section">
+                    <div class="section-title">🐞 کفشدوزک و نقش آن در مزرعه</div>
+                    <div class="section-content">${data.science}</div>
+                </div>
+                <div class="section">
+                    <div class="section-title">✅ توصیه‌های مدیریتی</div>
+                    <div class="section-content">${data.control}</div>
+                </div>
+                <hr>
+                <div class="section-content highlight">🐞 کفشدوزک = دوست مزرعه! از سمپاشی علیه آن خودداری کنید.</div>
+            `;
+        }
+        
+        const btn = document.getElementById('stageBtn');
+        btn.addEventListener('click', () => {
+            let next = currentStage + 1;
+            if (next > 3) next = 0;
+            goToStage(next);
+        });
+        
+        goToStage(0);
+    })();
+</script>
+</body>
+</html>
