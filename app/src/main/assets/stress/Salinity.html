@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>برگ گوجه فرنگی - تنش شوری (Salinity) | آموزش کامل</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: linear-gradient(145deg, #1b3d2a, #0d2a1a);
+            font-family: 'Segoe UI', 'Vazirmatn', Tahoma, system-ui, sans-serif;
+            padding: 12px;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .master {
+            max-width: 750px;
+            width: 100%;
+            background: #27261cd9;
+            backdrop-filter: blur(4px);
+            border-radius: 2rem;
+            padding: 12px;
+            box-shadow: 0 12px 28px black;
+        }
+        .card {
+            background: #fef8ec;
+            border-radius: 1.8rem;
+            padding: 1rem;
+            box-shadow: inset 0 0 0 1px #fff9e8, 0 6px 14px rgba(0,0,0,0.2);
+        }
+        .title {
+            text-align: center;
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #2b7220;
+            text-shadow: 1px 1px 0 #e2f0cf;
+        }
+        .sub {
+            text-align: center;
+            font-size: 0.75rem;
+            color: #b47c44;
+            border-bottom: 2px dashed #dabd88;
+            display: inline-block;
+            width: auto;
+            margin: 0 auto 12px auto;
+            padding-bottom: 4px;
+        }
+        .svg-container {
+            background: #e7ddc4;
+            border-radius: 1.2rem;
+            padding: 8px;
+            text-align: center;
+            margin: 8px 0;
+            box-shadow: inset 0 0 0 2px #fef5e2, 0 4px 10px rgba(0,0,0,0.15);
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        svg {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            border-radius: 1rem;
+        }
+        .button-area {
+            display: flex;
+            justify-content: center;
+            margin: 12px 0;
+        }
+        button {
+            background: #c08545;
+            border: none;
+            color: white;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 2rem;
+            font-size: 0.85rem;
+            cursor: pointer;
+            font-family: inherit;
+            transition: 0.2s;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+        button:active {
+            transform: scale(0.96);
+        }
+        .info-panel {
+            background: #efe4cf;
+            border-radius: 1.2rem;
+            padding: 0.9rem;
+            margin-top: 12px;
+            border-right: 5px solid #aa7942;
+            text-align: right;
+            font-size: 0.75rem;
+            max-height: 55vh;
+            overflow-y: auto;
+        }
+        .stage-name {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #4a3920;
+            background: #fdf1df;
+            padding: 4px 10px;
+            border-radius: 2rem;
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+        .section {
+            margin-top: 10px;
+            background: #faf3e3;
+            padding: 8px;
+            border-radius: 1rem;
+        }
+        .section-title {
+            font-weight: bold;
+            color: #6b3f1c;
+            border-right: 3px solid #c6904b;
+            padding-right: 8px;
+            margin-bottom: 6px;
+            font-size: 0.8rem;
+        }
+        .section-content {
+            line-height: 1.45;
+            color: #2c2a1a;
+        }
+        hr {
+            margin: 8px 0;
+            border-color: #dbbc87;
+        }
+        .highlight {
+            background: #f5e6c4;
+            padding: 2px 6px;
+            border-radius: 12px;
+            font-weight: bold;
+        }
+        .warning-box {
+            background: #fae6c3;
+            border-right: 4px solid #c67a2e;
+            padding: 6px 10px;
+            border-radius: 12px;
+            margin-top: 8px;
+            font-size: 0.7rem;
+        }
+        footer {
+            text-align: center;
+            font-size: 0.6rem;
+            color: #aa956b;
+            margin-top: 10px;
+        }
+        @media (max-width: 500px) {
+            .master { padding: 8px; }
+            .card { padding: 0.7rem; }
+            .title { font-size: 1.2rem; }
+            .info-panel { font-size: 0.7rem; max-height: 50vh; }
+            .section-title { font-size: 0.75rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="master">
+    <div class="card">
+        <div class="title">🧂 برگ گوجه‌فرنگی | تنش شوری (Salinity)</div>
+        <div style="text-align: center;"><div class="sub">سوختگی حاشیه + پژمردگی + توقف رشد</div></div>
+
+        <div class="svg-container">
+            <svg id="tomatoLeafSvg" viewBox="0 0 600 700" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <filter id="shadow" x="-10%" y="-10%" width="130%" height="130%">
+                        <feDropShadow dx="2" dy="5" stdDeviation="4" flood-color="#2d2a1a" flood-opacity="0.25"/>
+                    </filter>
+                    <filter id="veinGlow"><feGaussianBlur stdDeviation="1"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+                    <linearGradient id="leafGrad" x1="20%" y1="0%" x2="80%" y2="100%">
+                        <stop offset="0%" stop-color="#6daa44"/><stop offset="60%" stop-color="#468a2e"/><stop offset="100%" stop-color="#2d6b1e"/>
+                    </linearGradient>
+                    <linearGradient id="petioleGrad" x1="0" y1="0" x2="1" y2="0">
+                        <stop offset="0%" stop-color="#8b744b"/><stop offset="100%" stop-color="#b4925e"/>
+                    </linearGradient>
+                </defs>
+                <g filter="url(#shadow)">
+                    <!-- دمبرگ Petiole -->
+                    <path id="petiolePath" d="M300,510 C285,545 270,585 285,640 Q295,670 310,685" stroke="url(#petioleGrad)" stroke-width="14" fill="none" stroke-linecap="round"/>
+                    <path id="petioleInner" d="M300,510 C310,540 325,585 312,640" stroke="#b7975f" stroke-width="3" fill="none" opacity="0.5"/>
+
+                    <!-- پهنک برگ -->
+                    <g id="leafGroup">
+                        <path id="leafBlade" d="M300,160 C340,175 375,200 405,240 C425,268 442,298 448,330 C452,358 450,385 440,410 C425,445 400,475 372,500 C355,514 335,525 312,525 C290,525 270,514 253,500 C225,475 200,445 185,410 C175,385 173,358 177,330 C183,298 200,268 220,240 C250,200 285,175 300,160Z" fill="url(#leafGrad)" stroke="#3e6827" stroke-width="1.8"/>
+
+                        <!-- سوختگی و برنز شدن حاشیه برگ (علامت اصلی شوری) -->
+                        <g id="marginBurn" opacity="0">
+                            <path d="M405,240 C430,280 448,330 445,380" stroke="#b87a45" stroke-width="12" fill="none" opacity="0.7" stroke-linecap="round"/>
+                            <path d="M220,240 C195,280 177,330 180,380" stroke="#b87a45" stroke-width="12" fill="none" opacity="0.7" stroke-linecap="round"/>
+                            <ellipse cx="300" cy="165" rx="14" ry="9" fill="#b87a45" opacity="0.7"/>
+                        </g>
+
+                        <!-- نکروز شدید حاشیه (مراحل پیشرفته) -->
+                        <g id="severeBurn" opacity="0">
+                            <path d="M410,250 C435,290 450,340 442,390" stroke="#7a4e2a" stroke-width="10" fill="none" opacity="0.8" stroke-linecap="round"/>
+                            <path d="M210,250 C185,290 170,340 178,390" stroke="#7a4e2a" stroke-width="10" fill="none" opacity="0.8" stroke-linecap="round"/>
+                            <ellipse cx="300" cy="160" rx="15" ry="10" fill="#7a4e2a" opacity="0.8"/>
+                            <!-- لکه‌های نمک روی برگ (بلورهای نمک) -->
+                            <circle cx="360" cy="300" r="2" fill="#f5f5dc" opacity="0.6"/>
+                            <circle cx="280" cy="350" r="2.5" fill="#f5f5dc" opacity="0.5"/>
+                            <circle cx="390" cy="380" r="2" fill="#f5f5dc" opacity="0.5"/>
+                            <circle cx="250" cy="320" r="1.8" fill="#f5f5dc" opacity="0.5"/>
+                        </g>
+
+                        <!-- سبز تیره و ضخیم شدن برگ -->
+                        <g id="darkThickLeaf" opacity="0">
+                            <ellipse cx="310" cy="340" rx="130" ry="160" fill="#2d5a3a" opacity="0.3"/>
+                        </g>
+
+                        <!-- پژمردگی -->
+                        <g id="wilting" opacity="0">
+                            <path d="M340,175 Q365,220 350,280" stroke="#6a7a4a" stroke-width="1.5" fill="none" opacity="0.5"/>
+                            <path d="M280,175 Q255,220 270,280" stroke="#6a7a4a" stroke-width="1.5" fill="none" opacity="0.5"/>
+                        </g>
+
+                        <!-- کلروز خفیف (در شوری ممکن است برگ زرد شود) -->
+                        <g id="mildChlorosis" opacity="0">
+                            <ellipse cx="340" cy="280" rx="20" ry="18" fill="#e0d55a" opacity="0.35"/>
+                            <ellipse cx="280" cy="370" rx="22" ry="20" fill="#ddd055" opacity="0.3"/>
+                        </g>
+
+                        <!-- رگبرگ اصلی -->
+                        <path id="midVein" d="M300,170 Q293,280 300,520" stroke="#5b953c" stroke-width="4.5" fill="none" stroke-linecap="round" filter="url(#veinGlow)"/>
+                        <path id="midVeinInner" d="M300,170 Q295,280 300,520" stroke="#a3df78" stroke-width="1.4" fill="none"/>
+
+                        <!-- رگبرگ فرعی -->
+                        <g id="veinsGroup" stroke="#4b8231" fill="none" stroke-linecap="round">
+                            <path d="M300,210 Q330,225 355,240" stroke-width="2.6"/><path d="M300,210 Q270,225 245,240" stroke-width="2.6"/>
+                            <path d="M300,260 Q345,275 385,295" stroke-width="2.8"/><path d="M300,260 Q255,275 215,295" stroke-width="2.8"/>
+                            <path d="M300,320 Q355,340 410,365" stroke-width="3"/><path d="M300,320 Q245,340 190,365" stroke-width="3"/>
+                            <path d="M300,380 Q350,395 395,425" stroke-width="2.6"/><path d="M300,380 Q250,395 205,425" stroke-width="2.6"/>
+                            <path d="M300,440 Q335,455 365,485" stroke-width="2.4"/><path d="M300,440 Q265,455 235,485" stroke-width="2.4"/>
+                            <path d="M345,270 Q370,280 395,272" stroke-width="1.2" opacity="0.75"/><path d="M255,270 Q230,280 205,272" stroke-width="1.2" opacity="0.75"/>
+                            <path d="M360,330 Q390,340 425,330" stroke-width="1.3" opacity="0.8"/><path d="M240,330 Q210,340 175,330" stroke-width="1.3" opacity="0.8"/>
+                        </g>
+
+                        <!-- تریکوم -->
+                        <g id="trichomesGroup" stroke="#b6a467" fill="none" stroke-width="0.8" opacity="0.9">
+                            <path d="M380,230 L390,225"/><circle cx="390" cy="225" r="1.1" fill="#cfb572"/>
+                            <path d="M410,280 L422,272"/><circle cx="422" cy="272" r="1.2" fill="#cfb572"/>
+                            <path d="M435,340 L448,332"/><circle cx="448" cy="332" r="1.2" fill="#cfb572"/>
+                            <path d="M420,400 L433,395"/><circle cx="433" cy="395" r="1.1" fill="#cfb572"/>
+                            <path d="M380,460 L390,455"/><circle cx="390" cy="455" r="1.1" fill="#cfb572"/>
+                            <path d="M220,230 L210,225"/><circle cx="210" cy="225" r="1.1" fill="#cfb572"/>
+                            <path d="M190,280 L178,272"/><circle cx="178" cy="272" r="1.2" fill="#cfb572"/>
+                            <path d="M165,340 L152,332"/><circle cx="152" cy="332" r="1.2" fill="#cfb572"/>
+                            <path d="M180,400 L168,395"/><circle cx="168" cy="395" r="1.1" fill="#cfb572"/>
+                            <path d="M220,460 L210,455"/><circle cx="210" cy="455" r="1.1" fill="#cfb572"/>
+                        </g>
+
+                        <!-- روزنه‌ها -->
+                        <g id="stomataGroup" fill="#6a8c50" opacity="0.4">
+                            <ellipse cx="340" cy="260" rx="1.3" ry="2" transform="rotate(15 340 260)"/>
+                            <ellipse cx="320" cy="290" rx="1.2" ry="1.9" transform="rotate(-20 320 290)"/>
+                            <ellipse cx="370" cy="310" rx="1.4" ry="2.1" transform="rotate(30 370 310)"/>
+                            <ellipse cx="290" cy="330" rx="1.3" ry="2" transform="rotate(-10 290 330)"/>
+                            <ellipse cx="410" cy="350" rx="1.2" ry="1.9" transform="rotate(10 410 350)"/>
+                            <ellipse cx="220" cy="280" rx="1.4" ry="2.1" transform="rotate(-25 220 280)"/>
+                            <ellipse cx="260" cy="400" rx="1.3" ry="2" transform="rotate(5 260 400)"/>
+                            <ellipse cx="350" cy="430" rx="1.2" ry="1.9" transform="rotate(20 350 430)"/>
+                        </g>
+                    </g>
+                </g>
+            </svg>
+        </div>
+
+        <div class="button-area">
+            <button id="stageBtn">🌱 مراحل تنش شوری (سالم ← شدید)</button>
+        </div>
+
+        <div class="info-panel" id="infoPanel">
+            <!-- محتوای داینامیک توسط JS پر می‌شود -->
+        </div>
+        <footer>🔍 هر بار کلیک، شدت تنش شوری افزایش می‌یابد. علائم: سوختگی حاشیه، پژمردگی، سبز تیره شدن، بلور نمک روی برگ.</footer>
+    </div>
+</div>
+
+<script>
+    (function() {
+        // گرفتن المان‌های SVG
+        const leafGrad = document.getElementById('leafGrad');
+        const marginBurn = document.getElementById('marginBurn');
+        const severeBurn = document.getElementById('severeBurn');
+        const darkThickLeaf = document.getElementById('darkThickLeaf');
+        const wilting = document.getElementById('wilting');
+        const mildChlorosis = document.getElementById('mildChlorosis');
+        const midVein = document.getElementById('midVein');
+        const veinsGroup = document.getElementById('veinsGroup');
+        const trichomesGroup = document.getElementById('trichomesGroup');
+        const petiolePath = document.getElementById('petiolePath');
+        
+        let currentStage = 0;  // 0:سالم, 1:خفیف, 2:متوسط, 3:شدید
+        
+        function setSeverityVisual(severity) {
+            // تنش شوری: برگ سبز تیره و ضخیم می‌شود، سپس حاشیه می‌سوزد
+            const hue = 105 - severity * 15;
+            const sat = 55 + severity * 12;
+            const light = 42 - severity * 10;
+            const stops = leafGrad.querySelectorAll('stop');
+            if (stops.length >= 3) {
+                stops[0].setAttribute('stop-color', `hsl(${hue}, ${sat}%, ${light+3}%)`);
+                stops[1].setAttribute('stop-color', `hsl(${hue-3}, ${sat-3}%, ${light-2}%)`);
+                stops[2].setAttribute('stop-color', `hsl(${hue-6}, ${sat-5}%, ${light-6}%)`);
+            }
+            
+            // سوختگی حاشیه (علامت اصلی)
+            let burnOp = severity * 0.85;
+            marginBurn.setAttribute('opacity', Math.min(0.85, burnOp).toString());
+            
+            // سوختگی شدید
+            let severeOp = (severity > 0.5) ? (severity - 0.5) * 1.4 : 0;
+            severeBurn.setAttribute('opacity', Math.min(0.9, severeOp).toString());
+            
+            // سبز تیره و ضخیم شدن برگ
+            let darkOp = severity * 0.5;
+            darkThickLeaf.setAttribute('opacity', Math.min(0.5, darkOp).toString());
+            
+            // پژمردگی
+            let wiltOp = (severity > 0.35) ? (severity - 0.35) * 1.0 : 0;
+            wilting.setAttribute('opacity', Math.min(0.6, wiltOp).toString());
+            
+            // کلروز خفیف
+            let chloroOp = (severity > 0.6) ? (severity - 0.6) * 0.8 : 0;
+            mildChlorosis.setAttribute('opacity', Math.min(0.4, chloroOp).toString());
+            
+            // رگبرگ‌ها
+            const veinColor = (severity > 0.6) ? "#6a8a4a" : "#5b953c";
+            midVein.setAttribute('stroke', veinColor);
+            const allVeins = veinsGroup.querySelectorAll('path');
+            allVeins.forEach(p => p.setAttribute('stroke', (severity > 0.6) ? "#6a8a4a" : "#4b8231"));
+            
+            // دمبرگ
+            if (severity > 0.6) {
+                petiolePath.setAttribute('stroke', "#9a8050");
+            } else {
+                petiolePath.setAttribute('stroke', "url(#petioleGrad)");
+            }
+            
+            // تریکوم
+            trichomesGroup.setAttribute('stroke', severity > 0.5 ? "#a08f58" : "#b6a467");
+        }
+        
+        const stageDetails = [
+            {
+                name: "🌿 مرحله ۰: برگ کاملاً سالم (بدون تنش شوری)",
+                glossary: "✅ <strong>تعریف اجزای برگ:</strong><br> • <strong>پهنک برگ (Blade):</strong> قسمت سبز و پهن که عمل فتوسنتز را انجام می‌دهد.<br> • <strong>دمبرگ (Petiole):</strong> ساقه‌ای که برگ را به ساقه اصلی متصل می‌کند.<br> • <strong>رگبرگ اصلی (Midvein):</strong> رگ ضخیم وسط برگ.<br> • <strong>رگبرگ فرعی (Secondary Veins):</strong> انشعابات ریزتر.<br> • <strong>تریکوم (Trichomes):</strong> کرک‌های ریز غده‌ای محافظ.<br> • <strong>روزنه (Stomata):</strong> منافذ ریز برای تبادل گاز.<br><br>🧂 <strong>تنش شوری چیست؟</strong><br> شوری یعنی وجود نمک زیاد در خاک یا آب آبیاری. در شرایط نرمال، گیاه گوجه‌فرنگی به شوری حساس است. شوری باعث اختلال در جذب آب، مسمومیت یونی (سدیم و کلر) و کاهش رشد می‌شود.",
+                symptoms: "🔹 <strong>علائم قابل مشاهده:</strong> سبزی یکدست، برگ‌ها شاداب، بدون سوختگی حاشیه، رشد طبیعی.",
+                science: "📗 <strong>علت فیزیولوژیک:</strong> در حالت سالم، تعادل اسمزی گیاه برقرار است، آب به خوبی جذب می‌شود، هیچ یون سمی در بافت وجود ندارد، فتوسنتز و رشد طبیعی."
+            },
+            {
+                name: "⚠️ مرحله ۱: تنش شوری خفیف (آغاز علائم)",
+                glossary: "همان اجزای بالا – اکنون برگ‌ها سبز تیره و کمی ضخیم می‌شوند، سوختگی خفیف حاشیه شروع می‌شود.",
+                symptoms: "🟢 برگ‌ها سبز تیره و ضخیم به نظر می‌رسند. حاشیه برگ کمی برنز و سوخته می‌شود. رشد کمی کاهش یافته. پژمردگی خفیف در ساعات گرم روز دیده می‌شود.",
+                science: "🔬 <strong>دلیل علمی:</strong> شوری خفیف (EC 2-4 dS/m): یون‌های سدیم و کلر شروع به تجمع در حاشیه برگ می‌کنند. گیاه برای حفظ آب، روزنه‌ها را می‌بندد ← رشد کاهش می‌یابد. برگ‌ها ضخیم می‌شوند تا تبخیر کم شود."
+            },
+            {
+                name: "🥀 مرحله ۲: تنش شوری متوسط (علائم آشکار)",
+                glossary: "تمامی اجزا – اکنون سوختگی واضح حاشیه، پژمردگی و کاهش شدید رشد ظاهر شده است.",
+                symptoms: "حاشیه برگ به شدت برنز و سوخته. پژمردگی واضح برگ‌ها (حتی با آبیاری). رشد متوقف شده، برگ‌ها کوچک می‌مانند. ممکن است لکه‌های سفید ریز (بلور نمک) روی برگ دیده شود.",
+                science: "🧪 <strong>دلیل علمی:</strong> شوری متوسط (EC 4-6 dS/m): تجمع نمک در حاشیه برگ باعث مرگ سلولی (نکروز) می‌شود. پتانسیل اسمزی خاک پایین آمده ← جذب آب مختل ← پژمردگی. فتوسنتز کاهش یافته، گیاه در تنش شدید."
+            },
+            {
+                name: "🔴 مرحله ۳: تنش شوری شدید (پیشرفته، بحرانی)",
+                glossary: "همه قسمت‌های برگ درگیر: سوختگی گسترده حاشیه، نکروز، پژمردگی شدید، ریزش برگ.",
+                symptoms: "نکروز گسترده حاشیه و نوک برگ (قهوه‌ای تیره و خشک). بلورهای نمک سفید روی سطح برگ. پژمردگی شدید و دائمی. رشد کامل متوقف. برگ‌های پایینی می‌ریزند. گیاه در آستانه مرگ. میوه‌ها کوچک و بی‌کیفیت.",
+                science: "⚠️ <strong>دلیل علمی:</strong> شوری شدید (EC > 8 dS/m): تنش اسمزی شدید، جذب آب تقریباً متوقف شده. یون‌های سدیم و کلر به غلظت سمی رسیده‌اند. فتوسنتز متوقف، کلروفیل تجزیه می‌شود. سلول‌های حاشیه برگ مرده‌اند. گیاه توانایی تولید میوه را از دست می‌دهد."
+            }
+        ];
+        
+        function goToStage(stage) {
+            currentStage = stage;
+            let intensity = 0;
+            if (stage === 0) intensity = 0;
+            if (stage === 1) intensity = 0.35;
+            if (stage === 2) intensity = 0.65;
+            if (stage === 3) intensity = 0.95;
+            
+            setSeverityVisual(intensity);
+            
+            const data = stageDetails[stage];
+            const infoDiv = document.getElementById('infoPanel');
+            infoDiv.innerHTML = `
+                <div class="stage-name">${data.name}</div>
+                <div class="section">
+                    <div class="section-title">📖 آموزش اجزای برگ و مفهوم تنش شوری</div>
+                    <div class="section-content">${data.glossary}</div>
+                </div>
+                <div class="section">
+                    <div class="section-title">🔍 علائم ظاهری در این مرحله (تنش شوری)</div>
+                    <div class="section-content">${data.symptoms}</div>
+                </div>
+                <div class="section">
+                    <div class="section-title">🧠 علت علمی (فیزیولوژی تنش شوری)</div>
+                    <div class="section-content">${data.science}</div>
+                </div>
+                <div class="warning-box">
+                    💡 <span class="highlight">نکته مهم - علائم اختصاصی تنش شوری:</span><br>
+                    • <strong>سوختگی و برنز شدن حاشیه برگ</strong> (از نوک شروع می‌شود)<br>
+                    • <strong>سبز تیره و ضخیم شدن برگ</strong> (واکنش به تنش)<br>
+                    • <strong>پژمردگی حتی با آبیاری کافی</strong><br>
+                    • <strong>بلورهای سفید نمک روی سطح برگ</strong> (در مراحل پیشرفته)<br>
+                    • شبیه کمبود پتاسیم است، اما با آب شور آبیاری ارتباط دارد
+                </div>
+                <div class="warning-box" style="margin-top:6px;">
+                    💧 <span class="highlight">راهکارهای کاهش تنش شوری:</span><br>
+                    • آب شویی خاک (آبیاری سنگین برای خروج نمک)<br>
+                    • استفاده از کودهای کلسیم و پتاسیم بالا<br>
+                    • آبیاری قطره‌ای (کاهش تنش)<br>
+                    • ارقام مقاوم به شوری (مانند برخی پایه‌های مقاوم)
+                </div>
+                <hr>
+                <div class="section-content" style="font-size:0.7rem; color:#5c481f;">
+                    💡 با هر کلیک، شدت تنش شوری افزایش می‌یابد. گوجه‌فرنگی به شوری حساس است (مقاومت کم تا متوسط).
+                </div>
+            `;
+        }
+        
+        const btn = document.getElementById('stageBtn');
+        btn.addEventListener('click', () => {
+            let next = currentStage + 1;
+            if (next > 3) next = 0;
+            goToStage(next);
+        });
+        
+        goToStage(0);
+    })();
+</script>
+</body>
+</html>
