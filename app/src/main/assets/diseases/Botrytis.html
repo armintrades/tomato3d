@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>بوتریتیس (کپک خاکستری) گوجه فرنگی | برگ + ساقه + میوه</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: linear-gradient(145deg, #1b3d2a, #0d2a1a);
+            font-family: 'Segoe UI', 'Vazirmatn', Tahoma, system-ui, sans-serif;
+            padding: 12px;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .master {
+            max-width: 750px;
+            width: 100%;
+            background: #27261cd9;
+            backdrop-filter: blur(4px);
+            border-radius: 2rem;
+            padding: 12px;
+            box-shadow: 0 12px 28px black;
+        }
+        .card {
+            background: #fef8ec;
+            border-radius: 1.8rem;
+            padding: 1rem;
+            box-shadow: inset 0 0 0 1px #fff9e8, 0 6px 14px rgba(0,0,0,0.2);
+        }
+        .title {
+            text-align: center;
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #9b4b2c;
+            text-shadow: 1px 1px 0 #e2d5c0;
+        }
+        .sub {
+            text-align: center;
+            font-size: 0.75rem;
+            color: #b47c44;
+            border-bottom: 2px dashed #dabd88;
+            display: inline-block;
+            width: auto;
+            margin: 0 auto 12px auto;
+            padding-bottom: 4px;
+        }
+        .comparison-box {
+            background: #2c4724;
+            color: #ffecb3;
+            border-radius: 1rem;
+            padding: 10px;
+            margin-bottom: 15px;
+            font-size: 0.7rem;
+            text-align: center;
+        }
+        .svg-container {
+            background: #e7ddc4;
+            border-radius: 1.2rem;
+            padding: 8px;
+            text-align: center;
+            margin: 8px 0;
+            box-shadow: inset 0 0 0 2px #fef5e2, 0 4px 10px rgba(0,0,0,0.15);
+            min-height: 580px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        svg {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            border-radius: 1rem;
+        }
+        .button-area {
+            display: flex;
+            justify-content: center;
+            margin: 12px 0;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        button {
+            background: #c08545;
+            border: none;
+            color: white;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 2rem;
+            font-size: 0.85rem;
+            cursor: pointer;
+            font-family: inherit;
+            transition: 0.2s;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+        button:active { transform: scale(0.96); }
+        .info-panel {
+            background: #efe4cf;
+            border-radius: 1.2rem;
+            padding: 0.9rem;
+            margin-top: 12px;
+            border-right: 5px solid #aa7942;
+            text-align: right;
+            font-size: 0.75rem;
+            max-height: 55vh;
+            overflow-y: auto;
+        }
+        .stage-name {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #4a3920;
+            background: #fdf1df;
+            padding: 4px 10px;
+            border-radius: 2rem;
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+        .section {
+            margin-top: 10px;
+            background: #faf3e3;
+            padding: 8px;
+            border-radius: 1rem;
+        }
+        .section-title {
+            font-weight: bold;
+            color: #6b3f1c;
+            border-right: 3px solid #c6904b;
+            padding-right: 8px;
+            margin-bottom: 6px;
+            font-size: 0.8rem;
+        }
+        .section-content { line-height: 1.45; color: #2c2a1a; }
+        hr { margin: 8px 0; border-color: #dbbc87; }
+        .highlight { background: #f5e6c4; padding: 2px 6px; border-radius: 12px; font-weight: bold; }
+        .warning-box {
+            background: #fae6c3;
+            border-right: 4px solid #c67a2e;
+            padding: 6px 10px;
+            border-radius: 12px;
+            margin-top: 8px;
+            font-size: 0.7rem;
+        }
+        .diff-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #fff8ec;
+            border-radius: 1rem;
+            overflow: hidden;
+            margin-top: 10px;
+        }
+        .diff-table th, .diff-table td {
+            padding: 8px;
+            border-bottom: 1px solid #e2d2bb;
+            text-align: right;
+            font-size: 0.7rem;
+        }
+        .diff-table th {
+            background: #e7ddce;
+            font-weight: bold;
+        }
+        footer {
+            text-align: center;
+            font-size: 0.6rem;
+            color: #aa956b;
+            margin-top: 10px;
+        }
+        @media (max-width: 500px) {
+            .master { padding: 8px; }
+            .card { padding: 0.7rem; }
+            .title { font-size: 1.2rem; }
+            .info-panel { font-size: 0.7rem; max-height: 50vh; }
+            .section-title { font-size: 0.75rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="master">
+    <div class="card">
+        <div class="title">🍅 بوتریتیس (کپک خاکستری) | Botrytis cinerea</div>
+        <div style="text-align: center;"><div class="sub">عامل: قارچ Botrytis cinerea | در رطوبت بالا بسیار خطرناک ⚠️</div></div>
+
+        <div class="comparison-box">
+            🔴 <span>نکته مهم:</span> این بیماری با <span>سفیدک سطحی</span> اشتباه گرفته می‌شود اما تفاوت اصلی: <span>کپک خاکستری (نه سفید)</span> و شیوع در <span>رطوبت بالا و دمای خنک</span> (بر خلاف سفیدک که در گرمای خشک است).
+        </div>
+
+        <div class="svg-container">
+            <svg id="tomatoLeafSvg" viewBox="0 0 600 700" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <filter id="shadow" x="-10%" y="-10%" width="130%" height="130%">
+                        <feDropShadow dx="2" dy="5" stdDeviation="4" flood-color="#2d2a1a" flood-opacity="0.25"/>
+                    </filter>
+                    <filter id="veinGlow"><feGaussianBlur stdDeviation="1"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+                    <linearGradient id="leafGrad" x1="20%" y1="0%" x2="80%" y2="100%">
+                        <stop offset="0%" stop-color="#6daa44"/><stop offset="60%" stop-color="#468a2e"/><stop offset="100%" stop-color="#2d6b1e"/>
+                    </linearGradient>
+                    <linearGradient id="fruitGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#e84030"/><stop offset="50%" stop-color="#cc3020"/><stop offset="100%" stop-color="#aa2518"/>
+                    </linearGradient>
+                    <linearGradient id="petioleGrad" x1="0" y1="0" x2="1" y2="0">
+                        <stop offset="0%" stop-color="#8b744b"/><stop offset="100%" stop-color="#b4925e"/>
+                    </linearGradient>
+                    <radialGradient id="fruitShine" cx="35%" cy="30%" r="50%">
+                        <stop offset="0%" stop-color="#ffaaa0" stop-opacity="0.5"/>
+                        <stop offset="100%" stop-color="#ff0000" stop-opacity="0"/>
+                    </radialGradient>
+                </defs>
+                <g filter="url(#shadow)">
+                    <!-- ==================== برگ ==================== -->
+                    <path id="petiolePath" d="M300,480 C285,515 270,555 285,610 Q295,640 310,655" stroke="url(#petioleGrad)" stroke-width="14" fill="none" stroke-linecap="round"/>
+                    <path id="petioleInner" d="M300,480 C310,510 325,555 312,610" stroke="#b7975f" stroke-width="3" fill="none" opacity="0.5"/>
+
+                    <g id="leafGroup">
+                        <path id="leafBlade" d="M300,160 C340,175 375,200 405,240 C425,268 442,298 448,330 C452,358 450,385 440,410 C425,445 400,475 372,500 C355,514 335,525 312,525 C290,525 270,514 253,500 C225,475 200,445 185,410 C175,385 173,358 177,330 C183,298 200,268 220,240 C250,200 285,175 300,160Z" fill="url(#leafGrad)" stroke="#3e6827" stroke-width="1.8"/>
+
+                        <!-- لکه‌های قهوه‌ای آب سوخته (بوتریتیس) -->
+                        <g id="botrytisSpots" opacity="0">
+                            <ellipse cx="340" cy="280" rx="25" ry="20" fill="#6b3a1a" opacity="0.75"/>
+                            <ellipse cx="340" cy="280" rx="15" ry="12" fill="#8a4e2a" opacity="0.6"/>
+                            
+                            <ellipse cx="390" cy="350" rx="22" ry="18" fill="#6b3a1a" opacity="0.7"/>
+                            <ellipse cx="390" cy="350" rx="13" ry="10" fill="#8a4e2a" opacity="0.55"/>
+                            
+                            <ellipse cx="280" cy="340" rx="20" ry="16" fill="#6b3a1a" opacity="0.7"/>
+                            <ellipse cx="280" cy="340" rx="12" ry="9" fill="#8a4e2a" opacity="0.55"/>
+                            
+                            <ellipse cx="370" cy="420" rx="18" ry="14" fill="#6b3a1a" opacity="0.65"/>
+                            <ellipse cx="310" cy="450" rx="16" ry="12" fill="#6b3a1a" opacity="0.6"/>
+                        </g>
+
+                        <!-- کپک خاکستری (علامت اختصاصی بوتریتیس - متفاوت از سفیدک) -->
+                        <g id="grayMold" opacity="0">
+                            <ellipse cx="340" cy="282" rx="28" ry="23" fill="#a0a0a0" opacity="0.5"/>
+                            <ellipse cx="340" cy="282" rx="20" ry="16" fill="#c0c0c0" opacity="0.4"/>
+                            
+                            <ellipse cx="390" cy="352" rx="25" ry="20" fill="#a0a0a0" opacity="0.45"/>
+                            <ellipse cx="390" cy="352" rx="17" ry="13" fill="#c0c0c0" opacity="0.35"/>
+                            
+                            <ellipse cx="280" cy="342" rx="23" ry="18" fill="#a0a0a0" opacity="0.45"/>
+                            <ellipse cx="280" cy="342" rx="15" ry="11" fill="#c0c0c0" opacity="0.35"/>
+                            
+                            <ellipse cx="370" cy="422" rx="20" ry="16" fill="#a0a0a0" opacity="0.4"/>
+                        </g>
+
+                        <!-- زردی و نکروز برگ -->
+                        <g id="leafYellowing" opacity="0">
+                            <ellipse cx="340" cy="280" rx="35" ry="28" fill="#e8cf5a" opacity="0.35"/>
+                            <ellipse cx="390" cy="350" rx="30" ry="25" fill="#e0c33e" opacity="0.3"/>
+                            <ellipse cx="280" cy="340" rx="28" ry="22" fill="#e0c33e" opacity="0.3"/>
+                        </g>
+
+                        <!-- نکروز حاشیه -->
+                        <g id="marginNecrosis" opacity="0">
+                            <path d="M405,240 C430,280 448,330 445,380" stroke="#7a4e2a" stroke-width="8" fill="none" opacity="0.5" stroke-linecap="round"/>
+                            <path d="M220,240 C195,280 177,330 180,380" stroke="#7a4e2a" stroke-width="8" fill="none" opacity="0.5" stroke-linecap="round"/>
+                        </g>
+
+                        <!-- رگبرگ‌ها -->
+                        <path id="midVein" d="M300,170 Q293,280 300,490" stroke="#5b953c" stroke-width="4.5" fill="none" stroke-linecap="round" filter="url(#veinGlow)"/>
+                        <path id="midVeinInner" d="M300,170 Q295,280 300,490" stroke="#a3df78" stroke-width="1.4" fill="none"/>
+
+                        <g id="veinsGroup" stroke="#4b8231" fill="none" stroke-linecap="round">
+                            <path d="M300,210 Q330,225 355,240" stroke-width="2.6"/><path d="M300,210 Q270,225 245,240" stroke-width="2.6"/>
+                            <path d="M300,260 Q345,275 385,295" stroke-width="2.8"/><path d="M300,260 Q255,275 215,295" stroke-width="2.8"/>
+                            <path d="M300,320 Q355,340 410,365" stroke-width="3"/><path d="M300,320 Q245,340 190,365" stroke-width="3"/>
+                            <path d="M300,380 Q350,395 395,425" stroke-width="2.6"/><path d="M300,380 Q250,395 205,425" stroke-width="2.6"/>
+                            <path d="M300,440 Q335,455 365,485" stroke-width="2.4"/><path d="M300,440 Q265,455 235,485" stroke-width="2.4"/>
+                        </g>
+
+                        <g id="trichomesGroup" stroke="#b6a467" fill="none" stroke-width="0.8" opacity="0.9">
+                            <path d="M380,230 L390,225"/><circle cx="390" cy="225" r="1.1" fill="#cfb572"/>
+                            <path d="M410,280 L422,272"/><circle cx="422" cy="272" r="1.2" fill="#cfb572"/>
+                            <path d="M435,340 L448,332"/><circle cx="448" cy="332" r="1.2" fill="#cfb572"/>
+                            <path d="M420,400 L433,395"/><circle cx="433" cy="395" r="1.1" fill="#cfb572"/>
+                            <path d="M380,460 L390,455"/><circle cx="390" cy="455" r="1.1" fill="#cfb572"/>
+                            <path d="M220,230 L210,225"/><circle cx="210" cy="225" r="1.1" fill="#cfb572"/>
+                            <path d="M190,280 L178,272"/><circle cx="178" cy="272" r="1.2" fill="#cfb572"/>
+                            <path d="M165,340 L152,332"/><circle cx="152" cy="332" r="1.2" fill="#cfb572"/>
+                            <path d="M180,400 L168,395"/><circle cx="168" cy="395" r="1.1" fill="#cfb572"/>
+                            <path d="M220,460 L210,455"/><circle cx="210" cy="455" r="1.1" fill="#cfb572"/>
+                        </g>
+
+                        <g id="stomataGroup" fill="#6a8c50" opacity="0.4">
+                            <ellipse cx="340" cy="260" rx="1.3" ry="2" transform="rotate(15 340 260)"/>
+                            <ellipse cx="320" cy="290" rx="1.2" ry="1.9" transform="rotate(-20 320 290)"/>
+                            <ellipse cx="370" cy="310" rx="1.4" ry="2.1" transform="rotate(30 370 310)"/>
+                            <ellipse cx="290" cy="330" rx="1.3" ry="2" transform="rotate(-10 290 330)"/>
+                            <ellipse cx="410" cy="350" rx="1.2" ry="1.9" transform="rotate(10 410 350)"/>
+                            <ellipse cx="220" cy="280" rx="1.4" ry="2.1" transform="rotate(-25 220 280)"/>
+                            <ellipse cx="260" cy="400" rx="1.3" ry="2" transform="rotate(5 260 400)"/>
+                            <ellipse cx="350" cy="430" rx="1.2" ry="1.9" transform="rotate(20 350 430)"/>
+                        </g>
+                    </g>
+
+                    <!-- ==================== میوه آلوده ==================== -->
+                    <g id="fruitGroup">
+                        <path d="M490,620 Q500,595 510,575" stroke="#5a7a3a" stroke-width="3.5" fill="none"/>
+                        <path d="M510,575 Q515,562 525,555" stroke="#5a7a3a" stroke-width="2.5" fill="none"/>
+                        
+                        <path d="M525,555 Q512,542 500,548" stroke="#3a6a2a" stroke-width="2.5" fill="none"/>
+                        <path d="M525,555 Q530,540 545,545" stroke="#3a6a2a" stroke-width="2.5" fill="none"/>
+                        <path d="M525,555 Q520,535 510,538" stroke="#3a6a2a" stroke-width="2.5" fill="none"/>
+                        <path d="M525,555 Q540,550 548,560" stroke="#3a6a2a" stroke-width="2" fill="none"/>
+                        <path d="M525,555 Q505,550 498,560" stroke="#3a6a2a" stroke-width="2" fill="none"/>
+                        
+                        <ellipse cx="525" cy="620" rx="45" ry="55" fill="url(#fruitGrad)"/>
+                        <ellipse cx="525" cy="620" rx="45" ry="55" fill="url(#fruitShine)"/>
+                        
+                        <!-- لکه‌های بوتریتیس روی میوه -->
+                        <g id="fruitSpots" opacity="0">
+                            <ellipse cx="510" cy="600" rx="10" ry="7" fill="#6b3a1a" opacity="0.8"/>
+                            <ellipse cx="540" cy="630" rx="8" ry="6" fill="#6b3a1a" opacity="0.75"/>
+                            <ellipse cx="520" cy="645" rx="7" ry="5" fill="#6b3a1a" opacity="0.7"/>
+                        </g>
+                        
+                        <!-- کپک خاکستری روی میوه -->
+                        <g id="fruitMold" opacity="0">
+                            <ellipse cx="510" cy="602" rx="12" ry="9" fill="#a0a0a0" opacity="0.55"/>
+                            <ellipse cx="540" cy="632" rx="10" ry="8" fill="#a0a0a0" opacity="0.5"/>
+                            <ellipse cx="520" cy="647" rx="9" ry="7" fill="#a0a0a0" opacity="0.45"/>
+                        </g>
+                        
+                        <!-- پوسیدگی میوه -->
+                        <g id="fruitRot" opacity="0">
+                            <ellipse cx="525" cy="625" rx="20" ry="15" fill="#3a1a0a" opacity="0.55"/>
+                        </g>
+                    </g>
+                </g>
+            </svg>
+        </div>
+
+        <div class="button-area">
+            <button id="stageBtn">🍄 مراحل پیشرفت بوتریتیس (سالم ← شدید)</button>
+            <button id="compareBtn" style="background:#6b8c42;">📊 مقایسه با سفیدک سطحی</button>
+        </div>
+
+        <div class="info-panel" id="infoPanel"></div>
+        <footer>🔴 کپک خاکستری + لکه قهوه‌ای آب سوخته = بوتریتیس (کپک خاکستری)</footer>
+    </div>
+</div>
+
+<script>
+    (function() {
+        const leafGrad = document.getElementById('leafGrad');
+        const botrytisSpots = document.getElementById('botrytisSpots');
+        const grayMold = document.getElementById('grayMold');
+        const leafYellowing = document.getElementById('leafYellowing');
+        const marginNecrosis = document.getElementById('marginNecrosis');
+        const fruitSpots = document.getElementById('fruitSpots');
+        const fruitMold = document.getElementById('fruitMold');
+        const fruitRot = document.getElementById('fruitRot');
+        const midVein = document.getElementById('midVein');
+        const veinsGroup = document.getElementById('veinsGroup');
+        const trichomesGroup = document.getElementById('trichomesGroup');
+        
+        let currentStage = 0;
+        
+        function setSeverityVisual(severity) {
+            const hue = 85 - severity * 15;
+            const sat = 55 - severity * 12;
+            const light = 42 - severity * 10;
+            const stops = leafGrad.querySelectorAll('stop');
+            if (stops.length >= 3) {
+                stops[0].setAttribute('stop-color', `hsl(${hue}, ${sat}%, ${light+5}%)`);
+                stops[1].setAttribute('stop-color', `hsl(${hue-4}, ${sat-4}%, ${light-2}%)`);
+                stops[2].setAttribute('stop-color', `hsl(${hue-8}, ${sat-8}%, ${light-6}%)`);
+            }
+            
+            let spotOp = severity * 0.9;
+            botrytisSpots.setAttribute('opacity', Math.min(0.9, spotOp).toString());
+            
+            let moldOp = severity * 0.85;
+            grayMold.setAttribute('opacity', Math.min(0.7, moldOp).toString());
+            
+            let yellowOp = severity * 0.7;
+            leafYellowing.setAttribute('opacity', Math.min(0.6, yellowOp).toString());
+            
+            let necroOp = (severity > 0.4) ? (severity - 0.4) * 1.0 : 0;
+            marginNecrosis.setAttribute('opacity', Math.min(0.6, necroOp).toString());
+            
+            let fSpotOp = severity * 0.85;
+            fruitSpots.setAttribute('opacity', Math.min(0.9, fSpotOp).toString());
+            
+            let fMoldOp = severity * 0.8;
+            fruitMold.setAttribute('opacity', Math.min(0.65, fMoldOp).toString());
+            
+            let fRotOp = (severity > 0.6) ? (severity - 0.6) * 1.2 : 0;
+            fruitRot.setAttribute('opacity', Math.min(0.7, fRotOp).toString());
+            
+            const veinColor = (severity > 0.6) ? "#8a9a5a" : "#5b953c";
+            midVein.setAttribute('stroke', veinColor);
+            const allVeins = veinsGroup.querySelectorAll('path');
+            allVeins.forEach(p => p.setAttribute('stroke', (severity > 0.6) ? "#8a9a5a" : "#4b8231"));
+            trichomesGroup.setAttribute('stroke', severity > 0.5 ? "#a88f58" : "#b6a467");
+        }
+        
+        const stageDetails = [
+            {
+                name: "🌿 مرحله ۰: گیاه کاملاً سالم",
+                symptoms: "🔹 برگ: سبز سالم<br>🔹 میوه: قرمز یکدست",
+                science: "📗 شرایط مساعد برای بوتریتیس:<br>• دمای ۱۵-۲۵ درجه (خنک)<br>• رطوبت نسبی >85% (خیلی مرطوب)<br>• تهویه ضعیف<br>• زخم‌های روی گیاه (محل هرس، ترک میوه)",
+                control: "🛡️ پیشگیری:<br>• هرس اصولی (عدم ایجاد زخم بزرگ)<br>• تهویه مناسب<br>• آبیاری قطره‌ای (نه بارانی)<br>• حذف میوه‌های ترک خورده"
+            },
+            {
+                name: "⚠️ مرحله ۱: آلودگی خفیف",
+                symptoms: "🟤 برگ: لکه‌های کوچک قهوه‌ای آب سوخته (۱-۲ میلی‌متر) روی برگ‌های پایینی و زخم‌ها<br>🍅 میوه: بدون علائم",
+                science: "🔬 قارچ از طریق زخم‌ها و بافت‌های مرده وارد می‌شود. اسپورها در رطوبت ۱۰۰٪ در ۸-۱۲ ساعت جوانه می‌زنند.",
+                control: "💊 کنترل اولیه:<br>• ایپرودیون (روورال) ۱ کیلو/۱۰۰۰ لیتر<br>• حذف بافت‌های آلوده<br>• افزایش تهویه"
+            },
+            {
+                name: "🟤 مرحله ۲: آلودگی متوسط",
+                symptoms: "🟤 برگ: لکه‌های قهوه‌ای بزرگ (۵-۱۰ میلی‌متر)، شروع کپک خاکستری، زردی اطراف لکه‌ها<br>🌿 ساقه: زخم‌های قهوه‌ای در محل هرس<br>🍅 میوه: لکه قهوه‌ای در محل اتصال میوه به ساقه، شروع کپک خاکستری",
+                science: "🧪 قارچ در رطوبت بالا به سرعت گسترش می‌یابد. هر لکه تولید هزاران اسپور می‌کند.",
+                control: "💊 کنترل شیمیایی:<br>• ایپرودیون ۱ کیلو<br>• تیوفانات متیل ۱.۵ کیلو<br>• فلوودیوکسونیل ۰.۵ لیتر<br>(هر ۷-۱۰ روز)"
+            },
+            {
+                name: "🔴 مرحله ۳: آلودگی شدید",
+                symptoms: "🔴 برگ: لکه‌های بزرگ قهوه‌ای تیره، کپک خاکستری فراوان، نکروز گسترده، ریزش برگ<br>🌿 ساقه: لکه‌های سیاه کشیده، پوسیدگی طوقه<br>🍅 میوه: پوسیدگی کامل، کپک خاکستری، میوه غیرقابل مصرف",
+                science: "⚠️ کاهش محصول ۵۰-۷۰٪. میوه‌ها در انبار نیز پوسیده می‌شوند. قارچ روی بقایای گیاهی زمستان‌گذرانی می‌کند.",
+                control: "🌱 مدیریت اضطراری:<br>• برداشت میوه‌های سالم<br>• قارچکش سیستمیک (بوسکالید)<br>• تخریب بوته‌های شدیداً آلوده<br>• تناوب زراعی ۲-۳ ساله"
+            }
+        ];
+        
+        function goToStage(stage) {
+            currentStage = stage;
+            let intensity = 0;
+            if (stage === 0) intensity = 0;
+            if (stage === 1) intensity = 0.35;
+            if (stage === 2) intensity = 0.65;
+            if (stage === 3) intensity = 0.95;
+            
+            setSeverityVisual(intensity);
+            
+            const data = stageDetails[stage];
+            const infoDiv = document.getElementById('infoPanel');
+            infoDiv.innerHTML = `
+                <div class="stage-name">${data.name}</div>
+                <div class="section">
+                    <div class="section-title">🍃 علائم روی برگ، ساقه و میوه</div>
+                    <div class="section-content">${data.symptoms}</div>
+                </div>
+                <div class="section">
+                    <div class="section-title">🧫 شرایط مساعد و چرخه بیماری</div>
+                    <div class="section-content">${data.science}</div>
+                </div>
+                <div class="section">
+                    <div class="section-title">💊 روش‌های کنترل و درمان</div>
+                    <div class="section-content">${data.control}</div>
+                </div>
+            `;
+        }
+        
+        function showComparisonTable() {
+            const infoDiv = document.getElementById('infoPanel');
+            infoDiv.innerHTML = `
+                <div class="stage-name">📊 مقایسه بوتریتیس با سفیدک سطحی</div>
+                <table class="diff-table">
+                    <tr style="background:#e7ddce;"><th>ویژگی</th><th>بوتریتیس (کپک خاکستری)</th><th>سفیدک سطحی</th></tr>
+                    <tr><td>عامل بیماری</th><td>Botrytis cinerea</td><td>Leveillula taurica</td></tr>
+                    <tr><td>دمای مساعد</th><td style="color:#2266aa;">۱۵-۲۵ درجه (خنک)</td><td style="color:#aa6622;">۲۵-۳۰ درجه (گرم)</td></tr>
+                    <tr><td>رطوبت مورد نیاز</th><td style="color:#2266aa;">>85% (خیلی مرطوب)</td><td style="color:#aa6622;">۵۰-۷۰% (متوسط)</td></tr>
+                    <tr><td>رنگ کپک</th><td style="color:#aa6633;">خاکستری تیره</td><td style="color:#ddeeff;">سفید پودری</td></tr>
+                    <tr><td>شکل لکه</th><td>قهوه‌ای آب سوخته</td><td>زرد با پوشش سفید</td></tr>
+                    <tr><td>محل ظهور کپک</th><td>روی لکه‌های مرده</td><td>روی سطح برگ زنده</td></tr>
+                    <tr><td>آلودگی میوه</th><td style="color:#aa3322;">مستقیم و شدید</td><td>غیرمستقیم (کیفیت)</td></tr>
+                    <tr><td colspan="3" style="background:#fae6c3;">🔴 <strong>تشخیص سریع:</strong> کپک خاکستری + لکه قهوه‌ای = بوتریتیس | کپک سفید پودری = سفیدک سطحی</td></tr>
+                </table>
+                <hr>
+                <div class="section-content" style="text-align:center; margin-top:10px;">
+                    <button onclick="location.reload()" style="background:#bc9862; padding:6px 16px;">🔙 بازگشت به مراحل بیماری</button>
+                </div>
+            `;
+        }
+        
+        const btn = document.getElementById('stageBtn');
+        btn.addEventListener('click', () => {
+            let next = currentStage + 1;
+            if (next > 3) next = 0;
+            goToStage(next);
+        });
+        
+        const compareBtn = document.getElementById('compareBtn');
+        compareBtn.addEventListener('click', () => {
+            showComparisonTable();
+        });
+        
+        goToStage(0);
+    })();
+</script>
+</body>
+</html>
