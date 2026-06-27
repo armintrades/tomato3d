@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>🍅 دانشنامه کامل گوجه یارا | مهندسی مزرعه</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+        body {
+            background: #f4efe6;
+            font-family: system-ui, 'Segoe UI', 'Tahoma', sans-serif;
+            padding: 14px 12px 40px;
+        }
+        .app {
+            max-width: 550px;
+            margin: 0 auto;
+        }
+        .header {
+            background: linear-gradient(135deg, #1f4f2b, #0f3b1a);
+            border-radius: 40px;
+            padding: 20px 14px;
+            text-align: center;
+            color: #fff3df;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 18px rgba(0,0,0,0.15);
+        }
+        .header h1 {
+            font-size: 1.6rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        .badge {
+            background: #f5bc70;
+            color: #2d2b1e;
+            padding: 5px 12px;
+            border-radius: 60px;
+            font-size: 0.7rem;
+            display: inline-block;
+            margin-top: 6px;
+        }
+        .tabs {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 18px;
+        }
+        .tab-btn {
+            flex: 1;
+            background: #e7ddce;
+            border: none;
+            padding: 10px 6px;
+            border-radius: 60px;
+            font-weight: bold;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .tab-btn.active {
+            background: #c57f4a;
+            color: white;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        }
+        .section {
+            display: none;
+        }
+        .section.active-section {
+            display: block;
+        }
+        /* کارت‌ها (مشترک) */
+        .card {
+            background: white;
+            border-radius: 28px;
+            margin-bottom: 14px;
+            padding: 14px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            cursor: pointer;
+            border: 1px solid #e2d4c2;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            transition: 0.1s;
+        }
+        .card:active { transform: scale(0.99); background: #fffaf5; }
+        .card-info h3 {
+            font-size: 1.1rem;
+            color: #9b4f2c;
+        }
+        .card-info p {
+            font-size: 0.7rem;
+            color: #6c5a48;
+        }
+        .arrow {
+            font-size: 1.5rem;
+            color: #bc7a48;
+        }
+        /* مودال */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.8);
+            backdrop-filter: blur(4px);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            padding: 12px;
+        }
+        .modal-content {
+            background: #fffef9;
+            width: 100%;
+            max-width: 530px;
+            max-height: 88vh;
+            border-radius: 48px;
+            padding: 20px 18px 28px;
+            overflow-y: auto;
+            direction: rtl;
+        }
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            border-bottom: 2px solid #f0dbbc;
+            padding-bottom: 8px;
+            margin-bottom: 14px;
+        }
+        .modal-title {
+            font-size: 1.45rem;
+            font-weight: bold;
+            color: #b1451e;
+        }
+        .close-modal {
+            font-size: 2rem;
+            cursor: pointer;
+            color: #be7c48;
+        }
+        .section-detail {
+            margin: 16px 0;
+        }
+        .section-detail h4 {
+            font-size: 1rem;
+            color: #3c6b2c;
+            border-right: 4px solid #f3b33d;
+            padding-right: 12px;
+            margin-bottom: 8px;
+        }
+        .list-mini {
+            background: #faf6ed;
+            border-radius: 24px;
+            padding: 8px 14px;
+            list-style: none;
+        }
+        .list-mini li {
+            padding: 5px 0;
+            font-size: 0.8rem;
+        }
+        .table-mini {
+            background: #faf6ed;
+            border-radius: 24px;
+            padding: 8px;
+            width: 100%;
+            font-size: 0.75rem;
+            border-collapse: collapse;
+        }
+        .table-mini td, .table-mini th {
+            padding: 6px 4px;
+            border-bottom: 1px solid #e2d2bb;
+            text-align: right;
+        }
+        .copy-btn {
+            background: #e7dcc8;
+            border: none;
+            border-radius: 40px;
+            padding: 6px 16px;
+            font-size: 0.7rem;
+            margin-top: 12px;
+        }
+        .footer-modal {
+            font-size: 0.7rem;
+            text-align: center;
+            margin-top: 18px;
+            color: #a6794b;
+        }
+        @media (max-width: 450px) {
+            .modal-title { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="app">
+    <div class="header">
+        <h1>🌾🍅 دانشنامه گوجه یارا</h1>
+        <p>کاملترین مرجع | مراحل تخصصی + جزوه ۱۱ فصل</p>
+        <div class="badge">کلیک روی هر بخش → جزئیات مهندسی + کپی متن</div>
+    </div>
+
+    <div class="tabs">
+        <button class="tab-btn active" data-tab="stages">📌 مراحل تخصصی (۷ مرحله)</button>
+        <button class="tab-btn" data-tab="chapters">📘 جزوه کامل رقم یارا (۱۱ فصل)</button>
+    </div>
+
+    <!-- بخش اول: ۷ مرحله تخصصی (کد قبلی) -->
+    <div id="stagesSection" class="section active-section">
+        <div id="stagesList"></div>
+    </div>
+
+    <!-- بخش دوم: ۱۱ فصل جزوه -->
+    <div id="chaptersSection" class="section">
+        <div id="chaptersList"></div>
+    </div>
+</div>
+
+<div id="detailModal" class="modal">
+    <div class="modal-content" id="modalContent"></div>
+</div>
+
+<script>
+    // ======================= داده‌های ۷ مرحله تخصصی (کد قبلی شما) ===========================
+    const stagesData = [
+        { id:1, title:"تثبیت نشا و رشد ریشه", days:"۰ – ۷ روز", short:"پیشگیری از مرگ نشا، توسعه ریشه",
+          fertilizers:["کود فسفر بالا (P₂O₅ ≥ ۵۰%): ۲۰-۳۰ کیلو در هکتار","روت گرو (Root Grow): ۲ لیتر در هزار"],
+          mechanism:"فسفر بالا رشد غشای سلول ریشه. روت گرو هورمونی ریشه‌زایی",
+          optimal:"دمای خاک ۱۸-۲۲°C، EC آب ۱.۲-۱.۵ ds/m",
+          warning:"آبیاری سنگین = پوسیدگی ریشه. از نیتروژن بالا خودداری",
+          mix:"فسفر را جدا از کلسیم و روی مخلوط کنید" },
+        { id:2, title:"رشد رویشی", days:"۸ – ۲۰ روز", short:"توسعه شاخ و برگ",
+          fertilizers:["کود ۲۰-۲۰-۲۰: ۳-۴ کیلو در هکتار","اوره پریل: ۵ کیلو (یک نوبت)","سولفات منیزیم: ۱.۵ کیلو"],
+          foliar:"فولیک اسید + میکرو کامل + آمینو اسید هر ۱۰ روز",
+          mechanism:"نیتروژن بالا سنتز کلروفیل، منیزیم مرکز کلروفیل",
+          optimal:"دمای روز ۲۲-۲۶°C، EC ۱.۸-۲.۲",
+          warning:"اوره اضافه = ساقه طویل و ضعیف",
+          mix:"اوره و منیزیم قابل اختلاط" },
+        { id:3, title:"قبل گلدهی", days:"۲۰ – ۲۵ روز", short:"آماده‌سازی القای گل",
+          fertilizers:["سوپر فیوتاپ: ۱.۵ لیتر در هزار","کود ۱۰-۵۲-۱۰: ۱۵ کیلو در هکتار"],
+          mechanism:"فسفر (+۵۲) سنتز ATP، جیبرلین فعال‌کننده گل",
+          optimal:"نور ۱۴-۱۶ ساعت، کاهش نیتروژن",
+          warning:"دمای بالای ۳۲°C گلدهی مختل می‌شود",
+          mix:"۱۰-۵۲-۱۰ را با کلسیم مخلوط نکنید" },
+        { id:4, title:"موج اصلی گلدهی", days:"۳۸ – ۴۲ روز", short:"گرده افشانی و تثبیت گل",
+          fertilizers:["اکورمون: ۱ لیتر در هزار","کلسیم بور: ۱.۵ کیلو","سول پتاس: ۱۰ کیلو","پروشا ویژه: ۰.۵ لیتر"],
+          mechanism:"بور برای رشد توبول گرده، کلسیم استحکام دیواره",
+          optimal:"رطوبت ۵۵-۶۵%، دمای شب ۱۵-۱۸°C",
+          warning:"کمبود بور = ریزش گل",
+          mix:"کلسیم بور را جدا از سولفات‌ها" },
+        { id:5, title:"تشکیل میوه", days:"۴۵ – ۶۰ روز", short:"تثبیت میوه‌های جوان",
+          fertilizers:["فروتالیو: ۱.۵ لیتر در هزار","سول پتاس تزریقی: ۸ کیلو هر ده روز"],
+          mechanism:"پتاسیم فعال‌کننده آنزیم‌های سنتز نشاسته",
+          optimal:"EC آب ۲.۲-۲.۵ ds/m",
+          warning:"کمبود پتاسیم = میوه کوچک",
+          mix:"فروتالیو با سول پتاس قابل اختلاط" },
+        { id:6, title:"رشد میوه", days:"۶۰ – ۸۰ روز", short:"افزایش حجم میوه",
+          fertilizers:["جلبک دریایی: ۲ لیتر در هزار","آمینو اسید: ۱.۵ لیتر","سولفات پتاسیم: ۱۲ کیلو + منیزیم ۵ کیلو"],
+          mechanism:"جلبک بتائین + هورمون ضد استرس",
+          optimal:"دمای شب بالای ۱۸°C",
+          warning:"تغییرات شدید دمایی = ترک میوه",
+          mix:"سولفات پتاسیم و منیزیم مخلوط می‌شوند" },
+        { id:7, title:"رنگ‌گیری و قرمزی", days:"۸۰ روز تا برداشت", short:"تولید لیکوپن",
+          fertilizers:["منیزیم ۵ کیلو","ایسی لایف: ۱ لیتر در هزار","K60: ۲ لیتر در هزار"],
+          mechanism:"منیزیم تجزیه کلروفیل و فعال‌سازی لیکوپن",
+          optimal:"دمای روز ۲۵-۳۰°C",
+          warning:"گرمای بالای ۳۵°C توقف لیکوپن",
+          mix:"K60 را با منیزیم مخلوط کنید" }
+    ];
+
+    // ======================= داده‌های ۱۱ فصل جزوه (خلاصه کامل) ===========================
+    const chaptersData = [
+        { id:0, title:"فصل ۰: مقدمه و مشخصات رقم یارا", summary:"رقم هیبرید F1، وزن ۱۸۰-۲۲۰ گرم، عملکرد ۷۰-۱۰۰ تن، مقاوم به فوزاریوم رگ ۱ و ۲",
+          detail:`<div class='section-detail'><h4>📌 خصوصیات کلیدی</h4><ul class='list-mini'><li>نوع رشد نامحدود، رسیدگی ۷۵-۸۵ روز</li><li>فاصله کاشت ۵۰×۱۲۰ سانتی (۲۰-۲۲ هزار بوته)</li><li>دمای روز ۲۲-۲۸، شب ۱۴-۱۸°C</li><li>کود پایه: سوپر فسفات تریپل ۲۰۰ کیلو + سولفات پتاسیم ۱۰۰ کیلو در هکتار</li><li>نقاط قوت: مقاوم به گرما، کیفیت عالی | ضعف: حساس به بلایت دیررس، نیاز به داربست</li></ul></div>` },
+        { id:1, title:"فصل ۱: آماده‌سازی زمین و کاشت نشا", summary:"شخم عمیق ۳۰-۴۰ سانتی، کود دامی ۳۰-۴۰ تن، پشته‌سازی، نشا ۳۰-۴۵ روزه",
+          detail:`<div class='section-detail'><h4>🧪 مراحل کلیدی</h4><ul class='list-mini'><li>شخم + دیسک + پشته عرض ۶۰، ارتفاع ۳۰</li><li>مالچ پلاستیک مشکی توصیه می‌شود</li><li>نشا استاندارد: ۶-۸ برگ واقعی، ساقه به ضخامت مداد</li><li>کاشت به عمق ۱۰ سانتی تا زیر برگ اول</li><li>آبیاری روز اول و دوم هر بوته ۱ لیتر</li></ul></div>` },
+        { id:2, title:"فصل ۲: برنامه هفته به هفته کوددهی", summary:"جدول اوره، K60، کلسیم، منیزیم هفته ۱ تا ۱۶ (مقادیر در ۱۰۰۰ لیتر)",
+          detail:`<div class='section-detail'><h4>📊 خلاصه کوددهی (کیلو در ۱۰۰۰ لیتر)</h4>
+          <table class='table-mini'><tr><th>هفته</th><th>اوره</th><th>K60</th><th>کلسیم</th><th>منیزیم</th></tr>
+          <tr><td>۱-۴</td><td>۲.۵</td><td>۱.۵</td><td>۰</td><td>۱</td></tr>
+          <tr><td>۵</td><td>۲</td><td>۲</td><td>۰</td><td>۱</td></tr>
+          <tr><td>۶</td><td>۱.۵</td><td>۲.۵</td><td>۱</td><td>۱</td></tr>
+          <tr><td>۷-۸</td><td>۱</td><td>۳</td><td>۱-۲</td><td>۱</td></tr>
+          <tr><td>۹-۱۰</td><td>۰.۷۵</td><td>۳.۵</td><td>۱.۵</td><td>۰.۷۵</td></tr>
+          <tr><td>۱۱</td><td>۰.۵</td><td>۴</td><td>۱</td><td>۰.۵</td></tr>
+          <tr><td>۱۲</td><td>۰</td><td>۳</td><td>۰.۵</td><td>۰.۵</td></tr>
+          <tr><td>۱۳-۱۵</td><td>۰</td><td>۲-۲.۵</td><td>۰</td><td>۰-۰.۵</td></tr>
+          </table>
+          <div><h4>💧 محلول‌پاشی</h4><ul class='list-mini'><li>هفته ۶: کلسیم ۲ کیلو + بور ۱۰۰ گرم</li><li>هفته ۹: K60 ۲ کیلو + منیزیم ۰.۵</li><li>هفته ۱۳: K60 ۲ کیلو</li></ul></div>` },
+        { id:3, title:"فصل ۳: برنامه آبیاری", summary:"نیاز آبی ۳-۷ میلی‌متر در روز، حساس‌ترین مرحله گلدهی",
+          detail:`<div class='section-detail'><h4>⏱️ آبیاری هفتگی</h4><ul class='list-mini'><li>هفته ۱-۲: روزانه سبک (۳۰-۴۵ دقیقه قطره‌ای)</li><li>هفته ۳-۵: هر ۳ روز (۴ نوبت، ۲ ساعت)</li><li>هفته ۶-۱۱: ۵ نوبت (۲-۲.۵ ساعت) بحرانی</li><li>هفته ۱۲-۱۳: ۳ نوبت (کاهش ۴۰%)</li><li>هفته ۱۴-۱۵: ۲ نوبت (کاهش ۵۰%)</li><li>۱۰ روز قبل از برداشت نهایی: قطع آبیاری برای شیرینی</li></ul></div>` },
+        { id:4, title:"فصل ۴: هرس و داربست", summary:"هرس هفتگی پاجوش، هرس برگ پایین تا ۶۰ سانتی، سرزنی هفته ۱۲",
+          detail:`<div class='section-detail'><h4>✂️ برنامه هرس</h4><ul class='list-mini'><li>هفته ۴ شروع هرس پاجوش (همیشه هر هفته)</li><li>هرس برگ پایین هفته ۴:۲۰ سانتی، هفته ۶:۳۰، هفته ۸:۴۰، هفته ۱۰:۵۰، هفته ۱۲:۶۰ سانتی</li><li>سرزنی: هفته ۱۲ (۲ برگ بالای آخرین خوشه)</li><li>تنک میوه: هر خوشه ۴-۵ میوه</li><li>داربست چوبی یا فلزی، بستن آزاد هر ۲۰ سانتی</li></ul></div>` },
+        { id:5, title:"فصل ۵: سمپاشی پیشگیرانه", summary:"تناوب: مانکوزب، مس، متالاکسیل، آزوکسی استروبین، فنامیدون",
+          detail:`<div class='section-detail'><h4>🧴 برنامه هفتگی (در ۱۰۰۰ لیتر)</h4><table class='table-mini'><tr><th>هفته</th><th>سم</th><th>مقدار</th></tr>
+          <tr><td>۲</td><td>مانکوزب</td><td>۲ کیلو</td></tr><tr><td>۴</td><td>مس</td><td>۲ کیلو</td></tr>
+          <tr><td>۶</td><td>متالاکسیل+مانکوزب</td><td>۲ کیلو</td></tr><tr><td>۸</td><td>آزوکسی استروبین</td><td>۰.۷۵ لیتر</td></tr>
+          <tr><td>۱۰</td><td>مس+گوگرد</td><td>۲ کیلو+۲ لیتر</td></tr><tr><td>۱۲</td><td>فنامیدون+مانکوزب</td><td>۲ کیلو</td></tr>
+          <tr><td>۱۴</td><td>مس (آخر)</td><td>۲ کیلو</td></tr></table><div class='list-mini'>⚠️ دوره کارنس حداقل ۷ روز تا برداشت</div></div>` },
+        { id:6, title:"فصل ۶: تشخیص و درمان ۱۰ بیماری", summary:"بلایت دیررس (قاتل)، بلایت زودرس، سفیدک، فوزاریوم، آنتراکنوز، پوسیدگی گلگاه، ...",
+          detail:`<div class='section-detail'><h4>🦠 مهمترین بیماری‌ها</h4><ul class='list-mini'><li><strong>بلایت دیررس:</strong> لکه آب سوخته + سفید کرکی زیر برگ → متالاکسیل+مانکوزب</li>
+          <li><strong>بلایت زودرس:</strong> لکه هدف‌مانند → مانکوزب</li>
+          <li><strong>سفیدک سطحی:</strong> پودر سفید روی برگ → گوگرد مایع</li>
+          <li><strong>پوسیدگی گلگاه:</strong> ته میوه سیاه فرورفته → نیترات کلسیم محلول‌پاشی</li>
+          <li><strong>آنتراکنوز:</strong> لکه قیری سیاه → آزوکسی استروبین</li>
+          <li><strong>فوزاریوم:</strong> زردی یک طرفه، آوند قهوه‌ای → قابل درمان نیست (پیشگیری با رقم مقاوم)</li></ul></div>` },
+        { id:7, title:"فصل ۷: تشخیص و درمان ۵ آفت مهم", summary:"مگس سفید، شته، کنه، کرم میوه، مینوز برگ",
+          detail:`<div class='section-detail'><h4>🐛 آفات و درمان</h4><ul class='list-mini'><li><strong>مگس سفید:</strong> تله زرد + پیمتروزین ۲۰۰ گرم</li>
+          <li><strong>شته:</strong> پیمتروزین ۲۰۰ گرم</li>
+          <li><strong>کنه:</strong> آبامکتین ۵۰۰ میلی‌لیتر</li>
+          <li><strong>کرم میوه:</strong> ایندوکساکارب ۳۰۰ گرم</li>
+          <li><strong>مینوز برگ:</strong> سییرومازین ۵۰۰ گرم</li></ul></div>` },
+        { id:8, title:"فصل ۸: برداشت و پس از برداشت", summary:"برداشت صبح زود، درجه‌بندی، بسته‌بندی، نگهداری در ۱۲-۱۵ درجه",
+          detail:`<div class='section-detail'><h4>⏰ نکات برداشت</h4><ul class='list-mini'><li>برداشت وقتی قرمز یکدست (۸۰-۹۰%)، با قیچی و کاسبرگ</li><li>درجه یک: لوکس، درجه دو: بازاری، درجه سه: صنعتی</li><li>دمای نگهداری ۱۲-۱۵ درجه، رطوبت ۸۵-۹۰%</li><li>قطع آبیاری ۱۰ روز قبل از برداشت نهایی برای شیرینی بیشتر</li></ul></div>` },
+        { id:9, title:"فصل ۹: پاسخ به سوالات رایج", summary:"۲۰ سوال مهم: زمان قطع نیتروژن، علت ترک خوردگی، شیرینی، کمبود کلسیم، تفاوت کودهای پتاسیم",
+          detail:`<div class='section-detail'><h4>❓ منتخب سوالات</h4><ul class='list-mini'><li><strong>زمان قطع نیتروژن؟</strong> هفته ۱۲ (شروع رسیدگی)</li>
+          <li><strong>ترک خوردگی میوه؟</strong> آبیاری نامنظم یا نیتروژن زیاد</li>
+          <li><strong>ریز ماندن میوه؟</strong> کمبود پتاسیم، هرس نکردن پاجوش</li>
+          <li><strong>شیرینی کم؟</strong> پتاسیم کم، نیتروژن زیاد در رسیدگی</li>
+          <li><strong>کمبود کلسیم؟</strong> پوسیدگی گلگاه → نیترات کلسیم محلول‌پاشی</li></ul></div>` },
+        { id:10, title:"فصل ۱۰: جمع‌بندی نهایی و تقویم یک صفحه‌ای", summary:"خلاصه همه جداول، قانون‌های طلایی، چک‌لیست روزانه و هفتگی",
+          detail:`<div class='section-detail'><h4>📌 قانون‌های طلایی</h4><ul class='list-mini'><li>۱. نیتروژن را از هفته ۱۲ قطع کن</li><li>۲. پتاسیم را هیچ وقت قطع نکن</li><li>۳. کلسیم را هفته ۶ تا ۱۲ حتماً بده</li><li>۴. هر هفته پاجوش بزن</li><li>۵. سمپاشی پیشگیرانه هر ۲ هفته</li><li>۶. آبیاری صبح زود</li><li>۷. داربست بزن (عملکرد ×۲)</li><li>۸. تناوب زراعی ۳ سال</li></ul></div>` }
+    ];
+
+    // رندر مراحل
+    const stagesContainer = document.getElementById("stagesList");
+    function renderStages() {
+        stagesContainer.innerHTML = "";
+        stagesData.forEach(s => {
+            const card = document.createElement("div");
+            card.className = "card";
+            card.innerHTML = `<div class="card-info"><h3>📌 مرحله ${s.id} : ${s.title}</h3><p>⏱️ ${s.days} | ${s.short.substring(0,50)}</p></div><div class="arrow">📖</div>`;
+            card.addEventListener("click", () => openStageModal(s));
+            stagesContainer.appendChild(card);
+        });
+    }
+
+    function openStageModal(stage) {
+        let fertHtml = `<div class='section-detail'><h4>🧪 کودها</h4><ul class='list-mini'>`;
+        stage.fertilizers.forEach(f => fertHtml += `<li>🌱 ${f}</li>`);
+        fertHtml += `</ul></div>`;
+        let foliarHtml = stage.foliar ? `<div class='section-detail'><h4>💧 محلول‌پاشی</h4><ul class='list-mini'><li>✨ ${stage.foliar}</li></ul></div>` : "";
+        const modalHtml = `
+            <div class="modal-header"><span class="modal-title">مرحله ${stage.id} : ${stage.title}</span><span class="close-modal" id="closeModalBtn">&times;</span></div>
+            <div class="badge-tech" style="background:#d9e2c0; display:inline-block; padding:2px 10px; border-radius:20px;">⏱️ ${stage.days}</div>
+            <div class='section-detail'><h4>📖 شرح فنی</h4><p>${stage.short} — ${stage.mechanism}</p></div>
+            ${fertHtml}${foliarHtml}
+            <div class='section-detail'><h4>🌡️ شرایط بهینه</h4><ul class='list-mini'><li>🔬 ${stage.optimal}</li></ul></div>
+            <div class='section-detail'><h4>⚠️ هشدارها</h4><ul class='list-mini'><li>⚠️ ${stage.warning}</li></ul></div>
+            ${stage.mix ? `<div class='section-detail'><h4>🧫 دستور اختلاط</h4><ul class='list-mini'><li>🔁 ${stage.mix}</li></ul></div>` : ""}
+            <button class="copy-btn" id="copyModalBtn">📋 کپی متن</button>
+            <div class="footer-modal">🌾 منبع: دانشنامه مهندسی گوجه یارا</div>
+        `;
+        document.getElementById("modalContent").innerHTML = modalHtml;
+        const modal = document.getElementById("detailModal");
+        modal.style.display = "flex";
+        document.getElementById("closeModalBtn").onclick = () => modal.style.display = "none";
+        modal.onclick = (e) => { if(e.target === modal) modal.style.display = "none"; };
+        document.getElementById("copyModalBtn").onclick = () => {
+            let txt = `${stage.title}\n${stage.days}\n${stage.short}\nکودها: ${stage.fertilizers.join(", ")}\n${stage.mechanism}`;
+            navigator.clipboard.writeText(txt).then(() => alert("کپی شد"));
+        };
+    }
+
+    // رندر فصول
+    const chaptersContainer = document.getElementById("chaptersList");
+    function renderChapters() {
+        chaptersContainer.innerHTML = "";
+        chaptersData.forEach(ch => {
+            const card = document.createElement("div");
+            card.className = "card";
+            card.innerHTML = `<div class="card-info"><h3>📘 ${ch.title}</h3><p>${ch.summary.substring(0,70)}...</p></div><div class="arrow">📖</div>`;
+            card.addEventListener("click", () => openChapterModal(ch));
+            chaptersContainer.appendChild(card);
+        });
+    }
+
+    function openChapterModal(ch) {
+        const modalHtml = `
+            <div class="modal-header"><span class="modal-title">${ch.title}</span><span class="close-modal" id="closeModalBtnCh">&times;</span></div>
+            ${ch.detail}
+            <button class="copy-btn" id="copyModalBtnCh">📋 کپی متن خلاصه</button>
+            <div class="footer-modal">🌾 بر اساس جزوه تخصصی رقم یارا</div>
+        `;
+        document.getElementById("modalContent").innerHTML = modalHtml;
+        const modal = document.getElementById("detailModal");
+        modal.style.display = "flex";
+        document.getElementById("closeModalBtnCh").onclick = () => modal.style.display = "none";
+        modal.onclick = (e) => { if(e.target === modal) modal.style.display = "none"; };
+        document.getElementById("copyModalBtnCh").onclick = () => {
+            let text = `${ch.title}\n${ch.summary}`;
+            navigator.clipboard.writeText(text).then(() => alert("کپی شد"));
+        };
+    }
+
+    // تب‌ها
+    const tabBtns = document.querySelectorAll(".tab-btn");
+    const sections = { stages: document.getElementById("stagesSection"), chapters: document.getElementById("chaptersSection") };
+    tabBtns.forEach(btn => {
+        btn.addEventListener("click", () => {
+            tabBtns.forEach(b => b.classList.remove("active"));
+            btn.classList.add("active");
+            const which = btn.getAttribute("data-tab");
+            sections.stages.classList.remove("active-section");
+            sections.chapters.classList.remove("active-section");
+            if (which === "stages") sections.stages.classList.add("active-section");
+            else sections.chapters.classList.add("active-section");
+        });
+    });
+
+    renderStages();
+    renderChapters();
+</script>
+</body>
+</html>
