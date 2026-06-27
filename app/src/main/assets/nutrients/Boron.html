@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>برگ گوجه فرنگی - کمبود بور (B) | آموزش کامل</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: linear-gradient(145deg, #1b3d2a, #0d2a1a);
+            font-family: 'Segoe UI', 'Vazirmatn', Tahoma, system-ui, sans-serif;
+            padding: 12px;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .master {
+            max-width: 750px;
+            width: 100%;
+            background: #27261cd9;
+            backdrop-filter: blur(4px);
+            border-radius: 2rem;
+            padding: 12px;
+            box-shadow: 0 12px 28px black;
+        }
+        .card {
+            background: #fef8ec;
+            border-radius: 1.8rem;
+            padding: 1rem;
+            box-shadow: inset 0 0 0 1px #fff9e8, 0 6px 14px rgba(0,0,0,0.2);
+        }
+        .title {
+            text-align: center;
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #2b7220;
+            text-shadow: 1px 1px 0 #e2f0cf;
+        }
+        .sub {
+            text-align: center;
+            font-size: 0.75rem;
+            color: #b47c44;
+            border-bottom: 2px dashed #dabd88;
+            display: inline-block;
+            width: auto;
+            margin: 0 auto 12px auto;
+            padding-bottom: 4px;
+        }
+        .svg-container {
+            background: #e7ddc4;
+            border-radius: 1.2rem;
+            padding: 8px;
+            text-align: center;
+            margin: 8px 0;
+            box-shadow: inset 0 0 0 2px #fef5e2, 0 4px 10px rgba(0,0,0,0.15);
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        svg {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            border-radius: 1rem;
+        }
+        .button-area {
+            display: flex;
+            justify-content: center;
+            margin: 12px 0;
+        }
+        button {
+            background: #c08545;
+            border: none;
+            color: white;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 2rem;
+            font-size: 0.85rem;
+            cursor: pointer;
+            font-family: inherit;
+            transition: 0.2s;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+        button:active {
+            transform: scale(0.96);
+        }
+        .info-panel {
+            background: #efe4cf;
+            border-radius: 1.2rem;
+            padding: 0.9rem;
+            margin-top: 12px;
+            border-right: 5px solid #aa7942;
+            text-align: right;
+            font-size: 0.75rem;
+            max-height: 55vh;
+            overflow-y: auto;
+        }
+        .stage-name {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #4a3920;
+            background: #fdf1df;
+            padding: 4px 10px;
+            border-radius: 2rem;
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+        .section {
+            margin-top: 10px;
+            background: #faf3e3;
+            padding: 8px;
+            border-radius: 1rem;
+        }
+        .section-title {
+            font-weight: bold;
+            color: #6b3f1c;
+            border-right: 3px solid #c6904b;
+            padding-right: 8px;
+            margin-bottom: 6px;
+            font-size: 0.8rem;
+        }
+        .section-content {
+            line-height: 1.45;
+            color: #2c2a1a;
+        }
+        hr {
+            margin: 8px 0;
+            border-color: #dbbc87;
+        }
+        .highlight {
+            background: #f5e6c4;
+            padding: 2px 6px;
+            border-radius: 12px;
+            font-weight: bold;
+        }
+        .warning-box {
+            background: #fae6c3;
+            border-right: 4px solid #c67a2e;
+            padding: 6px 10px;
+            border-radius: 12px;
+            margin-top: 8px;
+            font-size: 0.7rem;
+        }
+        footer {
+            text-align: center;
+            font-size: 0.6rem;
+            color: #aa956b;
+            margin-top: 10px;
+        }
+        @media (max-width: 500px) {
+            .master { padding: 8px; }
+            .card { padding: 0.7rem; }
+            .title { font-size: 1.2rem; }
+            .info-panel { font-size: 0.7rem; max-height: 50vh; }
+            .section-title { font-size: 0.75rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="master">
+    <div class="card">
+        <div class="title">🍅 برگ گوجه‌فرنگی | کمبود بور (B)</div>
+        <div style="text-align: center;"><div class="sub">ترک خوردگی ساقه + تغییر شکل برگ + ریزش گل و میوه</div></div>
+
+        <div class="svg-container">
+            <svg id="tomatoLeafSvg" viewBox="0 0 600 700" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <filter id="shadow" x="-10%" y="-10%" width="130%" height="130%">
+                        <feDropShadow dx="2" dy="5" stdDeviation="4" flood-color="#2d2a1a" flood-opacity="0.25"/>
+                    </filter>
+                    <filter id="veinGlow"><feGaussianBlur stdDeviation="1"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+                    <linearGradient id="leafGrad" x1="20%" y1="0%" x2="80%" y2="100%">
+                        <stop offset="0%" stop-color="#6daa44"/><stop offset="60%" stop-color="#468a2e"/><stop offset="100%" stop-color="#2d6b1e"/>
+                    </linearGradient>
+                    <linearGradient id="petioleGrad" x1="0" y1="0" x2="1" y2="0">
+                        <stop offset="0%" stop-color="#8b744b"/><stop offset="100%" stop-color="#b4925e"/>
+                    </linearGradient>
+                </defs>
+                <g filter="url(#shadow)">
+                    <!-- دمبرگ Petiole با ترک خوردگی و شکنندگی -->
+                    <path id="petiolePath" d="M300,510 C285,545 270,585 285,640 Q295,670 310,685" stroke="url(#petioleGrad)" stroke-width="14" fill="none" stroke-linecap="round"/>
+                    <path id="petioleInner" d="M300,510 C310,540 325,585 312,640" stroke="#b7975f" stroke-width="3" fill="none" opacity="0.5"/>
+
+                    <!-- ترک‌های دمبرگ (نشانه کمبود بور) -->
+                    <g id="cracksOnPetiole" opacity="0">
+                        <line x1="295" y1="560" x2="308" y2="565" stroke="#7a4e2a" stroke-width="1.5" stroke-dasharray="2 2"/>
+                        <line x1="290" y1="590" x2="305" y2="595" stroke="#7a4e2a" stroke-width="1.5" stroke-dasharray="2 2"/>
+                        <line x1="288" y1="610" x2="302" y2="615" stroke="#7a4e2a" stroke-width="1.5" stroke-dasharray="2 2"/>
+                        <line x1="292" y1="630" x2="308" y2="633" stroke="#7a4e2a" stroke-width="1.5" stroke-dasharray="2 2"/>
+                        <line x1="296" y1="650" x2="310" y2="652" stroke="#7a4e2a" stroke-width="1.5" stroke-dasharray="2 2"/>
+                    </g>
+
+                    <!-- پهنک برگ -->
+                    <g id="leafGroup">
+                        <path id="leafBlade" d="M300,160 C340,175 375,200 405,240 C425,268 442,298 448,330 C452,358 450,385 440,410 C425,445 400,475 372,500 C355,514 335,525 312,525 C290,525 270,514 253,500 C225,475 200,445 185,410 C175,385 173,358 177,330 C183,298 200,268 220,240 C250,200 285,175 300,160Z" fill="url(#leafGrad)" stroke="#3e6827" stroke-width="1.8"/>
+
+                        <!-- تغییر شکل برگ (ضخیم، شکننده، بدشکل) -->
+                        <g id="leafDeformation" opacity="0">
+                            <!-- چروکیدگی و بدشکلی برگ -->
+                            <path d="M320,200 Q340,220 335,260" stroke="#8a7a4a" stroke-width="1.5" fill="none" opacity="0.6"/>
+                            <path d="M280,210 Q260,240 265,280" stroke="#8a7a4a" stroke-width="1.5" fill="none" opacity="0.6"/>
+                            <path d="M350,290 Q370,310 360,350" stroke="#8a7a4a" stroke-width="1.5" fill="none" opacity="0.6"/>
+                            <path d="M255,300 Q235,330 245,370" stroke="#8a7a4a" stroke-width="1.5" fill="none" opacity="0.6"/>
+                            <path d="M370,370 Q385,400 375,440" stroke="#8a7a4a" stroke-width="1.5" fill="none" opacity="0.6"/>
+                            <path d="M240,380 Q225,410 235,450" stroke="#8a7a4a" stroke-width="1.5" fill="none" opacity="0.6"/>
+                            <!-- برگ پیچ خورده -->
+                            <path d="M300,180 Q320,200 310,230 Q300,260 290,240 Q280,220 300,180" stroke="#9a8a5a" stroke-width="1" fill="none" opacity="0.5"/>
+                        </g>
+
+                        <!-- نکروز نوک برگ -->
+                        <g id="tipNecrosis" opacity="0">
+                            <ellipse cx="300" cy="165" rx="18" ry="12" fill="#7a3e1c" opacity="0.8"/>
+                            <ellipse cx="300" cy="162" rx="10" ry="6" fill="#8a4e2c" opacity="0.9"/>
+                        </g>
+
+                        <!-- رگبرگ اصلی -->
+                        <path id="midVein" d="M300,170 Q293,280 300,520" stroke="#5b953c" stroke-width="4.5" fill="none" stroke-linecap="round" filter="url(#veinGlow)"/>
+                        <path id="midVeinInner" d="M300,170 Q295,280 300,520" stroke="#a3df78" stroke-width="1.4" fill="none"/>
+
+                        <!-- رگبرگ فرعی -->
+                        <g id="veinsGroup" stroke="#4b8231" fill="none" stroke-linecap="round">
+                            <path d="M300,210 Q330,225 355,240" stroke-width="2.6"/><path d="M300,210 Q270,225 245,240" stroke-width="2.6"/>
+                            <path d="M300,260 Q345,275 385,295" stroke-width="2.8"/><path d="M300,260 Q255,275 215,295" stroke-width="2.8"/>
+                            <path d="M300,320 Q355,340 410,365" stroke-width="3"/><path d="M300,320 Q245,340 190,365" stroke-width="3"/>
+                            <path d="M300,380 Q350,395 395,425" stroke-width="2.6"/><path d="M300,380 Q250,395 205,425" stroke-width="2.6"/>
+                            <path d="M300,440 Q335,455 365,485" stroke-width="2.4"/><path d="M300,440 Q265,455 235,485" stroke-width="2.4"/>
+                            <path d="M345,270 Q370,280 395,272" stroke-width="1.2" opacity="0.75"/><path d="M255,270 Q230,280 205,272" stroke-width="1.2" opacity="0.75"/>
+                            <path d="M360,330 Q390,340 425,330" stroke-width="1.3" opacity="0.8"/><path d="M240,330 Q210,340 175,330" stroke-width="1.3" opacity="0.8"/>
+                        </g>
+
+                        <!-- تریکوم -->
+                        <g id="trichomesGroup" stroke="#b6a467" fill="none" stroke-width="0.8" opacity="0.9">
+                            <path d="M380,230 L390,225"/><circle cx="390" cy="225" r="1.1" fill="#cfb572"/>
+                            <path d="M410,280 L422,272"/><circle cx="422" cy="272" r="1.2" fill="#cfb572"/>
+                            <path d="M435,340 L448,332"/><circle cx="448" cy="332" r="1.2" fill="#cfb572"/>
+                            <path d="M420,400 L433,395"/><circle cx="433" cy="395" r="1.1" fill="#cfb572"/>
+                            <path d="M380,460 L390,455"/><circle cx="390" cy="455" r="1.1" fill="#cfb572"/>
+                            <path d="M220,230 L210,225"/><circle cx="210" cy="225" r="1.1" fill="#cfb572"/>
+                            <path d="M190,280 L178,272"/><circle cx="178" cy="272" r="1.2" fill="#cfb572"/>
+                            <path d="M165,340 L152,332"/><circle cx="152" cy="332" r="1.2" fill="#cfb572"/>
+                            <path d="M180,400 L168,395"/><circle cx="168" cy="395" r="1.1" fill="#cfb572"/>
+                            <path d="M220,460 L210,455"/><circle cx="210" cy="455" r="1.1" fill="#cfb572"/>
+                        </g>
+
+                        <!-- روزنه‌ها -->
+                        <g id="stomataGroup" fill="#6a8c50" opacity="0.4">
+                            <ellipse cx="340" cy="260" rx="1.3" ry="2" transform="rotate(15 340 260)"/>
+                            <ellipse cx="320" cy="290" rx="1.2" ry="1.9" transform="rotate(-20 320 290)"/>
+                            <ellipse cx="370" cy="310" rx="1.4" ry="2.1" transform="rotate(30 370 310)"/>
+                            <ellipse cx="290" cy="330" rx="1.3" ry="2" transform="rotate(-10 290 330)"/>
+                            <ellipse cx="410" cy="350" rx="1.2" ry="1.9" transform="rotate(10 410 350)"/>
+                            <ellipse cx="220" cy="280" rx="1.4" ry="2.1" transform="rotate(-25 220 280)"/>
+                            <ellipse cx="260" cy="400" rx="1.3" ry="2" transform="rotate(5 260 400)"/>
+                            <ellipse cx="350" cy="430" rx="1.2" ry="1.9" transform="rotate(20 350 430)"/>
+                        </g>
+                    </g>
+                </g>
+            </svg>
+        </div>
+
+        <div class="button-area">
+            <button id="stageBtn">🌱 مراحل کمبود بور (سالم ← شدید)</button>
+        </div>
+
+        <div class="info-panel" id="infoPanel">
+            <!-- محتوای داینامیک توسط JS پر می‌شود -->
+        </div>
+        <footer>🔍 هر بار کلیک، شدت کمبود بور افزایش می‌یابد. علائم: ترک خوردگی دمبرگ، تغییر شکل برگ، نکروز نوک، ریزش گل و میوه.</footer>
+    </div>
+</div>
+
+<script>
+    (function() {
+        // گرفتن المان‌های SVG
+        const leafGrad = document.getElementById('leafGrad');
+        const cracksOnPetiole = document.getElementById('cracksOnPetiole');
+        const leafDeformation = document.getElementById('leafDeformation');
+        const tipNecrosis = document.getElementById('tipNecrosis');
+        const midVein = document.getElementById('midVein');
+        const veinsGroup = document.getElementById('veinsGroup');
+        const trichomesGroup = document.getElementById('trichomesGroup');
+        const petiolePath = document.getElementById('petiolePath');
+        
+        let currentStage = 0;  // 0:سالم, 1:خفیف, 2:متوسط, 3:شدید
+        
+        function setSeverityVisual(severity) {
+            // رنگ برگ: زردی خفیف تا شدید
+            const hue = 85 - severity * 20;
+            const sat = 55 - severity * 12;
+            const light = 42 - severity * 6;
+            const stops = leafGrad.querySelectorAll('stop');
+            if (stops.length >= 3) {
+                stops[0].setAttribute('stop-color', `hsl(${hue}, ${sat}%, ${light+5}%)`);
+                stops[1].setAttribute('stop-color', `hsl(${hue-5}, ${sat-5}%, ${light-2}%)`);
+                stops[2].setAttribute('stop-color', `hsl(${hue-10}, ${sat-10}%, ${light-6}%)`);
+            }
+            
+            // ترک خوردگی دمبرگ
+            let cracksOp = severity * 0.9;
+            cracksOnPetiole.setAttribute('opacity', Math.min(0.85, cracksOp).toString());
+            
+            // تغییر شکل برگ (ضخیم و شکننده)
+            let deformOp = (severity > 0.3) ? (severity - 0.3) * 1.2 : 0;
+            leafDeformation.setAttribute('opacity', Math.min(0.8, deformOp).toString());
+            
+            // نکروز نوک برگ
+            let tipNecrOp = (severity > 0.4) ? (severity - 0.4) * 1.3 : 0;
+            tipNecrosis.setAttribute('opacity', Math.min(0.9, tipNecrOp).toString());
+            
+            // رگبرگ‌ها
+            const veinColor = (severity > 0.6) ? "#8a8a4a" : "#5b953c";
+            midVein.setAttribute('stroke', veinColor);
+            const allVeins = veinsGroup.querySelectorAll('path');
+            allVeins.forEach(p => p.setAttribute('stroke', (severity > 0.6) ? "#8a8a4a" : "#4b8231"));
+            
+            // دمبرگ شکننده و ترک خورده
+            if (severity > 0.5) {
+                petiolePath.setAttribute('stroke', "#b08050");
+            } else {
+                petiolePath.setAttribute('stroke', "url(#petioleGrad)");
+            }
+            
+            // تریکوم
+            trichomesGroup.setAttribute('stroke', severity > 0.5 ? "#a88f58" : "#b6a467");
+        }
+        
+        const stageDetails = [
+            {
+                name: "🌿 مرحله ۰: برگ کاملاً سالم (بدون کمبود بور)",
+                glossary: "✅ <strong>تعریف اجزای برگ:</strong><br> • <strong>پهنک برگ (Blade):</strong> قسمت سبز و پهن که عمل فتوسنتز را انجام می‌دهد.<br> • <strong>دمبرگ (Petiole):</strong> ساقه‌ای که برگ را به ساقه اصلی متصل می‌کند.<br> • <strong>رگبرگ اصلی (Midvein):</strong> رگ ضخیم وسط برگ.<br> • <strong>رگبرگ فرعی (Secondary Veins):</strong> انشعابات ریزتر.<br> • <strong>تریکوم (Trichomes):</strong> کرک‌های ریز غده‌ای محافظ.<br> • <strong>روزنه (Stomata):</strong> منافذ ریز برای تبادل گاز.<br><br>🧪 <strong>بور (B) چه کاری انجام می‌دهد؟</strong><br> بور برای تشکیل دیواره سلولی، تقسیم سلولی، جوانه‌زنی گرده و رشد نوک ریشه و ساقه ضروری است. در گیاه سالم، ساقه‌ها محکم، برگ‌ها طبیعی و میوه‌دهی خوب است.",
+                symptoms: "🔹 <strong>علائم قابل مشاهده:</strong> سبزی یکدست، دمبرگ بدون ترک، برگ‌ها با شکل طبیعی، رشد نرمال.",
+                science: "📗 <strong>علت فیزیولوژیک:</strong> بور کافی در دسترس است. دیواره سلولی محکم، تقسیم سلولی منظم، رشد جوانه انتهایی طبیعی. گرده‌افشانی و میوه‌دهی به خوبی انجام می‌شود."
+            },
+            {
+                name: "⚠️ مرحله ۱: کمبود خفیف بور (آغاز علائم)",
+                glossary: "همان اجزای بالا – اکنون ترک‌های خفیف روی دمبرگ و کمی بدشکلی برگ شروع می‌شود.",
+                symptoms: "🟡 رشد نوک ساقه کمی کند شده. ترک‌های ریز روی دمبرگ. برگ‌های جدید کمی ضخیم‌تر و شکننده. ممکن است ریزش خفیف گل دیده شود.",
+                science: "🔬 <strong>دلیل علمی:</strong> بور برای تقسیم سلولی در مریستم ضروری است. با کاهش بور، دیواره سلولی ضعیف می‌شود ← ترک خوردگی دمبرگ. رشد جوانه انتهایی مختل می‌شود."
+            },
+            {
+                name: "🥀 مرحله ۲: کمبود متوسط بور (علائم آشکار)",
+                glossary: "تمامی اجزا – اکنون ترک‌های واضح روی دمبرگ، بدشکلی برگ، ریزش گل و میوه.",
+                symptoms: "ترک خوردگی واضح و شکنندگی دمبرگ. برگ‌های جدید ضخیم، بدشکل و شکننده. نکروز نوک برگ. ریزش گل و میوه. رشد متوقف شده.",
+                science: "🧪 <strong>دلیل علمی:</strong> کمبود بور متوسط: دیواره سلولی به شدت ضعیف شده، سلول‌ها توانایی تقسیم ندارند ← بدشکلی برگ و ترک ساقه. جوانه انتهایی ممکن است بمیرد. گرده‌افشانی مختل ← ریزش گل و میوه."
+            },
+            {
+                name: "🔴 مرحله ۳: کمبود شدید بور (پیشرفته، بحرانی)",
+                glossary: "همه قسمت‌های گیاه درگیر: ترک‌های عمیق، برگ‌های بدشکل و شکننده، مرگ نوک ساقه.",
+                symptoms: "دمبرگ و ساقه اصلی ترک خورده و شکننده. برگ‌های جدید بسیار بدشکل، ضخیم و شکننده. نکروز گسترده نوک برگ و حاشیه. مرگ جوانه انتهایی. ریزش کامل گل‌ها و میوه‌های کوچک. رشد کامل متوقف.",
+                science: "⚠️ <strong>دلیل علمی:</strong> کمبود حاد بور: دیواره سلولی فرو می‌ریزد، مریستم انتهایی از بین می‌رود. سلول‌ها توانایی ترمیم ندارند. گیاه قادر به تولید برگ، گل و میوه جدید نیست. گیاه در آستانه مرگ است."
+            }
+        ];
+        
+        function goToStage(stage) {
+            currentStage = stage;
+            let intensity = 0;
+            if (stage === 0) intensity = 0;
+            if (stage === 1) intensity = 0.35;
+            if (stage === 2) intensity = 0.65;
+            if (stage === 3) intensity = 0.95;
+            
+            setSeverityVisual(intensity);
+            
+            const data = stageDetails[stage];
+            const infoDiv = document.getElementById('infoPanel');
+            infoDiv.innerHTML = `
+                <div class="stage-name">${data.name}</div>
+                <div class="section">
+                    <div class="section-title">📖 آموزش اجزای برگ و نقش بور</div>
+                    <div class="section-content">${data.glossary}</div>
+                </div>
+                <div class="section">
+                    <div class="section-title">🔍 علائم ظاهری در این مرحله (کمبود بور)</div>
+                    <div class="section-content">${data.symptoms}</div>
+                </div>
+                <div class="section">
+                    <div class="section-title">🧠 علت علمی (فیزیولوژی کمبود بور)</div>
+                    <div class="section-content">${data.science}</div>
+                </div>
+                <div class="warning-box">
+                    💡 <span class="highlight">نکته مهم - علائم اختصاصی کمبود بور:</span><br>
+                    • <strong>ترک خوردگی و شکنندگی دمبرگ و ساقه</strong> (علامت بسیار مشخص)<br>
+                    • <strong>توقف رشد نوک ساقه و مرگ مریستم انتهایی</strong><br>
+                    • <strong>ریزش گل و میوه</strong> (گرده‌افشانی مختل می‌شود)<br>
+                    • برگ‌های جدید <strong>ضخیم، شکننده و بدشکل</strong> می‌شوند
+                </div>
+                <div class="warning-box" style="margin-top:6px;">
+                    🧪 <span class="highlight">علت شایع کمبود بور:</span><br>
+                    خاک‌های شنی با مواد آلی کم، آبیاری بیش از حد (شستشوی بور)، خاک‌های آهکی. راه حل: اسید بوریک (H₃BO₃) به صورت محلول‌پاشی (توجه: سمیت بور در مقادیر کم!).
+                </div>
+                <hr>
+                <div class="section-content" style="font-size:0.7rem; color:#5c481f;">
+                    💡 با هر کلیک، شدت کمبود بور افزایش می‌یابد. در مراحل شدید، ترک‌های دمبرگ و بدشکلی برگ واضح است.
+                </div>
+            `;
+        }
+        
+        const btn = document.getElementById('stageBtn');
+        btn.addEventListener('click', () => {
+            let next = currentStage + 1;
+            if (next > 3) next = 0;
+            goToStage(next);
+        });
+        
+        goToStage(0);
+    })();
+</script>
+</body>
+</html>
