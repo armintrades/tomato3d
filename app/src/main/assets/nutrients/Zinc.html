@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>برگ گوجه فرنگی - کمبود روی (Zn) اصلاح شده | آموزش کامل</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: linear-gradient(145deg, #1b3d2a, #0d2a1a);
+            font-family: 'Segoe UI', 'Vazirmatn', Tahoma, system-ui, sans-serif;
+            padding: 12px;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .master {
+            max-width: 750px;
+            width: 100%;
+            background: #27261cd9;
+            backdrop-filter: blur(4px);
+            border-radius: 2rem;
+            padding: 12px;
+            box-shadow: 0 12px 28px black;
+        }
+        .card {
+            background: #fef8ec;
+            border-radius: 1.8rem;
+            padding: 1rem;
+            box-shadow: inset 0 0 0 1px #fff9e8, 0 6px 14px rgba(0,0,0,0.2);
+        }
+        .title {
+            text-align: center;
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #2b7220;
+            text-shadow: 1px 1px 0 #e2f0cf;
+        }
+        .sub {
+            text-align: center;
+            font-size: 0.75rem;
+            color: #b47c44;
+            border-bottom: 2px dashed #dabd88;
+            display: inline-block;
+            width: auto;
+            margin: 0 auto 12px auto;
+            padding-bottom: 4px;
+        }
+        .svg-container {
+            background: #e7ddc4;
+            border-radius: 1.2rem;
+            padding: 8px;
+            text-align: center;
+            margin: 8px 0;
+            box-shadow: inset 0 0 0 2px #fef5e2, 0 4px 10px rgba(0,0,0,0.15);
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        svg {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            border-radius: 1rem;
+        }
+        .button-area {
+            display: flex;
+            justify-content: center;
+            margin: 12px 0;
+        }
+        button {
+            background: #c08545;
+            border: none;
+            color: white;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 2rem;
+            font-size: 0.85rem;
+            cursor: pointer;
+            font-family: inherit;
+            transition: 0.2s;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+        button:active {
+            transform: scale(0.96);
+        }
+        .info-panel {
+            background: #efe4cf;
+            border-radius: 1.2rem;
+            padding: 0.9rem;
+            margin-top: 12px;
+            border-right: 5px solid #aa7942;
+            text-align: right;
+            font-size: 0.75rem;
+            max-height: 55vh;
+            overflow-y: auto;
+        }
+        .stage-name {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #4a3920;
+            background: #fdf1df;
+            padding: 4px 10px;
+            border-radius: 2rem;
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+        .section {
+            margin-top: 10px;
+            background: #faf3e3;
+            padding: 8px;
+            border-radius: 1rem;
+        }
+        .section-title {
+            font-weight: bold;
+            color: #6b3f1c;
+            border-right: 3px solid #c6904b;
+            padding-right: 8px;
+            margin-bottom: 6px;
+            font-size: 0.8rem;
+        }
+        .section-content {
+            line-height: 1.45;
+            color: #2c2a1a;
+        }
+        hr {
+            margin: 8px 0;
+            border-color: #dbbc87;
+        }
+        .highlight {
+            background: #f5e6c4;
+            padding: 2px 6px;
+            border-radius: 12px;
+            font-weight: bold;
+        }
+        .warning-box {
+            background: #fae6c3;
+            border-right: 4px solid #c67a2e;
+            padding: 6px 10px;
+            border-radius: 12px;
+            margin-top: 8px;
+            font-size: 0.7rem;
+        }
+        footer {
+            text-align: center;
+            font-size: 0.6rem;
+            color: #aa956b;
+            margin-top: 10px;
+        }
+        @media (max-width: 500px) {
+            .master { padding: 8px; }
+            .card { padding: 0.7rem; }
+            .title { font-size: 1.2rem; }
+            .info-panel { font-size: 0.7rem; max-height: 50vh; }
+            .section-title { font-size: 0.75rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="master">
+    <div class="card">
+        <div class="title">🍅 برگ گوجه‌فرنگی | کمبود روی (Zn) - اصلاح شده</div>
+        <div style="text-align: center;"><div class="sub">ریزبرگی (کوچکی برگ) + زردی + رنگ برنزی</div></div>
+
+        <div class="svg-container">
+            <svg id="tomatoLeafSvg" viewBox="0 0 600 700" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <filter id="shadow" x="-10%" y="-10%" width="130%" height="130%">
+                        <feDropShadow dx="2" dy="5" stdDeviation="4" flood-color="#2d2a1a" flood-opacity="0.25"/>
+                    </filter>
+                    <filter id="veinGlow"><feGaussianBlur stdDeviation="1"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+                    <linearGradient id="leafGrad" x1="20%" y1="0%" x2="80%" y2="100%">
+                        <stop offset="0%" stop-color="#6daa44"/><stop offset="60%" stop-color="#468a2e"/><stop offset="100%" stop-color="#2d6b1e"/>
+                    </linearGradient>
+                    <linearGradient id="petioleGrad" x1="0" y1="0" x2="1" y2="0">
+                        <stop offset="0%" stop-color="#8b744b"/><stop offset="100%" stop-color="#b4925e"/>
+                    </linearGradient>
+                </defs>
+                <g filter="url(#shadow)">
+                    <!-- دمبرگ Petiole - اصلاح شده با سایزهای مختلف در JS -->
+                    <path id="petiolePath" stroke="url(#petioleGrad)" stroke-width="13" fill="none" stroke-linecap="round"/>
+                    
+                    <!-- گروه اصلی برگ که سایز آن تغییر می‌کند -->
+                    <g id="leafGroup">
+                        <!-- پهنک برگ Blade -->
+                        <path id="leafBlade" d="M300,190 C330,202 355,225 378,258 C393,278 405,305 408,330 C410,350 408,372 400,392 C388,418 368,442 348,462 C335,474 320,485 305,490 C290,485 275,474 262,462 C242,442 222,418 210,392 C202,372 200,350 202,330 C205,305 217,278 232,258 C255,225 280,202 300,190Z" fill="url(#leafGrad)" stroke="#3e6827" stroke-width="1.8"/>
+
+                        <!-- کلروز بین رگبرگی -->
+                        <g id="interveinalChlorosis" opacity="0">
+                            <ellipse cx="340" cy="270" rx="22" ry="18" fill="#e8df6a" opacity="0.65"/>
+                            <ellipse cx="370" cy="320" rx="20" ry="22" fill="#e0d55a" opacity="0.6"/>
+                            <ellipse cx="280" cy="290" rx="20" ry="20" fill="#e8df6a" opacity="0.6"/>
+                            <ellipse cx="310" cy="360" rx="24" ry="18" fill="#ddd055" opacity="0.55"/>
+                            <ellipse cx="260" cy="350" rx="18" ry="16" fill="#e0d55a" opacity="0.55"/>
+                            <ellipse cx="380" cy="390" rx="18" ry="15" fill="#ddd055" opacity="0.5"/>
+                        </g>
+
+                        <!-- رنگ برنزی/بنفش -->
+                        <g id="bronzeColor" opacity="0">
+                            <ellipse cx="340" cy="300" rx="35" ry="30" fill="#b87a45" opacity="0.35"/>
+                            <ellipse cx="280" cy="340" rx="30" ry="28" fill="#a86a35" opacity="0.3"/>
+                            <ellipse cx="370" cy="380" rx="28" ry="22" fill="#b87a45" opacity="0.3"/>
+                            <ellipse cx="310" cy="420" rx="32" ry="20" fill="#a86a35" opacity="0.25"/>
+                        </g>
+
+                        <!-- نکروز -->
+                        <g id="necrosisGroup" opacity="0">
+                            <ellipse cx="350" cy="320" rx="8" ry="6" fill="#7a4e2a" opacity="0.5"/>
+                            <ellipse cx="280" cy="380" rx="10" ry="7" fill="#7a4e2a" opacity="0.45"/>
+                            <ellipse cx="380" cy="410" rx="7" ry="5" fill="#7a4e2a" opacity="0.4"/>
+                        </g>
+
+                        <!-- رگبرگ اصلی -->
+                        <path id="midVein" d="M300,200 Q295,290 302,480" stroke="#5b953c" stroke-width="4" fill="none" stroke-linecap="round" filter="url(#veinGlow)"/>
+                        <path id="midVeinInner" d="M300,200 Q297,290 302,480" stroke="#a3df78" stroke-width="1.2" fill="none"/>
+
+                        <!-- رگبرگ فرعی -->
+                        <g id="veinsGroup" stroke="#4b8231" fill="none" stroke-linecap="round">
+                            <path d="M300,230 Q322,240 340,252" stroke-width="2.4"/><path d="M300,230 Q278,240 260,252" stroke-width="2.4"/>
+                            <path d="M300,270 Q335,282 360,300" stroke-width="2.6"/><path d="M300,270 Q265,282 240,300" stroke-width="2.6"/>
+                            <path d="M300,320 Q345,338 385,360" stroke-width="2.8"/><path d="M300,320 Q255,338 215,360" stroke-width="2.8"/>
+                            <path d="M300,370 Q340,385 370,410" stroke-width="2.5"/><path d="M300,370 Q260,385 230,410" stroke-width="2.5"/>
+                            <path d="M300,420 Q325,432 345,455" stroke-width="2.2"/><path d="M300,420 Q275,432 255,455" stroke-width="2.2"/>
+                        </g>
+
+                        <!-- تریکوم -->
+                        <g id="trichomesGroup" stroke="#b6a467" fill="none" stroke-width="0.8" opacity="0.9">
+                            <path d="M380,230 L390,225"/><circle cx="390" cy="225" r="1.1" fill="#cfb572"/>
+                            <path d="M410,280 L422,272"/><circle cx="422" cy="272" r="1.2" fill="#cfb572"/>
+                            <path d="M435,340 L448,332"/><circle cx="448" cy="332" r="1.2" fill="#cfb572"/>
+                            <path d="M420,400 L433,395"/><circle cx="433" cy="395" r="1.1" fill="#cfb572"/>
+                            <path d="M380,460 L390,455"/><circle cx="390" cy="455" r="1.1" fill="#cfb572"/>
+                            <path d="M220,230 L210,225"/><circle cx="210" cy="225" r="1.1" fill="#cfb572"/>
+                            <path d="M190,280 L178,272"/><circle cx="178" cy="272" r="1.2" fill="#cfb572"/>
+                            <path d="M165,340 L152,332"/><circle cx="152" cy="332" r="1.2" fill="#cfb572"/>
+                            <path d="M180,400 L168,395"/><circle cx="168" cy="395" r="1.1" fill="#cfb572"/>
+                            <path d="M220,460 L210,455"/><circle cx="210" cy="455" r="1.1" fill="#cfb572"/>
+                        </g>
+
+                        <!-- روزنه‌ها -->
+                        <g id="stomataGroup" fill="#6a8c50" opacity="0.4">
+                            <ellipse cx="340" cy="260" rx="1.3" ry="2" transform="rotate(15 340 260)"/>
+                            <ellipse cx="320" cy="290" rx="1.2" ry="1.9" transform="rotate(-20 320 290)"/>
+                            <ellipse cx="370" cy="310" rx="1.4" ry="2.1" transform="rotate(30 370 310)"/>
+                            <ellipse cx="290" cy="330" rx="1.3" ry="2" transform="rotate(-10 290 330)"/>
+                            <ellipse cx="410" cy="350" rx="1.2" ry="1.9" transform="rotate(10 410 350)"/>
+                            <ellipse cx="220" cy="280" rx="1.4" ry="2.1" transform="rotate(-25 220 280)"/>
+                            <ellipse cx="260" cy="400" rx="1.3" ry="2" transform="rotate(5 260 400)"/>
+                            <ellipse cx="350" cy="430" rx="1.2" ry="1.9" transform="rotate(20 350 430)"/>
+                        </g>
+                    </g>
+                </g>
+            </svg>
+        </div>
+
+        <div class="button-area">
+            <button id="stageBtn">🌱 مراحل کمبود روی (سالم ← شدید)</button>
+        </div>
+
+        <div class="info-panel" id="infoPanel">
+            <!-- محتوای داینامیک توسط JS پر می‌شود -->
+        </div>
+        <footer>🔍 هر بار کلیک، شدت کمبود روی افزایش می‌یابد. در مرحله شدید برگ کوچک می‌شود (ریزبرگی) اما اجزا متناسب با همان اندازه بازطراحی می‌شوند.</footer>
+    </div>
+</div>
+
+<script>
+    (function() {
+        // گرفتن المان‌های SVG
+        const leafGrad = document.getElementById('leafGrad');
+        const leafGroup = document.getElementById('leafGroup');
+        const interveinalChlorosis = document.getElementById('interveinalChlorosis');
+        const bronzeColor = document.getElementById('bronzeColor');
+        const necrosisGroup = document.getElementById('necrosisGroup');
+        const midVein = document.getElementById('midVein');
+        const midVeinInner = document.getElementById('midVeinInner');
+        const veinsGroup = document.getElementById('veinsGroup');
+        const trichomesGroup = document.getElementById('trichomesGroup');
+        const petiolePath = document.getElementById('petiolePath');
+        
+        let currentStage = 0;  // 0:سالم, 1:خفیف, 2:متوسط, 3:شدید
+        
+        // تابع تغییر ظاهر SVG بر اساس شدت کمبود روی (0 تا 1)
+        function setSeverityVisual(severity) {
+            // ========== 1. تغییر سایز برگ (ریزبرگی) بدون تخریب اجزا ==========
+            // برگ در کمبود شدید کوچک می‌شود، اما از مرکز خود (300, 340) مقیاس می‌خورد
+            const scale = 1 - severity * 0.45;  // حداکثر 55% اندازه اصلی
+            const centerX = 300;
+            const centerY = 340;
+            // تبدیل: ابتدا به مرکز برو، مقیاس بده، برگرد
+            leafGroup.setAttribute('transform', `translate(${centerX}, ${centerY}) scale(${scale}) translate(${-centerX}, ${-centerY})`);
+            
+            // ========== 2. تغییر رنگ برگ ==========
+            const hue = 85 - severity * 25;
+            const sat = 55 - severity * 10;
+            const light = 42 - severity * 5;
+            const stops = leafGrad.querySelectorAll('stop');
+            if (stops.length >= 3) {
+                stops[0].setAttribute('stop-color', `hsl(${hue}, ${sat}%, ${light+5}%)`);
+                stops[1].setAttribute('stop-color', `hsl(${hue-5}, ${sat-5}%, ${light-2}%)`);
+                stops[2].setAttribute('stop-color', `hsl(${hue-10}, ${sat-10}%, ${light-6}%)`);
+            }
+            
+            // ========== 3. علائم ==========
+            // کلروز بین رگبرگی
+            let interveinalOp = severity * 0.85;
+            interveinalChlorosis.setAttribute('opacity', Math.min(0.8, interveinalOp).toString());
+            
+            // رنگ برنزی/بنفش (در شدت‌های بالاتر)
+            let bronzeOp = (severity > 0.4) ? (severity - 0.4) * 1.0 : 0;
+            bronzeColor.setAttribute('opacity', Math.min(0.6, bronzeOp).toString());
+            
+            // نکروز (فقط در شدت خیلی زیاد)
+            let necroOp = (severity > 0.75) ? (severity - 0.75) * 1.8 : 0;
+            necrosisGroup.setAttribute('opacity', Math.min(0.5, necroOp).toString());
+            
+            // ========== 4. رگبرگ‌ها ==========
+            const veinColor = (severity > 0.5) ? "#8a9a4a" : "#5b953c";
+            midVein.setAttribute('stroke', veinColor);
+            midVeinInner.setAttribute('stroke', (severity > 0.5) ? "#b0c080" : "#a3df78");
+            
+            const allVeins = veinsGroup.querySelectorAll('path');
+            allVeins.forEach(p => p.setAttribute('stroke', (severity > 0.5) ? "#8a9a4a" : "#4b8231"));
+            
+            // ========== 5. دمبرگ (کوتاه و ضخیم می‌شود) ==========
+            if (severity > 0.3) {
+                let shortY = 535 + severity * 20;
+                let shortEnd = 685 - severity * 35;
+                petiolePath.setAttribute('d', `M300,${shortY} C288,${shortY+20} 278,${shortY+45} 288,${shortEnd} Q296,${shortEnd+20} 310,${shortEnd+10}`);
+                petiolePath.setAttribute('stroke-width', (13 + severity * 6).toString());
+            } else {
+                petiolePath.setAttribute('d', `M300,535 C288,560 278,590 288,640 Q296,665 310,675`);
+                petiolePath.setAttribute('stroke-width', "13");
+            }
+            
+            // تریکوم
+            trichomesGroup.setAttribute('stroke', severity > 0.5 ? "#a88f58" : "#b6a467");
+        }
+        
+        // داده‌های توضیحی برای هر مرحله
+        const stageDetails = [
+            {
+                name: "🌿 مرحله ۰: برگ کاملاً سالم (بدون کمبود روی)",
+                glossary: "✅ <strong>تعریف اجزای برگ:</strong><br> • <strong>پهنک برگ (Blade):</strong> قسمت سبز و پهن که عمل فتوسنتز را انجام می‌دهد.<br> • <strong>دمبرگ (Petiole):</strong> ساقه‌ای که برگ را به ساقه اصلی متصل می‌کند.<br> • <strong>رگبرگ اصلی (Midvein):</strong> رگ ضخیم وسط برگ.<br> • <strong>رگبرگ فرعی (Secondary Veins):</strong> انشعابات ریزتر.<br> • <strong>تریکوم (Trichomes):</strong> کرک‌های ریز غده‌ای محافظ.<br> • <strong>روزنه (Stomata):</strong> منافذ ریز برای تبادل گاز.<br><br>🧪 <strong>روی (Zn) چه کاری انجام می‌دهد؟</strong><br> روی برای سنتز اکسین (هورمون رشد) و فعال‌سازی آنزیم‌ها ضروری است. در گیاه سالم، برگ‌ها با اندازه طبیعی، سبز و شاداب هستند.",
+                symptoms: "🔹 <strong>علائم قابل مشاهده:</strong> سبزی یکدست، برگ‌ها با اندازه طبیعی، فاصله میان‌گره‌ها نرمال.",
+                science: "📗 <strong>علت فیزیولوژیک:</strong> روی کافی در دسترس است. اکسین به خوبی ساخته می‌شود، تقسیم سلولی منظم، رشد طبیعی."
+            },
+            {
+                name: "⚠️ مرحله ۱: کمبود خفیف روی (آغاز علائم)",
+                glossary: "همان اجزای بالا – اکنون برگ‌های جوان کمی کوچک‌تر و زردی خفیف بین رگبرگ‌ها دیده می‌شود.",
+                symptoms: "🟡 برگ‌های جدید کمی کوچک‌تر از حد طبیعی. زردی خفیف بین رگبرگ‌ها. رشد کمی کند شده است.",
+                science: "🔬 <strong>دلیل علمی:</strong> روی برای سنتز اکسین ضروری است. با کاهش روی، تولید اکسین کاهش می‌یابد ← برگ‌ها کوچک می‌شوند (ریزبرگی خفیف)."
+            },
+            {
+                name: "🟡 مرحله ۲: کمبود متوسط روی (علائم آشکار)",
+                glossary: "تمامی اجزا – اکنون ریزبرگی واضح، زردی شدید و فاصله میان‌گره‌ها کوتاه شده است.",
+                symptoms: "برگ‌های جدید کوچک و باریک (ریزبرگی). زردی شدید بین رگبرگ‌ها. گیاه کوتوله و فشرده. برگ‌ها رنگ برنزی خفیف پیدا می‌کنند.",
+                science: "🧪 <strong>دلیل علمی:</strong> کمبود روی متوسط: اکسین کاهش یافته، کلروفیل کاهش، تجمع قندها ← رنگ برنزی."
+            },
+            {
+                name: "🔴 مرحله ۳: کمبود شدید روی (پیشرفته، بحرانی) - ریزبرگی شدید",
+                glossary: "همه قسمت‌های برگ درگیر: برگ بسیار ریز و بدشکل، رنگ برنزی تا بنفش، نکروز خفیف.",
+                symptoms: "برگ‌های جدید بسیار ریز، باریک و بدشکل. برگ‌ها رنگ برنزی تا بنفش تیره دارند. فاصله میان‌گره‌ها بسیار کوتاه (گیاه کوتوله). رشد کامل متوقف.",
+                science: "⚠️ <strong>دلیل علمی:</strong> کمبود حاد روی: تولید اکسین متوقف، تقسیم سلولی غیرفعال، فتوسنتز متوقف، گیاه در آستانه مرگ."
+            }
+        ];
+        
+        function goToStage(stage) {
+            currentStage = stage;
+            let intensity = 0;
+            if (stage === 0) intensity = 0;
+            if (stage === 1) intensity = 0.35;
+            if (stage === 2) intensity = 0.65;
+            if (stage === 3) intensity = 0.95;
+            
+            setSeverityVisual(intensity);
+            
+            const data = stageDetails[stage];
+            const infoDiv = document.getElementById('infoPanel');
+            infoDiv.innerHTML = `
+                <div class="stage-name">${data.name}</div>
+                <div class="section">
+                    <div class="section-title">📖 آموزش اجزای برگ و نقش روی</div>
+                    <div class="section-content">${data.glossary}</div>
+                </div>
+                <div class="section">
+                    <div class="section-title">🔍 علائم ظاهری در این مرحله (کمبود روی)</div>
+                    <div class="section-content">${data.symptoms}</div>
+                </div>
+                <div class="section">
+                    <div class="section-title">🧠 علت علمی (فیزیولوژی کمبود روی)</div>
+                    <div class="section-content">${data.science}</div>
+                </div>
+                <div class="warning-box">
+                    💡 <span class="highlight">علامت اختصاصی کمبود روی: ریزبرگی (Little Leaf)</span><br>
+                    • برگ‌های جدید بسیار کوچک و باریک می‌شوند.<br>
+                    • فاصله میان‌گره‌ها کوتاه ← گیاه فشرده و کوتوله.<br>
+                    • در مرحله شدید، برگ به ۵۰-۶۰٪ اندازه طبیعی می‌رسد.
+                </div>
+                <hr>
+                <div class="section-content" style="font-size:0.7rem; color:#5c481f;">
+                    💡 با هر کلیک، شدت کمبود روی افزایش می‌یابد. پس از مرحله شدید، دوباره به حالت سالم برمی‌گردد.
+                </div>
+            `;
+        }
+        
+        const btn = document.getElementById('stageBtn');
+        btn.addEventListener('click', () => {
+            let next = currentStage + 1;
+            if (next > 3) next = 0;
+            goToStage(next);
+        });
+        
+        goToStage(0);
+    })();
+</script>
+</body>
+</html>
