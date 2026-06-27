@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>شته گوجه فرنگی (Aphid) | آفت خطرناک</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: linear-gradient(145deg, #1b3d2a, #0d2a1a);
+            font-family: 'Segoe UI', 'Vazirmatn', Tahoma, system-ui, sans-serif;
+            padding: 12px;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .master {
+            max-width: 750px;
+            width: 100%;
+            background: #27261cd9;
+            backdrop-filter: blur(4px);
+            border-radius: 2rem;
+            padding: 12px;
+            box-shadow: 0 12px 28px black;
+        }
+        .card {
+            background: #fef8ec;
+            border-radius: 1.8rem;
+            padding: 1rem;
+            box-shadow: inset 0 0 0 1px #fff9e8, 0 6px 14px rgba(0,0,0,0.2);
+        }
+        .title {
+            text-align: center;
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #9b4b2c;
+            text-shadow: 1px 1px 0 #e2d5c0;
+        }
+        .sub {
+            text-align: center;
+            font-size: 0.75rem;
+            color: #b47c44;
+            border-bottom: 2px dashed #dabd88;
+            display: inline-block;
+            width: auto;
+            margin: 0 auto 12px auto;
+            padding-bottom: 4px;
+        }
+        .svg-container {
+            background: #e7ddc4;
+            border-radius: 1.2rem;
+            padding: 8px;
+            text-align: center;
+            margin: 8px 0;
+            box-shadow: inset 0 0 0 2px #fef5e2, 0 4px 10px rgba(0,0,0,0.15);
+            min-height: 640px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        svg {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            border-radius: 1rem;
+        }
+        .button-area {
+            display: flex;
+            justify-content: center;
+            margin: 12px 0;
+        }
+        button {
+            background: #c08545;
+            border: none;
+            color: white;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 2rem;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: 0.2s;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+        button:active { transform: scale(0.96); }
+        .info-panel {
+            background: #efe4cf;
+            border-radius: 1.2rem;
+            padding: 0.9rem;
+            margin-top: 12px;
+            border-right: 5px solid #aa7942;
+            text-align: right;
+            font-size: 0.75rem;
+            max-height: 55vh;
+            overflow-y: auto;
+        }
+        .stage-name {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #4a3920;
+            background: #fdf1df;
+            padding: 4px 10px;
+            border-radius: 2rem;
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+        .section {
+            margin-top: 10px;
+            background: #faf3e3;
+            padding: 8px;
+            border-radius: 1rem;
+        }
+        .section-title {
+            font-weight: bold;
+            color: #6b3f1c;
+            border-right: 3px solid #c6904b;
+            padding-right: 8px;
+            margin-bottom: 6px;
+            font-size: 0.8rem;
+        }
+        .section-content { line-height: 1.45; color: #2c2a1a; }
+        hr { margin: 8px 0; border-color: #dbbc87; }
+        .highlight { background: #f5e6c4; padding: 2px 6px; border-radius: 12px; font-weight: bold; }
+        footer {
+            text-align: center;
+            font-size: 0.6rem;
+            color: #aa956b;
+            margin-top: 10px;
+        }
+        @media (max-width: 500px) {
+            .master { padding: 8px; }
+            .card { padding: 0.7rem; }
+            .title { font-size: 1.2rem; }
+            .info-panel { font-size: 0.7rem; max-height: 50vh; }
+            .section-title { font-size: 0.75rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="master">
+    <div class="card">
+        <div class="title">🍅 شته (Aphid) | Aphis gossypii</div>
+        <div style="text-align: center;"><div class="sub">ناقل ویروس‌ها | آفت بسیار شایع در هرمزگان ⚠️</div></div>
+
+        <div class="svg-container">
+            <svg id="aphidSvg" viewBox="0 0 600 750" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <filter id="shadow" x="-10%" y="-10%" width="130%" height="130%">
+                        <feDropShadow dx="2" dy="5" stdDeviation="4" flood-color="#2d2a1a" flood-opacity="0.25"/>
+                    </filter>
+                    <filter id="veinGlow"><feGaussianBlur stdDeviation="1"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+                    <linearGradient id="leafGrad" x1="20%" y1="0%" x2="80%" y2="100%">
+                        <stop offset="0%" stop-color="#6daa44"/><stop offset="60%" stop-color="#468a2e"/><stop offset="100%" stop-color="#2d6b1e"/>
+                    </linearGradient>
+                    <linearGradient id="fruitGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#e84030"/><stop offset="50%" stop-color="#cc3020"/><stop offset="100%" stop-color="#aa2518"/>
+                    </linearGradient>
+                    <linearGradient id="petioleGrad" x1="0" y1="0" x2="1" y2="0">
+                        <stop offset="0%" stop-color="#8b744b"/><stop offset="100%" stop-color="#b4925e"/>
+                    </linearGradient>
+                    <radialGradient id="fruitShine" cx="35%" cy="30%" r="50%">
+                        <stop offset="0%" stop-color="#ffaaa0" stop-opacity="0.5"/>
+                        <stop offset="100%" stop-color="#ff0000" stop-opacity="0"/>
+                    </radialGradient>
+                </defs>
+                <g filter="url(#shadow)">
+                    <!-- ==================== برگ ==================== -->
+                    <path id="petiolePath" d="M300,480 C285,515 270,555 285,610 Q295,640 310,655" stroke="url(#petioleGrad)" stroke-width="14" fill="none" stroke-linecap="round"/>
+                    <path id="petioleInner" d="M300,480 C310,510 325,555 312,610" stroke="#b7975f" stroke-width="3" fill="none" opacity="0.5"/>
+
+                    <g id="leafGroup">
+                        <path id="leafBlade" d="M300,160 C340,175 375,200 405,240 C425,268 442,298 448,330 C452,358 450,385 440,410 C425,445 400,475 372,500 C355,514 335,525 312,525 C290,525 270,514 253,500 C225,475 200,445 185,410 C175,385 173,358 177,330 C183,298 200,268 220,240 C250,200 285,175 300,160Z" fill="url(#leafGrad)" stroke="#3e6827" stroke-width="1.8"/>
+
+                        <!-- زردی و پیچیدگی برگ -->
+                        <g id="leafYellowing" opacity="0">
+                            <ellipse cx="340" cy="280" rx="45" ry="35" fill="#e8cf5a" opacity="0.5"/>
+                            <ellipse cx="290" cy="360" rx="50" ry="40" fill="#e0c33e" opacity="0.45"/>
+                            <ellipse cx="370" cy="420" rx="35" ry="25" fill="#ddd055" opacity="0.4"/>
+                        </g>
+
+                        <!-- پیچیدگی برگ -->
+                        <g id="leafCurling" opacity="0">
+                            <path d="M340,175 Q370,200 365,250 Q360,280 340,270" stroke="#8a7a4a" stroke-width="1.5" fill="none" opacity="0.5"/>
+                            <path d="M280,175 Q250,200 255,250 Q260,280 280,270" stroke="#8a7a4a" stroke-width="1.5" fill="none" opacity="0.5"/>
+                        </g>
+
+                        <!-- عسلک و قارچ دوده -->
+                        <g id="honeydewSooty" opacity="0">
+                            <ellipse cx="350" cy="300" rx="20" ry="15" fill="#2a2a1a" opacity="0.5"/>
+                            <ellipse cx="310" cy="380" rx="22" ry="16" fill="#2a2a1a" opacity="0.45"/>
+                            <circle cx="340" cy="290" r="2.5" fill="#1a1a0a" opacity="0.6"/>
+                            <circle cx="360" cy="310" r="2" fill="#1a1a0a" opacity="0.6"/>
+                        </g>
+
+                        <!-- رگبرگ اصلی -->
+                        <path id="midVein" d="M300,170 Q293,280 300,490" stroke="#5b953c" stroke-width="4.5" fill="none" stroke-linecap="round" filter="url(#veinGlow)"/>
+                        <path id="midVeinInner" d="M300,170 Q295,280 300,490" stroke="#a3df78" stroke-width="1.4" fill="none"/>
+
+                        <!-- رگبرگ فرعی -->
+                        <g id="veinsGroup" stroke="#4b8231" fill="none" stroke-linecap="round">
+                            <path d="M300,210 Q330,225 355,240" stroke-width="2.6"/><path d="M300,210 Q270,225 245,240" stroke-width="2.6"/>
+                            <path d="M300,260 Q345,275 385,295" stroke-width="2.8"/><path d="M300,260 Q255,275 215,295" stroke-width="2.8"/>
+                            <path d="M300,320 Q355,340 410,365" stroke-width="3"/><path d="M300,320 Q245,340 190,365" stroke-width="3"/>
+                            <path d="M300,380 Q350,395 395,425" stroke-width="2.6"/><path d="M300,380 Q250,395 205,425" stroke-width="2.6"/>
+                            <path d="M300,440 Q335,455 365,485" stroke-width="2.4"/><path d="M300,440 Q265,455 235,485" stroke-width="2.4"/>
+                        </g>
+
+                        <!-- تریکوم -->
+                        <g id="trichomesGroup" stroke="#b6a467" fill="none" stroke-width="0.8" opacity="0.9">
+                            <path d="M380,230 L390,225"/><circle cx="390" cy="225" r="1.1" fill="#cfb572"/>
+                            <path d="M410,280 L422,272"/><circle cx="422" cy="272" r="1.2" fill="#cfb572"/>
+                            <path d="M435,340 L448,332"/><circle cx="448" cy="332" r="1.2" fill="#cfb572"/>
+                            <path d="M420,400 L433,395"/><circle cx="433" cy="395" r="1.1" fill="#cfb572"/>
+                            <path d="M380,460 L390,455"/><circle cx="390" cy="455" r="1.1" fill="#cfb572"/>
+                            <path d="M220,230 L210,225"/><circle cx="210" cy="225" r="1.1" fill="#cfb572"/>
+                            <path d="M190,280 L178,272"/><circle cx="178" cy="272" r="1.2" fill="#cfb572"/>
+                            <path d="M165,340 L152,332"/><circle cx="152" cy="332" r="1.2" fill="#cfb572"/>
+                            <path d="M180,400 L168,395"/><circle cx="168" cy="395" r="1.1" fill="#cfb572"/>
+                            <path d="M220,460 L210,455"/><circle cx="210" cy="455" r="1.1" fill="#cfb572"/>
+                        </g>
+
+                        <!-- روزنه‌ها -->
+                        <g id="stomataGroup" fill="#6a8c50" opacity="0.4">
+                            <ellipse cx="340" cy="260" rx="1.3" ry="2" transform="rotate(15 340 260)"/>
+                            <ellipse cx="320" cy="290" rx="1.2" ry="1.9" transform="rotate(-20 320 290)"/>
+                            <ellipse cx="370" cy="310" rx="1.4" ry="2.1" transform="rotate(30 370 310)"/>
+                            <ellipse cx="290" cy="330" rx="1.3" ry="2" transform="rotate(-10 290 330)"/>
+                            <ellipse cx="410" cy="350" rx="1.2" ry="1.9" transform="rotate(10 410 350)"/>
+                            <ellipse cx="220" cy="280" rx="1.4" ry="2.1" transform="rotate(-25 220 280)"/>
+                            <ellipse cx="260" cy="400" rx="1.3" ry="2" transform="rotate(5 260 400)"/>
+                            <ellipse cx="350" cy="430" rx="1.2" ry="1.9" transform="rotate(20 350 430)"/>
+                        </g>
+
+                        <!-- ==================== شته (شته سبز/زرد) ==================== -->
+                        <!-- شته بالغ بدون بال (روی برگ) -->
+                        <g id="aphid1" opacity="0">
+                            <g transform="translate(350, 290) scale(1.1)">
+                                <!-- بدن شته (گلابی شکل) -->
+                                <ellipse cx="0" cy="0" rx="5" ry="8" fill="#88cc44" stroke="#669933" stroke-width="0.5"/>
+                                <!-- سینه -->
+                                <ellipse cx="0" cy="-6" rx="3.5" ry="3" fill="#99dd55" stroke="#669933" stroke-width="0.4"/>
+                                <!-- سر -->
+                                <ellipse cx="0" cy="-9.5" rx="2.8" ry="2.5" fill="#99dd55" stroke="#669933" stroke-width="0.4"/>
+                                <!-- شاخک‌ها -->
+                                <path d="M-1.5,-10 Q-5,-15 -7,-18" stroke="#88aa44" stroke-width="0.5" fill="none"/>
+                                <path d="M1.5,-10 Q5,-15 7,-18" stroke="#88aa44" stroke-width="0.5" fill="none"/>
+                                <!-- پاها -->
+                                <path d="M-3,-5 Q-6,-2 -7,0" stroke="#88aa44" stroke-width="0.4" fill="none"/>
+                                <path d="M3,-5 Q6,-2 7,0" stroke="#88aa44" stroke-width="0.4" fill="none"/>
+                                <path d="M-2,-3 Q-5,0 -6,2" stroke="#88aa44" stroke-width="0.4" fill="none"/>
+                                <path d="M2,-3 Q5,0 6,2" stroke="#88aa44" stroke-width="0.4" fill="none"/>
+                                <!-- ساقه (Cornicles) روی بدن -->
+                                <ellipse cx="-1.5" cy="-2" rx="0.8" ry="1.5" fill="#99aa55"/>
+                                <ellipse cx="1.5" cy="-2" rx="0.8" ry="1.5" fill="#99aa55"/>
+                                <!-- چشم -->
+                                <circle cx="-1.5" cy="-10" r="0.6" fill="#333333"/>
+                                <circle cx="1.5" cy="-10" r="0.6" fill="#333333"/>
+                            </g>
+                        </g>
+
+                        <!-- شته دوم -->
+                        <g id="aphid2" opacity="0">
+                            <g transform="translate(330, 310) scale(0.9) rotate(10)">
+                                <ellipse cx="0" cy="0" rx="5" ry="8" fill="#aadd66" stroke="#669933" stroke-width="0.5"/>
+                                <ellipse cx="0" cy="-6" rx="3.5" ry="3" fill="#bbee77" stroke="#669933" stroke-width="0.4"/>
+                                <ellipse cx="0" cy="-9.5" rx="2.8" ry="2.5" fill="#bbee77" stroke="#669933" stroke-width="0.4"/>
+                                <path d="M-1.5,-10 Q-5,-15 -7,-18" stroke="#88aa44" stroke-width="0.5" fill="none"/>
+                                <path d="M1.5,-10 Q5,-15 7,-18" stroke="#88aa44" stroke-width="0.5" fill="none"/>
+                                <path d="M-3,-5 Q-6,-2 -7,0" stroke="#88aa44" stroke-width="0.4" fill="none"/>
+                                <path d="M3,-5 Q6,-2 7,0" stroke="#88aa44" stroke-width="0.4" fill="none"/>
+                                <ellipse cx="-1.5" cy="-2" rx="0.8" ry="1.5" fill="#99aa55"/>
+                                <ellipse cx="1.5" cy="-2" rx="0.8" ry="1.5" fill="#99aa55"/>
+                                <circle cx="-1.5" cy="-10" r="0.6" fill="#333"/>
+                                <circle cx="1.5" cy="-10" r="0.6" fill="#333"/>
+                            </g>
+                        </g>
+
+                        <!-- شته با بال (مرحله پراکندگی) -->
+                        <g id="aphidWinged" opacity="0">
+                            <g transform="translate(370, 330) scale(1) rotate(-5)">
+                                <ellipse cx="0" cy="0" rx="5" ry="8" fill="#88cc44" stroke="#669933" stroke-width="0.5"/>
+                                <ellipse cx="0" cy="-6" rx="3.5" ry="3" fill="#99dd55" stroke="#669933" stroke-width="0.4"/>
+                                <ellipse cx="0" cy="-9.5" rx="2.8" ry="2.5" fill="#99dd55" stroke="#669933" stroke-width="0.4"/>
+                                <!-- بال‌ها -->
+                                <path d="M-2,-7 Q-12,-14 -15,-12 Q-12,-8 -3,-6" fill="#cceecc" stroke="#aaccaa" stroke-width="0.3" opacity="0.8"/>
+                                <path d="M2,-7 Q12,-14 15,-12 Q12,-8 3,-6" fill="#cceecc" stroke="#aaccaa" stroke-width="0.3" opacity="0.8"/>
+                                <path d="M-1.5,-10 Q-5,-15 -7,-18" stroke="#88aa44" stroke-width="0.5" fill="none"/>
+                                <path d="M1.5,-10 Q5,-15 7,-18" stroke="#88aa44" stroke-width="0.5" fill="none"/>
+                                <circle cx="-1.5" cy="-10" r="0.6" fill="#333"/>
+                                <circle cx="1.5" cy="-10" r="0.6" fill="#333"/>
+                            </g>
+                        </g>
+
+                        <!-- پوره شته (شته نابالغ) -->
+                        <g id="aphidNymph" opacity="0">
+                            <g transform="translate(310, 360) scale(0.7)">
+                                <ellipse cx="0" cy="0" rx="4" ry="6" fill="#aadd66" stroke="#88aa44" stroke-width="0.4"/>
+                                <ellipse cx="0" cy="-4" rx="2.5" ry="2.5" fill="#bbee77" stroke="#88aa44" stroke-width="0.3"/>
+                                <path d="M-1,-5 Q-3,-8 -5,-10" stroke="#88aa44" stroke-width="0.4" fill="none"/>
+                                <path d="M1,-5 Q3,-8 5,-10" stroke="#88aa44" stroke-width="0.4" fill="none"/>
+                            </g>
+                        </g>
+
+                        <!-- جمعیت انبوه شته (مرحله شدید) -->
+                        <g id="aphidSwarm" opacity="0">
+                            <g transform="translate(340, 300) scale(0.8)"><ellipse cx="0" cy="0" rx="5" ry="8" fill="#88cc44"/><ellipse cx="0" cy="-6" rx="3.5" ry="3" fill="#99dd55"/><ellipse cx="0" cy="-9.5" rx="2.8" ry="2.5" fill="#99dd55"/></g>
+                            <g transform="translate(360, 310) scale(0.8) rotate(15)"><ellipse cx="0" cy="0" rx="5" ry="8" fill="#88cc44"/><ellipse cx="0" cy="-6" rx="3.5" ry="3" fill="#99dd55"/><ellipse cx="0" cy="-9.5" rx="2.8" ry="2.5" fill="#99dd55"/></g>
+                            <g transform="translate(320, 330) scale(0.7) rotate(-10)"><ellipse cx="0" cy="0" rx="5" ry="8" fill="#88cc44"/><ellipse cx="0" cy="-6" rx="3.5" ry="3" fill="#99dd55"/><ellipse cx="0" cy="-9.5" rx="2.8" ry="2.5" fill="#99dd55"/></g>
+                            <g transform="translate(380, 340) scale(0.75) rotate(20)"><ellipse cx="0" cy="0" rx="5" ry="8" fill="#88cc44"/></g>
+                            <g transform="translate(300, 350) scale(0.7)"><ellipse cx="0" cy="0" rx="5" ry="8" fill="#88cc44"/></g>
+                        </g>
+
+                        <!-- تخم شته -->
+                        <g id="aphidEggs" opacity="0">
+                            <ellipse cx="325" cy="280" rx="2" ry="1.2" fill="#88aa44" opacity="0.7"/>
+                            <ellipse cx="330" cy="283" rx="2" ry="1.2" fill="#88aa44" opacity="0.7"/>
+                            <ellipse cx="328" cy="278" rx="2" ry="1.2" fill="#88aa44" opacity="0.7"/>
+                        </g>
+                    </g>
+
+                    <!-- ==================== میوه ==================== -->
+                    <g id="fruitGroup">
+                        <path d="M490,620 Q500,595 510,575" stroke="#5a7a3a" stroke-width="3.5" fill="none"/>
+                        <path d="M510,575 Q515,562 525,555" stroke="#5a7a3a" stroke-width="2.5" fill="none"/>
+                        
+                        <path d="M525,555 Q512,542 500,548" stroke="#3a6a2a" stroke-width="2.5" fill="none"/>
+                        <path d="M525,555 Q530,540 545,545" stroke="#3a6a2a" stroke-width="2.5" fill="none"/>
+                        <path d="M525,555 Q520,535 510,538" stroke="#3a6a2a" stroke-width="2.5" fill="none"/>
+                        <path d="M525,555 Q540,550 548,560" stroke="#3a6a2a" stroke-width="2" fill="none"/>
+                        <path d="M525,555 Q505,550 498,560" stroke="#3a6a2a" stroke-width="2" fill="none"/>
+                        
+                        <ellipse cx="525" cy="620" rx="48" ry="58" fill="url(#fruitGrad)"/>
+                        <ellipse cx="525" cy="620" rx="48" ry="58" fill="url(#fruitShine)"/>
+                        
+                        <!-- میوه بدشکل و کوچک -->
+                        <g id="smallFruit" opacity="0">
+                            <ellipse cx="525" cy="620" rx="32" ry="40" fill="#cc3020" opacity="0.6"/>
+                            <ellipse cx="525" cy="620" rx="32" ry="40" fill="none" stroke="#8a4e2a" stroke-width="1.5" opacity="0.5"/>
+                        </g>
+                    </g>
+                </g>
+            </svg>
+        </div>
+
+        <div class="button-area">
+            <button id="stageBtn">🐛 مراحل طغیان شته (سالم ← شدید)</button>
+        </div>
+
+        <div class="info-panel" id="infoPanel"></div>
+        <footer>🔍 حشرات ریز سبز/زرد روی برگ‌های جوان و نوک ساقه + عسلک + مورچه = شته</footer>
+    </div>
+</div>
+
+<script>
+    (function() {
+        const leafGrad = document.getElementById('leafGrad');
+        const leafYellowing = document.getElementById('leafYellowing');
+        const leafCurling = document.getElementById('leafCurling');
+        const honeydewSooty = document.getElementById('honeydewSooty');
+        const aphid1 = document.getElementById('aphid1');
+        const aphid2 = document.getElementById('aphid2');
+        const aphidWinged = document.getElementById('aphidWinged');
+        const aphidNymph = document.getElementById('aphidNymph');
+        const aphidSwarm = document.getElementById('aphidSwarm');
+        const aphidEggs = document.getElementById('aphidEggs');
+        const smallFruit = document.getElementById('smallFruit');
+        const midVein = document.getElementById('midVein');
+        const veinsGroup = document.getElementById('veinsGroup');
+        const trichomesGroup = document.getElementById('trichomesGroup');
+        
+        let currentStage = 0;
+        
+        function setSeverityVisual(severity) {
+            const hue = 85 - severity * 15;
+            const sat = 55 - severity * 12;
+            const light = 42 - severity * 10;
+            const stops = leafGrad.querySelectorAll('stop');
+            if (stops.length >= 3) {
+                stops[0].setAttribute('stop-color', `hsl(${hue}, ${sat}%, ${light+5}%)`);
+                stops[1].setAttribute('stop-color', `hsl(${hue-4}, ${sat-4}%, ${light-2}%)`);
+                stops[2].setAttribute('stop-color', `hsl(${hue-8}, ${sat-8}%, ${light-6}%)`);
+            }
+            
+            let yellowOp = severity * 0.8;
+            leafYellowing.setAttribute('opacity', Math.min(0.7, yellowOp).toString());
+            
+            let curlOp = (severity > 0.3) ? (severity - 0.3) * 1.0 : 0;
+            leafCurling.setAttribute('opacity', Math.min(0.6, curlOp).toString());
+            
+            let sootyOp = severity * 0.8;
+            honeydewSooty.setAttribute('opacity', Math.min(0.6, sootyOp).toString());
+            
+            // شته‌ها بر اساس شدت
+            let a1Op = (severity > 0.2) ? (severity - 0.2) * 1.2 : 0;
+            aphid1.setAttribute('opacity', Math.min(1, a1Op).toString());
+            let a2Op = (severity > 0.3) ? (severity - 0.3) * 1.3 : 0;
+            aphid2.setAttribute('opacity', Math.min(1, a2Op).toString());
+            let aWOp = (severity > 0.45) ? (severity - 0.45) * 1.5 : 0;
+            aphidWinged.setAttribute('opacity', Math.min(1, aWOp).toString());
+            let aNOp = (severity > 0.4) ? (severity - 0.4) * 1.2 : 0;
+            aphidNymph.setAttribute('opacity', Math.min(1, aNOp).toString());
+            let aSOp = (severity > 0.6) ? (severity - 0.6) * 2.0 : 0;
+            aphidSwarm.setAttribute('opacity', Math.min(1, aSOp).toString());
+            let eggsOp = (severity > 0.5) ? (severity - 0.5) * 1.2 : 0;
+            aphidEggs.setAttribute('opacity', Math.min(0.8, eggsOp).toString());
+            
+            let fruitOp = (severity > 0.5) ? (severity - 0.5) * 1.0 : 0;
+            smallFruit.setAttribute('opacity', Math.min(0.7, fruitOp).toString());
+            
+            const veinColor = (severity > 0.6) ? "#8a9a5a" : "#5b953c";
+            midVein.setAttribute('stroke', veinColor);
+            const allVeins = veinsGroup.querySelectorAll('path');
+            allVeins.forEach(p => p.setAttribute('stroke', (severity > 0.6) ? "#8a9a5a" : "#4b8231"));
+            trichomesGroup.setAttribute('stroke', severity > 0.5 ? "#a88f58" : "#b6a467");
+        }
+        
+        const stageDetails = [
+            {
+                name: "🌿 مرحله ۰: گیاه کاملاً سالم",
+                symptoms: "🔹 برگ: سبز یکدست، بدون آفت<br>🍅 میوه: قرمز یکدست",
+                science: "شرایط مساعد برای شته:<br>• دمای ۲۰-۲۵ درجه<br>• رطوبت متوسط<br>• تهویه ضعیف<br>• علف‌های هرز میزبان<br>• وجود مورچه (نشانه شته)",
+                control: "🛡️ پیشگیری:<br>• تله چسبنده زرد<br>• حذف علف‌های هرز<br>• کنترل مورچه‌ها<br>• ارقام مقاوم"
+            },
+            {
+                name: "⚠️ مرحله ۱: آلودگی خفیف",
+                symptoms: "🟢 برگ: چند شته پراکنده روی برگ‌های جوان، زردی خفیف<br>🍅 میوه: بدون علائم",
+                science: "شته با مکیدن شیره گیاهی خسارت می‌زند. عسلک ترشح می‌کند که باعث جذب مورچه و رشد قارچ می‌شود.",
+                control: "💊 کنترل اولیه:<br>• تله چسبنده زرد<br>• پیمتروزین ۲۰۰ گرم/۱۰۰۰ لیتر<br>• حذف برگ‌های آلوده"
+            },
+            {
+                name: "🟢 مرحله ۲: آلودگی متوسط",
+                symptoms: "🟢 برگ: زردی واضح، پیچیدگی برگ، عسلک و مورچه، جمعیت شته زیاد<br>🍅 میوه: کوچک شدن میوه",
+                science: "شته ناقل ویروس‌های موزاییک و پیچیدگی برگ است. خسارت مستقیم و غیرمستقیم بالاست.",
+                control: "💊 کنترل شیمیایی:<br>• پیمتروزین ۲۰۰ گرم<br>• پریمیکارب ۵۰۰ گرم<br>• تله زرد (تکرار هر ۷ روز)"
+            },
+            {
+                name: "🔴 مرحله ۳: آلودگی شدید",
+                symptoms: "🔴 برگ: زردی شدید، پیچیدگی شدید، چروکیدگی، عسلک فراوان، جمعیت انبوه شته، مرگ برگ‌ها<br>🍅 میوه: میوه ریز و بدشکل",
+                science: "کاهش محصول ۵۰-۷۰٪. شته ویروس‌ها را منتقل کرده و گیاه را ضعیف می‌کند.",
+                control: "🌱 مدیریت اضطراری:<br>• سمپاشی فوری (پیمتروزین + پریمیکارب)<br>• برداشت میوه‌های سالم<br>• حذف بوته‌های شدیداً آلوده"
+            }
+        ];
+        
+        function goToStage(stage) {
+            currentStage = stage;
+            let intensity = 0;
+            if (stage === 0) intensity = 0;
+            if (stage === 1) intensity = 0.35;
+            if (stage === 2) intensity = 0.65;
+            if (stage === 3) intensity = 0.95;
+            
+            setSeverityVisual(intensity);
+            
+            const data = stageDetails[stage];
+            const infoDiv = document.getElementById('infoPanel');
+            infoDiv.innerHTML = `
+                <div class="stage-name">${data.name}</div>
+                <div class="section">
+                    <div class="section-title">🍃 علائم روی برگ و میوه</div>
+                    <div class="section-content">${data.symptoms}</div>
+                </div>
+                <div class="section">
+                    <div class="section-title">🐛 شکل ظاهری و زیستگاه شته</div>
+                    <div class="section-content">شته حشره‌ای کوچک (۱-۴ میلی‌متر) با بدن گلابی شکل نرم، به رنگ سبز، زرد یا سیاه است. معمولاً به صورت دسته‌جمعی روی <strong>برگ‌های جوان، نوک ساقه و زیر برگ</strong> مشاهده می‌شود. وجود <strong>مورچه</strong> روی بوته نشانه شته است.</div>
+                </div>
+                <div class="section">
+                    <div class="section-title">💊 روش‌های کنترل و درمان</div>
+                    <div class="section-content">${data.control}</div>
+                </div>
+                <hr>
+                <div class="section-content highlight">🎯 حشرات ریز سبز/زرد روی برگ + عسلک + مورچه = شته</div>
+            `;
+        }
+        
+        const btn = document.getElementById('stageBtn');
+        btn.addEventListener('click', () => {
+            let next = currentStage + 1;
+            if (next > 3) next = 0;
+            goToStage(next);
+        });
+        
+        goToStage(0);
+    })();
+</script>
+</body>
+</html>
