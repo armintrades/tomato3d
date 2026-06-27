@@ -163,9 +163,9 @@ class TomatoRenderer : GLSurfaceView.Renderer {
                 var y = (r * cos(lat) * sin(lon) * squash).toFloat()
                 var z = (r * sin(lat)).toFloat()
 
-                val topBias = ((sin(lat) + 1f) / 2f).pow(0.3f)
-                val creaseVal = (cos(lon * ribCount) * 0.5f + 0.5f).pow(2f)
-                y *= (1f - creaseVal * 0.06f * topBias)
+                val topBias = ((sin(lat) + 1.0) / 2.0).pow(0.3)
+                val creaseVal = (cos(lon * ribCount) * 0.5 + 0.5).pow(2.0)
+                y *= (1f - creaseVal.toFloat() * 0.06f * topBias.toFloat())
 
                 vertices.add(x); vertices.add(z); vertices.add(y)
 
