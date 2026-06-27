@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>برگ گوجه فرنگی - تنش سرمایی (Cold Stress) | آموزش کامل</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: linear-gradient(145deg, #1b3d2a, #0d2a1a);
+            font-family: 'Segoe UI', 'Vazirmatn', Tahoma, system-ui, sans-serif;
+            padding: 12px;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .master {
+            max-width: 750px;
+            width: 100%;
+            background: #27261cd9;
+            backdrop-filter: blur(4px);
+            border-radius: 2rem;
+            padding: 12px;
+            box-shadow: 0 12px 28px black;
+        }
+        .card {
+            background: #fef8ec;
+            border-radius: 1.8rem;
+            padding: 1rem;
+            box-shadow: inset 0 0 0 1px #fff9e8, 0 6px 14px rgba(0,0,0,0.2);
+        }
+        .title {
+            text-align: center;
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #2b7220;
+            text-shadow: 1px 1px 0 #e2f0cf;
+        }
+        .sub {
+            text-align: center;
+            font-size: 0.75rem;
+            color: #b47c44;
+            border-bottom: 2px dashed #dabd88;
+            display: inline-block;
+            width: auto;
+            margin: 0 auto 12px auto;
+            padding-bottom: 4px;
+        }
+        .svg-container {
+            background: #e7ddc4;
+            border-radius: 1.2rem;
+            padding: 8px;
+            text-align: center;
+            margin: 8px 0;
+            box-shadow: inset 0 0 0 2px #fef5e2, 0 4px 10px rgba(0,0,0,0.15);
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        svg {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            border-radius: 1rem;
+        }
+        .button-area {
+            display: flex;
+            justify-content: center;
+            margin: 12px 0;
+        }
+        button {
+            background: #c08545;
+            border: none;
+            color: white;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 2rem;
+            font-size: 0.85rem;
+            cursor: pointer;
+            font-family: inherit;
+            transition: 0.2s;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+        button:active {
+            transform: scale(0.96);
+        }
+        .info-panel {
+            background: #efe4cf;
+            border-radius: 1.2rem;
+            padding: 0.9rem;
+            margin-top: 12px;
+            border-right: 5px solid #aa7942;
+            text-align: right;
+            font-size: 0.75rem;
+            max-height: 55vh;
+            overflow-y: auto;
+        }
+        .stage-name {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #4a3920;
+            background: #fdf1df;
+            padding: 4px 10px;
+            border-radius: 2rem;
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+        .section {
+            margin-top: 10px;
+            background: #faf3e3;
+            padding: 8px;
+            border-radius: 1rem;
+        }
+        .section-title {
+            font-weight: bold;
+            color: #6b3f1c;
+            border-right: 3px solid #c6904b;
+            padding-right: 8px;
+            margin-bottom: 6px;
+            font-size: 0.8rem;
+        }
+        .section-content {
+            line-height: 1.45;
+            color: #2c2a1a;
+        }
+        hr {
+            margin: 8px 0;
+            border-color: #dbbc87;
+        }
+        .highlight {
+            background: #f5e6c4;
+            padding: 2px 6px;
+            border-radius: 12px;
+            font-weight: bold;
+        }
+        .warning-box {
+            background: #fae6c3;
+            border-right: 4px solid #c67a2e;
+            padding: 6px 10px;
+            border-radius: 12px;
+            margin-top: 8px;
+            font-size: 0.7rem;
+        }
+        footer {
+            text-align: center;
+            font-size: 0.6rem;
+            color: #aa956b;
+            margin-top: 10px;
+        }
+        @media (max-width: 500px) {
+            .master { padding: 8px; }
+            .card { padding: 0.7rem; }
+            .title { font-size: 1.2rem; }
+            .info-panel { font-size: 0.7rem; max-height: 50vh; }
+            .section-title { font-size: 0.75rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="master">
+    <div class="card">
+        <div class="title">❄️ برگ گوجه‌فرنگی | تنش سرمایی (Cold Stress)</div>
+        <div style="text-align: center;"><div class="sub">بنفش شدن برگ + پژمردگی + توقف رشد</div></div>
+
+        <div class="svg-container">
+            <svg id="tomatoLeafSvg" viewBox="0 0 600 700" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <filter id="shadow" x="-10%" y="-10%" width="130%" height="130%">
+                        <feDropShadow dx="2" dy="5" stdDeviation="4" flood-color="#2d2a1a" flood-opacity="0.25"/>
+                    </filter>
+                    <filter id="veinGlow"><feGaussianBlur stdDeviation="1"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+                    <linearGradient id="leafGrad" x1="20%" y1="0%" x2="80%" y2="100%">
+                        <stop offset="0%" stop-color="#6daa44"/><stop offset="60%" stop-color="#468a2e"/><stop offset="100%" stop-color="#2d6b1e"/>
+                    </linearGradient>
+                    <linearGradient id="petioleGrad" x1="0" y1="0" x2="1" y2="0">
+                        <stop offset="0%" stop-color="#8b744b"/><stop offset="100%" stop-color="#b4925e"/>
+                    </linearGradient>
+                </defs>
+                <g filter="url(#shadow)">
+                    <!-- دمبرگ Petiole -->
+                    <path id="petiolePath" d="M300,510 C285,545 270,585 285,640 Q295,670 310,685" stroke="url(#petioleGrad)" stroke-width="14" fill="none" stroke-linecap="round"/>
+                    <path id="petioleInner" d="M300,510 C310,540 325,585 312,640" stroke="#b7975f" stroke-width="3" fill="none" opacity="0.5"/>
+
+                    <!-- پهنک برگ -->
+                    <g id="leafGroup">
+                        <path id="leafBlade" d="M300,160 C340,175 375,200 405,240 C425,268 442,298 448,330 C452,358 450,385 440,410 C425,445 400,475 372,500 C355,514 335,525 312,525 C290,525 270,514 253,500 C225,475 200,445 185,410 C175,385 173,358 177,330 C183,298 200,268 220,240 C250,200 285,175 300,160Z" fill="url(#leafGrad)" stroke="#3e6827" stroke-width="1.8"/>
+
+                        <!-- بنفش شدن برگ (آنتوسیانین) - علامت اصلی سرمازدگی -->
+                        <g id="purpleColor" opacity="0">
+                            <ellipse cx="310" cy="340" rx="130" ry="160" fill="#9d4b72" opacity="0.35"/>
+                            <ellipse cx="350" cy="280" rx="50" ry="40" fill="#a0496e" opacity="0.4"/>
+                            <ellipse cx="270" cy="350" rx="55" ry="45" fill="#994564" opacity="0.35"/>
+                            <ellipse cx="380" cy="400" rx="45" ry="35" fill="#9d4b72" opacity="0.3"/>
+                            <ellipse cx="240" cy="320" rx="40" ry="35" fill="#a0496e" opacity="0.3"/>
+                        </g>
+
+                        <!-- بنفش شدن رگبرگ‌ها -->
+                        <g id="purpleVeins" opacity="0">
+                            <path d="M300,170 Q293,280 300,520" stroke="#b55881" stroke-width="6" fill="none" opacity="0.6" filter="url(#veinGlow)"/>
+                            <!-- رگبرگ‌های فرعی بنفش -->
+                            <path d="M300,210 Q330,225 355,240" stroke="#b55881" stroke-width="2.8" fill="none" opacity="0.5"/>
+                            <path d="M300,210 Q270,225 245,240" stroke="#b55881" stroke-width="2.8" fill="none" opacity="0.5"/>
+                            <path d="M300,260 Q345,275 385,295" stroke="#b55881" stroke-width="3" fill="none" opacity="0.5"/>
+                            <path d="M300,260 Q255,275 215,295" stroke="#b55881" stroke-width="3" fill="none" opacity="0.5"/>
+                            <path d="M300,320 Q355,340 410,365" stroke="#b55881" stroke-width="3.2" fill="none" opacity="0.5"/>
+                            <path d="M300,320 Q245,340 190,365" stroke="#b55881" stroke-width="3.2" fill="none" opacity="0.5"/>
+                        </g>
+
+                        <!-- پژمردگی و افتادگی برگ (در سرما) -->
+                        <g id="wilting" opacity="0">
+                            <path d="M340,175 Q370,220 350,280" stroke="#7a8a5a" stroke-width="1.5" fill="none" opacity="0.5"/>
+                            <path d="M375,200 Q405,250 385,310" stroke="#7a8a5a" stroke-width="1.5" fill="none" opacity="0.5"/>
+                            <path d="M280,175 Q250,220 270,280" stroke="#7a8a5a" stroke-width="1.5" fill="none" opacity="0.5"/>
+                            <path d="M245,200 Q215,250 235,310" stroke="#7a8a5a" stroke-width="1.5" fill="none" opacity="0.5"/>
+                        </g>
+
+                        <!-- نکروز حاشیه و نوک برگ (در سرمای شدید) -->
+                        <g id="necrosis" opacity="0">
+                            <path d="M405,240 C430,280 448,330 445,380" stroke="#7a4e2a" stroke-width="10" fill="none" opacity="0.65" stroke-linecap="round"/>
+                            <path d="M220,240 C195,280 177,330 180,380" stroke="#7a4e2a" stroke-width="10" fill="none" opacity="0.65" stroke-linecap="round"/>
+                            <ellipse cx="300" cy="165" rx="14" ry="9" fill="#7a4e2a" opacity="0.7"/>
+                            <ellipse cx="360" cy="310" rx="6" ry="4" fill="#8a5a2a" opacity="0.5"/>
+                            <ellipse cx="270" cy="370" rx="7" ry="5" fill="#8a5a2a" opacity="0.5"/>
+                        </g>
+
+                        <!-- زردی خفیف (کلروز) -->
+                        <g id="chlorosis" opacity="0">
+                            <ellipse cx="340" cy="280" rx="25" ry="20" fill="#e0d55a" opacity="0.35"/>
+                            <ellipse cx="290" cy="380" rx="30" ry="22" fill="#ddd055" opacity="0.3"/>
+                        </g>
+
+                        <!-- رگبرگ اصلی (در شرایط عادی - روی آن بنفش جداگانه زده می‌شود) -->
+                        <path id="midVein" d="M300,170 Q293,280 300,520" stroke="#5b953c" stroke-width="4.5" fill="none" stroke-linecap="round" filter="url(#veinGlow)"/>
+                        <path id="midVeinInner" d="M300,170 Q295,280 300,520" stroke="#a3df78" stroke-width="1.4" fill="none"/>
+
+                        <!-- رگبرگ فرعی (پایه) -->
+                        <g id="veinsGroupBase" stroke="#4b8231" fill="none" stroke-linecap="round">
+                            <path d="M300,210 Q330,225 355,240" stroke-width="2.6"/><path d="M300,210 Q270,225 245,240" stroke-width="2.6"/>
+                            <path d="M300,260 Q345,275 385,295" stroke-width="2.8"/><path d="M300,260 Q255,275 215,295" stroke-width="2.8"/>
+                            <path d="M300,320 Q355,340 410,365" stroke-width="3"/><path d="M300,320 Q245,340 190,365" stroke-width="3"/>
+                            <path d="M300,380 Q350,395 395,425" stroke-width="2.6"/><path d="M300,380 Q250,395 205,425" stroke-width="2.6"/>
+                            <path d="M300,440 Q335,455 365,485" stroke-width="2.4"/><path d="M300,440 Q265,455 235,485" stroke-width="2.4"/>
+                            <path d="M345,270 Q370,280 395,272" stroke-width="1.2" opacity="0.75"/><path d="M255,270 Q230,280 205,272" stroke-width="1.2" opacity="0.75"/>
+                            <path d="M360,330 Q390,340 425,330" stroke-width="1.3" opacity="0.8"/><path d="M240,330 Q210,340 175,330" stroke-width="1.3" opacity="0.8"/>
+                        </g>
+
+                        <!-- تریکوم -->
+                        <g id="trichomesGroup" stroke="#b6a467" fill="none" stroke-width="0.8" opacity="0.9">
+                            <path d="M380,230 L390,225"/><circle cx="390" cy="225" r="1.1" fill="#cfb572"/>
+                            <path d="M410,280 L422,272"/><circle cx="422" cy="272" r="1.2" fill="#cfb572"/>
+                            <path d="M435,340 L448,332"/><circle cx="448" cy="332" r="1.2" fill="#cfb572"/>
+                            <path d="M420,400 L433,395"/><circle cx="433" cy="395" r="1.1" fill="#cfb572"/>
+                            <path d="M380,460 L390,455"/><circle cx="390" cy="455" r="1.1" fill="#cfb572"/>
+                            <path d="M220,230 L210,225"/><circle cx="210" cy="225" r="1.1" fill="#cfb572"/>
+                            <path d="M190,280 L178,272"/><circle cx="178" cy="272" r="1.2" fill="#cfb572"/>
+                            <path d="M165,340 L152,332"/><circle cx="152" cy="332" r="1.2" fill="#cfb572"/>
+                            <path d="M180,400 L168,395"/><circle cx="168" cy="395" r="1.1" fill="#cfb572"/>
+                            <path d="M220,460 L210,455"/><circle cx="210" cy="455" r="1.1" fill="#cfb572"/>
+                        </g>
+
+                        <!-- روزنه‌ها -->
+                        <g id="stomataGroup" fill="#6a8c50" opacity="0.4">
+                            <ellipse cx="340" cy="260" rx="1.3" ry="2" transform="rotate(15 340 260)"/>
+                            <ellipse cx="320" cy="290" rx="1.2" ry="1.9" transform="rotate(-20 320 290)"/>
+                            <ellipse cx="370" cy="310" rx="1.4" ry="2.1" transform="rotate(30 370 310)"/>
+                            <ellipse cx="290" cy="330" rx="1.3" ry="2" transform="rotate(-10 290 330)"/>
+                            <ellipse cx="410" cy="350" rx="1.2" ry="1.9" transform="rotate(10 410 350)"/>
+                            <ellipse cx="220" cy="280" rx="1.4" ry="2.1" transform="rotate(-25 220 280)"/>
+                            <ellipse cx="260" cy="400" rx="1.3" ry="2" transform="rotate(5 260 400)"/>
+                            <ellipse cx="350" cy="430" rx="1.2" ry="1.9" transform="rotate(20 350 430)"/>
+                        </g>
+                    </g>
+                </g>
+            </svg>
+        </div>
+
+        <div class="button-area">
+            <button id="stageBtn">🌱 مراحل تنش سرمایی (سالم ← شدید)</button>
+        </div>
+
+        <div class="info-panel" id="infoPanel">
+            <!-- محتوای داینامیک توسط JS پر می‌شود -->
+        </div>
+        <footer>🔍 هر بار کلیک، شدت تنش سرمایی افزایش می‌یابد. علائم: بنفش شدن برگ و رگبرگ، پژمردگی، توقف رشد.</footer>
+    </div>
+</div>
+
+<script>
+    (function() {
+        // گرفتن المان‌های SVG
+        const leafGrad = document.getElementById('leafGrad');
+        const purpleColor = document.getElementById('purpleColor');
+        const purpleVeins = document.getElementById('purpleVeins');
+        const wilting = document.getElementById('wilting');
+        const necrosis = document.getElementById('necrosis');
+        const chlorosis = document.getElementById('chlorosis');
+        const midVein = document.getElementById('midVein');
+        const veinsGroupBase = document.getElementById('veinsGroupBase');
+        const trichomesGroup = document.getElementById('trichomesGroup');
+        const petiolePath = document.getElementById('petiolePath');
+        
+        let currentStage = 0;  // 0:سالم, 1:خفیف, 2:متوسط, 3:شدید
+        
+        function setSeverityVisual(severity) {
+            // تنش سرمایی: برگ بنفش می‌شود و رگبرگ‌ها بنفش
+            // رنگ زمینه سبز مایل به بنفش/آبی
+            const hue = 85 - severity * 20;
+            const sat = 55 - severity * 5;
+            const light = 42 - severity * 8;
+            const stops = leafGrad.querySelectorAll('stop');
+            if (stops.length >= 3) {
+                stops[0].setAttribute('stop-color', `hsl(${hue}, ${sat}%, ${light+3}%)`);
+                stops[1].setAttribute('stop-color', `hsl(${hue-4}, ${sat-4}%, ${light-2}%)`);
+                stops[2].setAttribute('stop-color', `hsl(${hue-8}, ${sat-8}%, ${light-6}%)`);
+            }
+            
+            // بنفش شدن برگ (علامت اصلی)
+            let purpleOp = severity * 0.85;
+            purpleColor.setAttribute('opacity', Math.min(0.7, purpleOp).toString());
+            
+            // بنفش شدن رگبرگ‌ها
+            let purpleVeinOp = severity * 0.9;
+            purpleVeins.setAttribute('opacity', Math.min(0.8, purpleVeinOp).toString());
+            
+            // پژمردگی
+            let wiltOp = (severity > 0.3) ? (severity - 0.3) * 1.0 : 0;
+            wilting.setAttribute('opacity', Math.min(0.65, wiltOp).toString());
+            
+            // نکروز
+            let necroOp = (severity > 0.55) ? (severity - 0.55) * 1.3 : 0;
+            necrosis.setAttribute('opacity', Math.min(0.8, necroOp).toString());
+            
+            // کلروز خفیف
+            let chloroOp = (severity > 0.6) ? (severity - 0.6) * 0.8 : 0;
+            chlorosis.setAttribute('opacity', Math.min(0.4, chloroOp).toString());
+            
+            // رگبرگ‌ها (پایه)
+            const veinColor = (severity > 0.5) ? "#8a9a5a" : "#5b953c";
+            midVein.setAttribute('stroke', veinColor);
+            const allVeins = veinsGroupBase.querySelectorAll('path');
+            allVeins.forEach(p => p.setAttribute('stroke', (severity > 0.5) ? "#8a9a5a" : "#4b8231"));
+            
+            // دمبرگ
+            if (severity > 0.6) {
+                petiolePath.setAttribute('stroke', "#9a8050");
+            } else {
+                petiolePath.setAttribute('stroke', "url(#petioleGrad)");
+            }
+            
+            // تریکوم
+            trichomesGroup.setAttribute('stroke', severity > 0.5 ? "#a08f58" : "#b6a467");
+        }
+        
+        const stageDetails = [
+            {
+                name: "🌿 مرحله ۰: برگ کاملاً سالم (بدون تنش سرمایی)",
+                glossary: "✅ <strong>تعریف اجزای برگ:</strong><br> • <strong>پهنک برگ (Blade):</strong> قسمت سبز و پهن که عمل فتوسنتز را انجام می‌دهد.<br> • <strong>دمبرگ (Petiole):</strong> ساقه‌ای که برگ را به ساقه اصلی متصل می‌کند.<br> • <strong>رگبرگ اصلی (Midvein):</strong> رگ ضخیم وسط برگ.<br> • <strong>رگبرگ فرعی (Secondary Veins):</strong> انشعابات ریزتر.<br> • <strong>تریکوم (Trichomes):</strong> کرک‌های ریز غده‌ای محافظ.<br> • <strong>روزنه (Stomata):</strong> منافذ ریز برای تبادل گاز.<br><br>❄️ <strong>تنش سرمایی چیست؟</strong><br> گوجه‌فرنگی گیاهی گرمادوست است. دمای زیر 15 درجه سانتی‌گراد برای آن تنش محسوب می‌شود. دمای زیر 10 درجه باعث آسیب جدی و زیر 5 درجه باعث یخ زدگی و مرگ گیاه می‌شود.",
+                symptoms: "🔹 <strong>علائم قابل مشاهده:</strong> سبزی یکدست، برگ‌ها صاف و بدون بنفشگی، رشد طبیعی.",
+                science: "📗 <strong>علت فیزیولوژیک:</strong> در دمای بهینه (20-28 درجه)، آنزیم‌ها فعال هستند، فتوسنتز طبیعی، غشای سلولی سیال و انعطاف‌پذیر است."
+            },
+            {
+                name: "⚠️ مرحله ۱: تنش سرمایی خفیف (آغاز علائم)",
+                glossary: "همان اجزای بالا – اکنون برگ‌ها کمی بنفش می‌شوند و رگبرگ‌ها رنگ بنفز خفیف پیدا می‌کنند.",
+                symptoms: "🟣 برگ‌ها و رگبرگ‌ها رنگ بنفش خفیف پیدا می‌کنند (تولید آنتوسیانین). رشد کمی کاهش یافته. برگ‌ها ممکن است کمی پژمرده به نظر برسند. گل‌دهی مختل می‌شود.",
+                science: "🔬 <strong>دلیل علمی:</strong> دمای 10-15 درجه: سنتز کلروفیل کاهش می‌یابد. قندها در برگ انباشته می‌شوند ← تولید آنتوسیانین (رنگ بنفش). غشای سلولی سفتی خود را از دست می‌دهد."
+            },
+            {
+                name: "🥀 مرحله ۲: تنش سرمایی متوسط (علائم آشکار)",
+                glossary: "تمامی اجزا – اکنون بنفشگی شدید برگ و رگبرگ، پژمردگی و توقف رشد ظاهر شده است.",
+                symptoms: "بنفشگی واضح و گسترده برگ و رگبرگ‌ها. پژمردگی و افتادگی برگ. رشد متوقف شده، گیاه کوتوله می‌ماند. برگ‌های پایینی زرد و نکروزه. ریزش گل و میوه.",
+                science: "🧪 <strong>دلیل علمی:</strong> دمای 5-10 درجه: فتوسنتز به شدت کاهش یافته، تنفس مختل شده. غشای سلولی آسیب دیده ← نشت مواد و پژمردگی. پروتئین‌های شوک سرما (CSP) فعال می‌شوند اما کافی نیستند."
+            },
+            {
+                name: "🔴 مرحله ۳: تنش سرمایی شدید (پیشرفته، بحرانی)",
+                glossary: "همه قسمت‌های برگ درگیر: بنفشگی تیره، نکروز گسترده، ریزش برگ، مرگ گیاه.",
+                symptoms: "برگ‌ها بنفش تیره تا سیاه. نکروز گسترده حاشیه و نوک برگ. برگ‌ها ریخته‌اند. رشد کامل متوقف. ساقه‌ها آسیب دیده و آبکی شده‌اند. گیاه در حال مرگ. میوه‌ای تشکیل نمی‌شود.",
+                science: "⚠️ <strong>دلیل علمی:</strong> دمای زیر 5 درجه: آب درون سلول‌ها یخ می‌زند ← پارگی غشاها و مرگ سلول. یخ زدگی بافت‌ها ← نکروز گسترده. فتوسنتز و تنفس متوقف. گیاه قادر به احیا نیست."
+            }
+        ];
+        
+        function goToStage(stage) {
+            currentStage = stage;
+            let intensity = 0;
+            if (stage === 0) intensity = 0;
+            if (stage === 1) intensity = 0.35;
+            if (stage === 2) intensity = 0.65;
+            if (stage === 3) intensity = 0.95;
+            
+            setSeverityVisual(intensity);
+            
+            const data = stageDetails[stage];
+            const infoDiv = document.getElementById('infoPanel');
+            infoDiv.innerHTML = `
+                <div class="stage-name">${data.name}</div>
+                <div class="section">
+                    <div class="section-title">📖 آموزش اجزای برگ و مفهوم تنش سرمایی</div>
+                    <div class="section-content">${data.glossary}</div>
+                </div>
+                <div class="section">
+                    <div class="section-title">🔍 علائم ظاهری در این مرحله (تنش سرمایی)</div>
+                    <div class="section-content">${data.symptoms}</div>
+                </div>
+                <div class="section">
+                    <div class="section-title">🧠 علت علمی (فیزیولوژی تنش سرمایی)</div>
+                    <div class="section-content">${data.science}</div>
+                </div>
+                <div class="warning-box">
+                    💡 <span class="highlight">نکته مهم - علائم اختصاصی تنش سرمایی:</span><br>
+                    • <strong>بنفش شدن برگ و رگبرگ‌ها</strong> (تولید آنتوسیانین) - بارزترین علامت<br>
+                    • <strong>پژمردگی و افتادگی برگ</strong><br>
+                    • <strong>توقف رشد و کوتولگی</strong><br>
+                    • <strong>نکروز حاشیه و نوک برگ</strong> در مراحل پیشرفته<br>
+                    • در دمای زیر صفر: بافت‌ها آبکی و سیاه می‌شوند
+                </div>
+                <div class="warning-box" style="margin-top:6px;">
+                    🧣 <span class="highlight">راهکارهای کاهش تنش سرمایی (برای کشت زمستانه هرمزگان):</span><br>
+                    • استفاده از <strong>پلاستیک یا نایلون</strong> روی بوته‌ها در شب‌های سرد<br>
+                    • <strong>مالچ پلاستیکی مشکی</strong> (جذب گرمای روز و حفظ آن در شب)<br>
+                    • <strong>آبیاری عصرگاهی</strong> (آب گرمای خود را دیرتر از دست می‌دهد)<br>
+                    • انتخاب <strong>ارقام مقاوم به سرما</strong><br>
+                    • استفاده از <strong>ضدیخ‌های گیاهی</strong> (محلول‌پاشی پتاسیم و کلسیم)
+                </div>
+                <div class="warning-box" style="margin-top:6px;">
+                    📊 <span class="highlight">دمای بحرانی گوجه‌فرنگی:</span><br>
+                    • دمای بهینه رشد: 20-28 درجه<br>
+                    • شروع تنش: زیر 15 درجه<br>
+                    • آسیب جدی: زیر 10 درجه<br>
+                    • یخ زدگی و مرگ: زیر 5 درجه
+                </div>
+                <hr>
+                <div class="section-content" style="font-size:0.7rem; color:#5c481f;">
+                    💡 با هر کلیک، شدت تنش سرمایی افزایش می‌یابد. گوجه‌فرنگی در مرحله نشا و گلدهی حساسترین مراحل به سرماست.
+                </div>
+            `;
+        }
+        
+        const btn = document.getElementById('stageBtn');
+        btn.addEventListener('click', () => {
+            let next = currentStage + 1;
+            if (next > 3) next = 0;
+            goToStage(next);
+        });
+        
+        goToStage(0);
+    })();
+</script>
+</body>
+</html>
