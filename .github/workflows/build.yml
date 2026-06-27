@@ -44,14 +44,4 @@ jobs:
         name: Tomato3D-release
         path: app/build/outputs/apk/release/app-release-unsigned.apk
 
-    - name: Create GitHub Release
-      if: github.ref == 'refs/heads/main'
-      uses: softprops/action-gh-release@v1
-      with:
-        tag_name: v1.0
-        name: Tomato 3D v1.0
-        files: |
-          app/build/outputs/apk/debug/app-debug.apk
-          app/build/outputs/apk/release/app-release-unsigned.apk
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
