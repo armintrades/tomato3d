@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>برگ گوجه فرنگی - کمبود فسفر (P) | آموزش کامل</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: linear-gradient(145deg, #1b3d2a, #0d2a1a);
+            font-family: 'Segoe UI', 'Vazirmatn', Tahoma, system-ui, sans-serif;
+            padding: 12px;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .master {
+            max-width: 750px;
+            width: 100%;
+            background: #27261cd9;
+            backdrop-filter: blur(4px);
+            border-radius: 2rem;
+            padding: 12px;
+            box-shadow: 0 12px 28px black;
+        }
+        .card {
+            background: #fef8ec;
+            border-radius: 1.8rem;
+            padding: 1rem;
+            box-shadow: inset 0 0 0 1px #fff9e8, 0 6px 14px rgba(0,0,0,0.2);
+        }
+        .title {
+            text-align: center;
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #2b7220;
+            text-shadow: 1px 1px 0 #e2f0cf;
+        }
+        .sub {
+            text-align: center;
+            font-size: 0.75rem;
+            color: #b47c44;
+            border-bottom: 2px dashed #dabd88;
+            display: inline-block;
+            width: auto;
+            margin: 0 auto 12px auto;
+            padding-bottom: 4px;
+        }
+        .svg-container {
+            background: #e7ddc4;
+            border-radius: 1.2rem;
+            padding: 8px;
+            text-align: center;
+            margin: 8px 0;
+            box-shadow: inset 0 0 0 2px #fef5e2, 0 4px 10px rgba(0,0,0,0.15);
+        }
+        svg {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            border-radius: 1rem;
+        }
+        .button-area {
+            display: flex;
+            justify-content: center;
+            margin: 12px 0;
+        }
+        button {
+            background: #c08545;
+            border: none;
+            color: white;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 2rem;
+            font-size: 0.85rem;
+            cursor: pointer;
+            font-family: inherit;
+            transition: 0.2s;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+        button:active {
+            transform: scale(0.96);
+        }
+        .info-panel {
+            background: #efe4cf;
+            border-radius: 1.2rem;
+            padding: 0.9rem;
+            margin-top: 12px;
+            border-right: 5px solid #aa7942;
+            text-align: right;
+            font-size: 0.75rem;
+            max-height: 55vh;
+            overflow-y: auto;
+        }
+        .stage-name {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #4a3920;
+            background: #fdf1df;
+            padding: 4px 10px;
+            border-radius: 2rem;
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+        .section {
+            margin-top: 10px;
+            background: #faf3e3;
+            padding: 8px;
+            border-radius: 1rem;
+        }
+        .section-title {
+            font-weight: bold;
+            color: #6b3f1c;
+            border-right: 3px solid #c6904b;
+            padding-right: 8px;
+            margin-bottom: 6px;
+            font-size: 0.8rem;
+        }
+        .section-content {
+            line-height: 1.45;
+            color: #2c2a1a;
+        }
+        hr {
+            margin: 8px 0;
+            border-color: #dbbc87;
+        }
+        footer {
+            text-align: center;
+            font-size: 0.6rem;
+            color: #aa956b;
+            margin-top: 10px;
+        }
+        @media (max-width: 500px) {
+            .master { padding: 8px; }
+            .card { padding: 0.7rem; }
+            .title { font-size: 1.2rem; }
+            .info-panel { font-size: 0.7rem; max-height: 50vh; }
+            .section-title { font-size: 0.75rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="master">
+    <div class="card">
+        <div class="title">🍅 برگ گوجه‌فرنگی | کمبود فسفر (P)</div>
+        <div style="text-align: center;"><div class="sub">آموزش کامل اجزا و علائم از سالم تا شدید</div></div>
+
+        <div class="svg-container">
+            <svg id="tomatoLeafSvg" viewBox="0 0 600 700" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <filter id="shadow" x="-10%" y="-10%" width="130%" height="130%">
+                        <feDropShadow dx="2" dy="5" stdDeviation="4" flood-color="#2d2a1a" flood-opacity="0.25"/>
+                    </filter>
+                    <filter id="veinGlow"><feGaussianBlur stdDeviation="1"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+                    <linearGradient id="leafGrad" x1="20%" y1="0%" x2="80%" y2="100%">
+                        <stop offset="0%" stop-color="#6daa44"/><stop offset="60%" stop-color="#468a2e"/><stop offset="100%" stop-color="#2d6b1e"/>
+                    </linearGradient>
+                    <linearGradient id="petioleGrad" x1="0" y1="0" x2="1" y2="0">
+                        <stop offset="0%" stop-color="#8b744b"/><stop offset="100%" stop-color="#b4925e"/>
+                    </linearGradient>
+                </defs>
+                <g filter="url(#shadow)">
+                    <!-- دمبرگ Petiole -->
+                    <path id="petiolePath" d="M300,510 C285,545 270,585 285,640 Q295,670 310,685" stroke="url(#petioleGrad)" stroke-width="14" fill="none" stroke-linecap="round"/>
+                    <path d="M300,510 C310,540 325,585 312,640" stroke="#b7975f" stroke-width="3" fill="none" opacity="0.5"/>
+
+                    <!-- پهنک برگ Blade -->
+                    <path id="leafBlade" d="M300,160 C340,175 375,200 405,240 C425,268 442,298 448,330 C452,358 450,385 440,410 C425,445 400,475 372,500 C355,514 335,525 312,525 C290,525 270,514 253,500 C225,475 200,445 185,410 C175,385 173,358 177,330 C183,298 200,268 220,240 C250,200 285,175 300,160Z" fill="url(#leafGrad)" stroke="#3e6827" stroke-width="1.8"/>
+
+                    <!-- رنگ بنفش آنتوسیانین (علامت اصلی کمبود فسفر) -->
+                    <g id="anthocyaninGroup" opacity="0">
+                        <path d="M300,170 Q293,280 300,520" stroke="#a0496e" stroke-width="10" fill="none" opacity="0.5" filter="url(#veinGlow)"/>
+                        <ellipse cx="320" cy="280" rx="30" ry="38" fill="#9d4b72" opacity="0.25"/>
+                        <ellipse cx="380" cy="350" rx="32" ry="35" fill="#b2557a" opacity="0.25"/>
+                        <ellipse cx="230" cy="300" rx="25" ry="32" fill="#994564" opacity="0.25"/>
+                        <ellipse cx="300" cy="420" rx="35" ry="22" fill="#a6446a" opacity="0.2"/>
+                    </g>
+
+                    <!-- لکه‌های نکروز (قهوه‌ای) در مراحل شدید -->
+                    <g id="necrosisGroup" opacity="0">
+                        <path d="M430,320 C448,360 445,395 425,420" stroke="#854c28" stroke-width="10" fill="none" stroke-linecap="round" opacity="0.7"/>
+                        <path d="M170,320 C152,360 155,395 175,420" stroke="#854c28" stroke-width="10" fill="none" stroke-linecap="round" opacity="0.7"/>
+                        <ellipse cx="300" cy="165" rx="14" ry="9" fill="#7a3e1c" opacity="0.8"/>
+                        <ellipse cx="445" cy="350" rx="10" ry="6" fill="#8a4524" opacity="0.75"/>
+                        <ellipse cx="155" cy="350" rx="10" ry="6" fill="#8a4524" opacity="0.75"/>
+                    </g>
+
+                    <!-- تغییر رنگ سبز به تیره و کدر (در کمبود فسفر، سبز تیره و مات می‌شود) -->
+                    <g id="darkGreenEffect" opacity="0">
+                        <ellipse cx="300" cy="340" rx="120" ry="140" fill="#2c5c2a" opacity="0.4"/>
+                    </g>
+
+                    <!-- رگبرگ اصلی -->
+                    <path id="midVein" d="M300,170 Q293,280 300,520" stroke="#5b953c" stroke-width="4.5" fill="none" stroke-linecap="round" filter="url(#veinGlow)"/>
+                    <path d="M300,170 Q295,280 300,520" stroke="#a3df78" stroke-width="1.4" fill="none"/>
+
+                    <!-- رگبرگ فرعی -->
+                    <g id="veinsGroup" stroke="#4b8231" fill="none" stroke-linecap="round">
+                        <path d="M300,210 Q330,225 355,240" stroke-width="2.6"/><path d="M300,210 Q270,225 245,240" stroke-width="2.6"/>
+                        <path d="M300,260 Q345,275 385,295" stroke-width="2.8"/><path d="M300,260 Q255,275 215,295" stroke-width="2.8"/>
+                        <path d="M300,320 Q355,340 410,365" stroke-width="3"/><path d="M300,320 Q245,340 190,365" stroke-width="3"/>
+                        <path d="M300,380 Q350,395 395,425" stroke-width="2.6"/><path d="M300,380 Q250,395 205,425" stroke-width="2.6"/>
+                        <path d="M300,440 Q335,455 365,485" stroke-width="2.4"/><path d="M300,440 Q265,455 235,485" stroke-width="2.4"/>
+                        <path d="M345,270 Q370,280 395,272" stroke-width="1.2" opacity="0.75"/><path d="M255,270 Q230,280 205,272" stroke-width="1.2" opacity="0.75"/>
+                        <path d="M360,330 Q390,340 425,330" stroke-width="1.3" opacity="0.8"/><path d="M240,330 Q210,340 175,330" stroke-width="1.3" opacity="0.8"/>
+                    </g>
+
+                    <!-- تریکوم (کرک‌های غده‌ای) -->
+                    <g id="trichomesGroup" stroke="#b6a467" fill="none" stroke-width="0.8" opacity="0.9">
+                        <path d="M380,230 L390,225"/><circle cx="390" cy="225" r="1.1" fill="#cfb572"/>
+                        <path d="M410,280 L422,272"/><circle cx="422" cy="272" r="1.2" fill="#cfb572"/>
+                        <path d="M435,340 L448,332"/><circle cx="448" cy="332" r="1.2" fill="#cfb572"/>
+                        <path d="M420,400 L433,395"/><circle cx="433" cy="395" r="1.1" fill="#cfb572"/>
+                        <path d="M380,460 L390,455"/><circle cx="390" cy="455" r="1.1" fill="#cfb572"/>
+                        <path d="M220,230 L210,225"/><circle cx="210" cy="225" r="1.1" fill="#cfb572"/>
+                        <path d="M190,280 L178,272"/><circle cx="178" cy="272" r="1.2" fill="#cfb572"/>
+                        <path d="M165,340 L152,332"/><circle cx="152" cy="332" r="1.2" fill="#cfb572"/>
+                        <path d="M180,400 L168,395"/><circle cx="168" cy="395" r="1.1" fill="#cfb572"/>
+                        <path d="M220,460 L210,455"/><circle cx="210" cy="455" r="1.1" fill="#cfb572"/>
+                    </g>
+
+                    <!-- روزنه‌ها (نقاط میکروسکوپی) -->
+                    <g id="stomataGroup" fill="#6a8c50" opacity="0.4">
+                        <ellipse cx="340" cy="260" rx="1.3" ry="2" transform="rotate(15 340 260)"/>
+                        <ellipse cx="320" cy="290" rx="1.2" ry="1.9" transform="rotate(-20 320 290)"/>
+                        <ellipse cx="370" cy="310" rx="1.4" ry="2.1" transform="rotate(30 370 310)"/>
+                        <ellipse cx="290" cy="330" rx="1.3" ry="2" transform="rotate(-10 290 330)"/>
+                        <ellipse cx="410" cy="350" rx="1.2" ry="1.9" transform="rotate(10 410 350)"/>
+                        <ellipse cx="220" cy="280" rx="1.4" ry="2.1" transform="rotate(-25 220 280)"/>
+                        <ellipse cx="260" cy="400" rx="1.3" ry="2" transform="rotate(5 260 400)"/>
+                        <ellipse cx="350" cy="430" rx="1.2" ry="1.9" transform="rotate(20 350 430)"/>
+                    </g>
+                </g>
+            </svg>
+        </div>
+
+        <div class="button-area">
+            <button id="stageBtn">🌱 مراحل کمبود فسفر (سالم ← شدید)</button>
+        </div>
+
+        <div class="info-panel" id="infoPanel">
+            <!-- محتوای داینامیک توسط JS پر می‌شود -->
+        </div>
+        <footer>🔍 هر بار کلیک، شدت کمبود فسفر افزایش می‌یابد. علائم: سبز تیره کدر، بنفشگی رگبرگ‌ها و حاشیه، نکروز در مراحل پیشرفته.</footer>
+    </div>
+</div>
+
+<script>
+    (function() {
+        // گرفتن المان‌های SVG
+        const leafGrad = document.getElementById('leafGrad');
+        const anthocyanin = document.getElementById('anthocyaninGroup');
+        const necrosis = document.getElementById('necrosisGroup');
+        const darkGreenEffect = document.getElementById('darkGreenEffect');
+        const midVein = document.getElementById('midVein');
+        const veinsGroup = document.getElementById('veinsGroup');
+        const trichomesGroup = document.getElementById('trichomesGroup');
+        const petiolePath = document.getElementById('petiolePath');
+        
+        let currentStage = 0;  // 0:سالم, 1:خفیف, 2:متوسط, 3:شدید
+        
+        // تابع تغییر ظاهر SVG بر اساس شدت کمبود فسفر (0 تا 1)
+        function setSeverityVisual(severity) {
+            // کمبود فسفر: برگ سبز تیره و کدر می‌شود (کاهش روشنایی)
+            const hue = 95 - severity * 10;       // از سبز روشن به سبز تیره
+            const sat = 55 + severity * 15;       // اشباع بیشتر
+            const light = 38 - severity * 12;     // تیره‌تر می‌شود
+            const stops = leafGrad.querySelectorAll('stop');
+            if (stops.length >= 3) {
+                stops[0].setAttribute('stop-color', `hsl(${hue}, ${sat}%, ${light+4}%)`);
+                stops[1].setAttribute('stop-color', `hsl(${hue-3}, ${sat-3}%, ${light-2}%)`);
+                stops[2].setAttribute('stop-color', `hsl(${hue-6}, ${sat-5}%, ${light-6}%)`);
+            }
+            
+            // آنتوسیانین (بنفش) علامت اصلی کمبود فسفر
+            let anthoOpacity = severity * 0.9;
+            anthocyanin.setAttribute('opacity', Math.min(0.85, anthoOpacity).toString());
+            
+            // نکروز (قهوه‌ای) فقط در شدت‌های بالا
+            let necroOpacity = (severity > 0.6) ? (severity - 0.6) * 1.8 : 0;
+            necrosis.setAttribute('opacity', Math.min(0.9, necroOpacity).toString());
+            
+            // افکت سبز تیره اضافی
+            let darkOp = severity * 0.5;
+            darkGreenEffect.setAttribute('opacity', Math.min(0.6, darkOp).toString());
+            
+            // رنگ رگبرگ‌ها (در کمبود فسفر بنفش می‌شوند)
+            const veinColor = (severity > 0.3) ? `rgba(160, 70, 110, ${0.5 + severity*0.4})` : "#5b953c";
+            midVein.setAttribute('stroke', veinColor);
+            const allVeins = veinsGroup.querySelectorAll('path');
+            const subVeinColor = (severity > 0.4) ? `rgba(150, 65, 105, ${0.6 + severity*0.3})` : "#4b8231";
+            allVeins.forEach(p => p.setAttribute('stroke', subVeinColor));
+            
+            // دمبرگ تیره‌تر
+            if (severity > 0.5) {
+                petiolePath.setAttribute('stroke', "#936f42");
+            } else {
+                petiolePath.setAttribute('stroke', "url(#petioleGrad)");
+            }
+            
+            // تریکوم
+            trichomesGroup.setAttribute('stroke', severity > 0.4 ? "#a08050" : "#b6a467");
+        }
+        
+        // داده‌های توضیحی برای هر مرحله (کمبود فسفر)
+        const stageDetails = [
+            { // مرحله 0: سالم
+                name: "🌿 مرحله ۰: برگ کاملاً سالم (بدون کمبود فسفر)",
+                glossary: "✅ <strong>تعریف اجزای برگ:</strong><br> • <strong>پهنک برگ (Blade):</strong> قسمت سبز و پهن که عمل فتوسنتز را انجام می‌دهد.<br> • <strong>دمبرگ (Petiole):</strong> ساقه‌ای که برگ را به ساقه اصلی متصل می‌کند.<br> • <strong>رگبرگ اصلی (Midvein):</strong> رگ ضخیم وسط برگ برای انتقال آب و مواد.<br> • <strong>رگبرگ فرعی (Secondary Veins):</strong> انشعابات ریزتر برای رساندن مواد به تمام بافت.<br> • <strong>تریکوم (Trichomes):</strong> کرک‌های ریز غده‌ای محافظ.<br> • <strong>روزنه (Stomata):</strong> منافذ ریز برای تبادل گاز و تعرق.<br> • <strong>آنتوسیانین (Anthocyanin):</strong> رنگدانه بنفش – در حالت سالم دیده نمی‌شود.<br> • <strong>نکروز (Necrosis):</strong> مرگ بافت قهوه‌ای – در سالم وجود ندارد.<br><br>🧪 <strong>فسفر (P) چه کاری انجام می‌دهد؟</strong><br> فسفر جز اصلی ATP (منبع انرژی سلول)، DNA، RNA و غشای سلولی است. در گیاه سالم، فسفر باعث ریشه‌زایی قوی، گلدهی و میوه‌دهی عالی می‌شود. برگ‌ها سبز پررنگ و شاداب هستند.",
+                symptoms: "🔹 <strong>علائم قابل مشاهده:</strong> سبزی یکدست و نسبتاً تیره، رگبرگ‌ها سبز، بدون بنفشگی، بدون نکروز.",
+                science: "📗 <strong>علت فیزیولوژیک:</strong> فسفر کافی در دسترس است. انتقال انرژی (ATP) به خوبی انجام می‌شود، فتوسنتز و تقسیم سلولی در اوج. برگ حالت سالم و طبیعی دارد."
+            },
+            { // مرحله 1: خفیف
+                name: "⚠️ مرحله ۱: کمبود خفیف فسفر (آغاز علائم)",
+                glossary: "همان اجزای بالا – اکنون برگ کمی تیره‌تر و بنفشگی بسیار خفیف در رگبرگ‌ها دیده می‌شود.",
+                symptoms: "🟣 سبزی برگ تیره و مات می‌شود (سبز تیره کدر). رگبرگ اصلی و حاشیه برگ کمی بنفش خفیف می‌زند. رشد ریشه کاهش یافته، اما هنوز نکروز دیده نمی‌شود.",
+                science: "🔬 <strong>دلیل علمی:</strong> فسفر کمی کمتر از نیاز است. گیاه در انتقال انرژی دچار مشکل می‌شود. قندها در برگ انباشته شده و تولید آنتوسیانین (بنفش) آغاز می‌شود. برگ به دلیل کاهش متابولیسم، ظاهر کدر و تیره پیدا می‌کند."
+            },
+            { // مرحله 2: متوسط
+                name: "🟣 مرحله ۲: کمبود متوسط فسفر (علائم آشکار)",
+                glossary: "تمامی اجزا – اکنون بنفشگی واضح رگبرگ‌ها و حاشیه برگ نمایان است.",
+                symptoms: "بنفش شدن واضح رگبرگ اصلی و فرعی، حاشیه برگ بنفش-قرمز. برگ‌های پایینی ممکن است زودتر پیر شوند. رشد گیاه کند شده، برگ‌ها کوچک و باریک. بدون نکروز یا نکروز خیلی جزئی.",
+                science: "🧪 <strong>دلیل علمی:</strong> کمبود فسفر متوسط: ATP به اندازه کافی ساخته نمی‌شود. فتوسنتز کاهش می‌یابد، قندها انباشته می‌شوند ← آنتوسیانین زیاد (بنفش). تقسیم سلولی مختل می‌شود ← رشد متوقف و برگ‌ها ریز می‌شوند."
+            },
+            { // مرحله 3: شدید
+                name: "🔴 مرحله ۳: کمبود شدید فسفر (پیشرفته، بحرانی)",
+                glossary: "همه قسمت‌های برگ به شدت بنفش و نکروزه: پهنک بنفش تیره، دمبرگ شکننده، نکروز گسترده قهوه‌ای.",
+                symptoms: "بیشتر سطح برگ بنفش تیره مایل به قرمز، حاشیه و نوک برگ قهوه‌ای و خشک (نکروز شدید). برگ‌های پایینی می‌ریزند. رشد کامل متوقف، ریشه‌ها ضعیف و نابسامان. گیاه در آستانه مرگ.",
+                science: "⚠️ <strong>دلیل علمی:</strong> کمبود حاد فسفر: تولید ATP تقریباً متوقف شده، سلول‌ها انرژی ندارند. قندها حداکثر انباشت ← آنتوسیانین غلیظ. مرگ بافت به دلیل نبود انرژی برای ترمیم و انتقال مواد. گیاه توانایی تولید میوه و رشد را از دست می‌دهد."
+            }
+        ];
+        
+        // تابع به‌روزرسانی پنل متن و ظاهر برگ
+        function goToStage(stage) {
+            currentStage = stage;
+            let intensity = 0;
+            if (stage === 0) intensity = 0;
+            if (stage === 1) intensity = 0.35;
+            if (stage === 2) intensity = 0.65;
+            if (stage === 3) intensity = 0.95;
+            
+            setSeverityVisual(intensity);
+            
+            const data = stageDetails[stage];
+            const infoDiv = document.getElementById('infoPanel');
+            infoDiv.innerHTML = `
+                <div class="stage-name">${data.name}</div>
+                <div class="section">
+                    <div class="section-title">📖 آموزش اجزای برگ و نقش فسفر</div>
+                    <div class="section-content">${data.glossary}</div>
+                </div>
+                <div class="section">
+                    <div class="section-title">🔍 علائم ظاهری در این مرحله (کمبود فسفر)</div>
+                    <div class="section-content">${data.symptoms}</div>
+                </div>
+                <div class="section">
+                    <div class="section-title">🧠 علت علمی (فیزیولوژی کمبود فسفر)</div>
+                    <div class="section-content">${data.science}</div>
+                </div>
+                <hr>
+                <div class="section-content" style="font-size:0.7rem; color:#5c481f;">💡 با هر کلیک، شدت کمبود فسفر افزایش می‌یابد. پس از مرحله شدید، دوباره به حالت سالم برمی‌گردد.</div>
+            `;
+        }
+        
+        // دکمه: چرخه بین مراحل 0 تا 3
+        const btn = document.getElementById('stageBtn');
+        btn.addEventListener('click', () => {
+            let next = currentStage + 1;
+            if (next > 3) next = 0;
+            goToStage(next);
+        });
+        
+        // مقدار اولیه: سالم (مرحله 0)
+        goToStage(0);
+    })();
+</script>
+</body>
+</html>
